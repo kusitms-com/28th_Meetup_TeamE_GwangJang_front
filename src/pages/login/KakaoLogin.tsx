@@ -1,5 +1,5 @@
 import kakao_logo from "@/assets/kakao-talk.svg";
-import { KakaoButton } from "@/components/atoms/button/Button.styles";
+import { KakaoButton } from "@/components/atoms/button";
 
 const KakaoLogin = () => {
   const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${
