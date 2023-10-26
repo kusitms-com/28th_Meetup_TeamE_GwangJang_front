@@ -14,7 +14,7 @@ const router = () => {
             element={<Home />}
           />
           <Route
-            path="/login"
+            path="/auth"
             element={<LoginPage />}
           />
         </Route>
