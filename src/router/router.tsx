@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "@/layout/Layout";
 import Home from "@/pages/Home";
-import KakaoLogin from "@/pages/login/KakaoLogin";
+import { LoginPage } from "@/pages/login";
 
 const router = () => {
   return (
@@ -14,8 +14,8 @@ const router = () => {
             element={<Home />}
           />
           <Route
-            path="/auth"
-            element={<KakaoLogin />}
+            path="/login"
+            element={<LoginPage />}
           />
         </Route>
       </Routes>
