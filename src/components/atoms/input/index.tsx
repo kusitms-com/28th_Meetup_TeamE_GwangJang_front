@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 
 import { BasicInput } from "./style";
 
@@ -6,7 +6,7 @@ export interface InputProps {
   value: string;
   type: string;
   placeholder: string;
-  onChange: (value: string) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Input: React.FC<InputProps> = ({ value, type, placeholder, onChange }) => {
@@ -16,7 +16,7 @@ export const Input: React.FC<InputProps> = ({ value, type, placeholder, onChange
         type={type}
         value={value}
         placeholder={placeholder}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={onChange}
       />
     </div>
   );
