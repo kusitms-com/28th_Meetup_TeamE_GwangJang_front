@@ -15,6 +15,7 @@ export const BasicInput = styled.input<InputProps>`
   //
   color: var(--Gray10_900, #212121);
   padding-left: 20px;
+  padding-right: 80px;
   font-size: 1rem;
   font-weight: 500;
 
