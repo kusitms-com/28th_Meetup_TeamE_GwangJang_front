@@ -23,7 +23,18 @@ export const LoginPage = () => {
           <div></div>
         </OrLine>
         <KakaoLogin />
-      </LoginBox>
+      </LoginBox>{" "}
+      <EtcBox>
+        <div className="findProp">
+          <p>아이디 찾기</p>
+          <p>|</p>
+          <p>비밀번호 찾기</p>
+        </div>
+        <div className="notUser">
+          <p>아직 회원이 아니신가요?</p>
+          <p className="sign-up">회원가입</p>
+        </div>
+      </EtcBox>
     </LoginContainer>
   );
 };
@@ -82,4 +93,46 @@ const LoginBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 14px;
+`;
+
+const EtcBox = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  .findProp {
+    display: flex;
+    gap: 10px;
+    color: var(--Gray7_600);
+    text-align: center;
+
+    /* TextButton1_M */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .notUser {
+    display: flex;
+    color: var(--Gray5_400, #bdbdbd);
+    text-align: center;
+
+    /* TextButton1_M */
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    gap: 14px;
+
+    .sign-up {
+      color: var(--Main_Blue);
+      /* TextButton2_Sb */
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-decoration-line: underline;
+    }
+  }
 `;
