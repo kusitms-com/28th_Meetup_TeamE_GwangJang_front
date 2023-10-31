@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ButtonProps } from ".";
+import { ButtonProps } from "@/types";
 
 export const KakaoBtn = styled.button<ButtonProps>`
   box-sizing: border-box;

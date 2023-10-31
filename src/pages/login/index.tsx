@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 import logo from "@/assets/logo.svg";
 
-import KakaoLogin from "./KakaoLogin";
-import { LocalLogin } from "./LocalLogin";
+import KakaoLogin from "../../components/molecules/login/KakaoLogin";
+import { LocalLogin } from "../../components/molecules/login/LocalLogin";
 
 export const LoginPage = () => {
   return (
@@ -97,8 +97,10 @@ const LoginBox = styled.div`
 
 const EtcBox = styled.div`
   display: flex;
+  align-items: center;
   flex-direction: column;
-
+  margin-top: 24px;
+  gap: 42px;
   .findProp {
     display: flex;
     gap: 10px;
