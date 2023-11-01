@@ -2,7 +2,7 @@ import { InputProps } from "@/types";
 
 import { BasicInput } from "./style";
 
-export const Input: React.FC<InputProps> = ({ value, type, placeholder, onChange }) => {
+export const Input = ({ value, type, placeholder, onChange }: InputProps) => {
   return (
     <div>
       <BasicInput
