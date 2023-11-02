@@ -8,7 +8,7 @@ export interface InputProps {
   placeholder: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
-  onBlur?: (e: FocusEvent<HTMLInputElement>) => void;
+  errorLine?: boolean;
 }
 export const Input: React.FC<InputProps> = ({
   value,
@@ -16,7 +16,7 @@ export const Input: React.FC<InputProps> = ({
   placeholder,
   onChange,
   onFocus,
-  onBlur,
+  errorLine,
 }) => {
   return (
     <div>
@@ -26,7 +26,7 @@ export const Input: React.FC<InputProps> = ({
         placeholder={placeholder}
         onChange={onChange}
         onFocus={onFocus}
-        onBlur={onBlur}
+        errorLine={errorLine}
       />
     </div>
   );
