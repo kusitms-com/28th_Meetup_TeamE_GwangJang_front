@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ButtonProps } from "@/types";
+import { ButtonProps } from "@/types/index.ts";
 
 export const KakaoBtn = styled.button<ButtonProps>`
   cursor: pointer;

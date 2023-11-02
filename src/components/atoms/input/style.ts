@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { InputProps } from "@/types";
+import { InputProps } from "@/types/index.ts";
 
 export const BasicInput = styled.input<InputProps>`
   box-sizing: border-box;
