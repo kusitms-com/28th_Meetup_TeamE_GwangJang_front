@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/LoginLogo.svg";
 
 import KakaoLogin from "../../components/molecules/login/KakaoLogin";
 import { LocalLogin } from "../../components/molecules/login/LocalLogin";

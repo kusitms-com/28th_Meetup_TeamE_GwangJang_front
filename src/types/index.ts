@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import React, { ChangeEvent, FocusEvent } from "react";
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -11,4 +11,6 @@ export interface InputProps {
   type: string;
   placeholder: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
+  errorLine?: boolean;
 }
