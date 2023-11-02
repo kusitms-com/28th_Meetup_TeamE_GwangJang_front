@@ -8,6 +8,7 @@ export const RegisterTitle = styled.div`
   display: flex;
   justify-content: center;
   gap: var(--text_b3);
+  margin-bottom: 40px;
   p {
     font-size: var(--text_h4);
     font-weight: 700;
@@ -48,30 +49,53 @@ export const RegisterBox = styled.div`
 export const IdBox = styled.div`
   .inputId {
     position: relative;
+    margin: 6px 0 4px;
   }
+  margin-bottom: 8px;
 `;
 
 export const PasswordBox = styled.div`
   position: relative;
+  .title {
+    margin-bottom: 4px;
+  }
+  .inputPassword {
+    margin: 7px 0 2px;
+  }
+  margin-bottom: 10px;
 `;
 export const PasswordCheckBox = styled.div`
   position: relative;
+  .inputPassword {
+    margin: 6px 0;
+  }
+  margin-bottom: 10px;
 `;
 
 export const NicknameBox = styled.div`
   .inputNickname {
     position: relative;
+    margin: 6px 0;
   }
+  margin-bottom: 12px;
 `;
 
 export const EmailBox = styled.div`
   position: relative;
+  .inputEmail {
+    margin: 6px 0 12px;
+  }
 `;
 
 export const EmailCodeBox = styled.div`
+  width: 338px;
+  margin: 14px auto 15px;
+  padding: 13px 0 16px;
+  box-sizing: border-box;
   position: relative;
   .inputEmailCode {
     position: relative;
+    margin: 8px 0;
   }
 
   .timer {
@@ -86,18 +110,33 @@ export const EmailCodeBox = styled.div`
   .resend {
     display: flex;
     .caption2 {
+      margin-left: 6px;
       text-decoration: underline;
       color: var(--Gray9_800, #424242);
+      cursor: pointer;
     }
   }
 `;
 
-export const BirthBox = styled.div``;
+export const BirthBox = styled.div`
+  margin-top: 15px;
+  .title {
+    margin-bottom: 8px;
+  }
+  .inputBirth {
+    margin-top: 10px;
+  }
+  margin-bottom: 30px;
+`;
 
 export const GenderBox = styled.div`
+  .title {
+    margin-bottom: 6px;
+  }
   .Btns {
     display: flex;
     gap: 6px;
+    margin-bottom: 60px;
   }
 `;
 
@@ -107,10 +146,16 @@ export const SpaceToLogin = styled.div`
   .caption2 {
     text-decoration: underline;
     color: var(--Gray9_800, #424242);
+    cursor: pointer;
   }
 `;
 
-export const DuplicateBtn = styled.div`
+export const DuplicateBtn = styled.button`
+  border: 0;
+  background-color: transparent;
+  font-family: "Pretendard";
+  font-size: var(--text_b2);
+  padding: 0;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
@@ -176,10 +221,9 @@ export const RegisterBtn = styled.button`
   padding: 0;
   font-family: "Pretendard"; // btn 태그 기본 속성 제거
   border-radius: 5px;
-  background: var(--Gray3_200, #eee);
-  color: var(--Gray6_500, #959595);
-  /* background: var(--Main_Blue, #0084ff); 
-  color: var(--White, #fff);*/
+  color: ${(props) => (!props.disabled ? "var(--White, #fff)" : "var(--Gray6_500)")};
+  background-color: ${(props) => (!props.disabled ? "var(--Main_Blue)" : "var(--Gray3_200)")};
+
   height: 56px;
   width: 100%;
 
@@ -188,4 +232,5 @@ export const RegisterBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
 `;
