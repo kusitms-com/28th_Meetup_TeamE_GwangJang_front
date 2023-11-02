@@ -1,4 +1,4 @@
-import { InputProps } from "@/types/index.ts";
+import { InputProps } from "@/types";
 
 import { BasicInput } from "./style";
 

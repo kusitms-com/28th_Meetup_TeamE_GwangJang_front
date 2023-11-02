@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 import logo from "@/assets/LoginLogo.svg";
-
-import KakaoLogin from "../../components/molecules/login/KakaoLogin";
-import { LocalLogin } from "../../components/molecules/login/LocalLogin";
+import KakaoLogin from "@/components/molecules/login/KakaoLogin";
+import { LocalLogin } from "@/components/molecules/login/LocalLogin";
 
 export const LoginPage = () => {
   return (
