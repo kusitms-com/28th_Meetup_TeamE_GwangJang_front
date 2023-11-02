@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Register from "@/components/molecules/register";
 import Layout from "@/layout/Layout";
 import Home from "@/pages/Home";
+import Signup from "@/pages/Signup";
 import { LoginPage } from "@/pages/login";
 
 const router = () => {
@@ -15,7 +15,7 @@ const router = () => {
         />
         <Route
           path="/register"
-          element={<Register />}
+          element={<Signup />}
         />
         <Route element={<Layout />}>
           <Route
