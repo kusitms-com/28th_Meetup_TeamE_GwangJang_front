@@ -1,23 +1,8 @@
-import React, { ChangeEvent, FocusEvent } from "react";
+import { InputProps } from "@/types";
 
 import { BasicInput } from "./style";
 
-export interface InputProps {
-  value: string;
-  type: string;
-  placeholder: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
-  errorLine?: boolean;
-}
-export const Input: React.FC<InputProps> = ({
-  value,
-  type,
-  placeholder,
-  onChange,
-  onFocus,
-  errorLine,
-}) => {
+export const Input = ({ value, type, placeholder, onChange, onFocus, errorLine }: InputProps) => {
   return (
     <div>
       <BasicInput

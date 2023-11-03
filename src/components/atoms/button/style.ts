@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-import { ButtonProps } from ".";
+import { ButtonProps } from "@/types/index.ts";
 
 export const KakaoBtn = styled.button<ButtonProps>`
+  cursor: pointer;
   box-sizing: border-box;
 
   display: flex;
@@ -14,11 +15,13 @@ export const KakaoBtn = styled.button<ButtonProps>`
   background: #ffe812;
   gap: 4px;
   border: none;
-  font-size: 1rem;
+  font-size: var(--text_b2);
   font-weight: 600;
 `;
 
 export const TestBtn = styled.button<ButtonProps>`
+  cursor: pointer;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,13 +33,9 @@ export const TestBtn = styled.button<ButtonProps>`
 
   //
   background: var(--Main_Blue, #0084ff);
-
-  //
   color: #fff;
   text-align: center;
-
-  /* Button1_Sb */
-  font-size: 18px;
+  font-size: var(--text_b1);
   font-style: normal;
   font-weight: 600;
   line-height: 18px; /* 100% */
