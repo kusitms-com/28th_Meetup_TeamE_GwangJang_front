@@ -91,7 +91,7 @@ const PackBubble = () => {
     credits: {
       enabled: false,
     },
-    series: packbubbleDummydata,
+    series: packbubbleDummydata, // 데이터 값
   };
   return (
     <HighchartsReact
