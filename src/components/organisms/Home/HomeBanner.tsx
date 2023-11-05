@@ -1,5 +1,11 @@
+import { MainTopic } from "./MainTopic";
+
 const HomeBanner = () => {
-  return <div>HomeBanner</div>;
+  return (
+    <div>
+      <MainTopic />
+    </div>
+  );
 };
 
 export default HomeBanner;
