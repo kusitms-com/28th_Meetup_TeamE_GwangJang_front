@@ -2,6 +2,9 @@
 .highcharts-root {
   position: relative;
 }
+/* .highcharts-container {
+  width: 80rem !important;
+} */
 .highcharts-title {
   position: absolute;
   right: 0;
@@ -67,24 +70,6 @@ image[width="1420"] {
   stroke: #0084ff;
 }
 
-/* .highcharts-point:hover
-	~ .highcharts-series-0
-	.highcharts-label.highcharts-data-label
-	text {
-	color: #fff !important;
-	fill: #fff !important;
-} */
-
-/* .highcharts-series-group:has(.highcharts-point:hover)
-	+ .highcharts-series-0
-	.highcharts-label.highcharts-data-label
-	text {
-	color: #000 !important;
-	fill: #d70202 !important;
-}
-.highcharts-series-0:hover {
-	fill: #d70202 !important;
-} */
 .highcharts-series-0 .highcharts-label.highcharts-data-label text {
   fill: #ff9900 !important;
   color: #ff9900 !important;
@@ -101,17 +86,8 @@ image[width="1420"] {
   fill: #0084ff !important;
   color: #0084ff !important;
 }
-/* 
-path[fill='#7755FF'].highcharts-point {
-	filter: drop-shadow(0px 44px 56px rgba(103, 68, 244, 0.3));
-}
 
-path[fill='#0084FF'].highcharts-point {
-	filter: drop-shadow(0px 44px 56px rgba(0, 132, 255, 0.5));
+.highcharts-series-hover .highcharts-label.highcharts-data-label text {
+  color: #fff !important;
+  fill: #fff !important;
 }
-path[fill='#1AE276'].highcharts-point {
-	filter: drop-shadow(0px 44px 56px rgba(11, 242, 117, 0.3));
-}
-path[fill='#FF7A00'].highcharts-point {
-	filter: drop-shadow(0px 44px 56px rgba(255, 122, 0, 0.4));
-} */
