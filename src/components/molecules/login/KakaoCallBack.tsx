@@ -2,6 +2,8 @@ import { useEffect } from "react";
 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { SyncLoader } from "react-spinners";
+import styled from "styled-components";
 
 export const KakaoCallBack = () => {
   const navigate = useNavigate();
@@ -37,5 +39,20 @@ export const KakaoCallBack = () => {
     getToken();
   }, []);
 
-  return <>loading중~~~~~~</>;
+  return (
+    <LoadingBox>
+      <h3>잠시만 기다려주세요.</h3>
+      <SyncLoader />
+    </LoadingBox>
+  );
 };
+
+const LoadingBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.3rem;
+`;
