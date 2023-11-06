@@ -7,7 +7,7 @@ export const ContentContainer = styled.div`
   flex-direction: column;
   padding: 20px;
   /* width: 384px; */
-  height: 240px;
+  /* height: 240px; */
   border-radius: 5px;
 
   .tag-box {

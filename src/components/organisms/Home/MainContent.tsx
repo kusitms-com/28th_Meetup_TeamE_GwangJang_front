@@ -11,9 +11,7 @@ export const MainContent = () => {
       <MainContentContainer>
         <Title title="지금 사람들이 가장 많이 본 콘텐츠" />
         <ContentWrapper>
-          <div>
-            <ContentBox />
-          </div>
+          <ContentBox />
           <div className="content-grid">
             <ContentBox />
             <ContentBox />
@@ -39,11 +37,8 @@ const ContentWrapper = styled.div`
 
   .content-grid {
     display: grid;
+    height: 504px;
     grid-template-columns: repeat(2, 2fr);
     gap: 24px;
   }
-  /* div {
-    display: flex;
-    gap: 24px;
-  } */
 `;
