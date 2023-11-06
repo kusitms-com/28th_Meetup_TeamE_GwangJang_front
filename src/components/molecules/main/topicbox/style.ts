@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const TopicContainer = styled.div`
-  //배경
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
