@@ -6,7 +6,7 @@ export const TopicBox = () => {
   const imageUrl = "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg";
 
   const containerStyle = {
-    backgroundImage: `linear-gradient(rgba(52, 52, 52, 0.8), rgba(52, 52, 52, 0.8)),url(${imageUrl})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(${imageUrl})`,
     backgroundSize: "cover", // 이미지를 컨테이너에 맞게 조절합니다.
   };
 
