@@ -1,3 +1,4 @@
+import { MainCommunity } from "./MainCommunity";
 import { MainContent } from "./MainContent";
 import { MainTopic } from "./MainTopic";
 
@@ -6,6 +7,7 @@ const HomeBanner = () => {
     <>
       <MainTopic />
       <MainContent />
+      <MainCommunity />
     </>
   );
 };
