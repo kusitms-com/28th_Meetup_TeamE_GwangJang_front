@@ -7,7 +7,7 @@ export const TopicBox = () => {
 
   const containerStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(${imageUrl})`,
-    backgroundSize: "cover", // 이미지를 컨테이너에 맞게 조절합니다.
+    backgroundSize: "cover",
   };
 
   return (
