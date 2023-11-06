@@ -27,6 +27,10 @@ const router = () => {
             path="/"
             element={<Home />}
           />
+          <Route
+            path="/topic"
+            element={<Topic />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
