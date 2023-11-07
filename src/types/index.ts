@@ -26,3 +26,10 @@ export interface TitleProps {
 export interface SeeMoreProps {
   text: string;
 }
+
+export interface discussedTopicProps {
+  title: string;
+  subTitles: string[];
+  idx: number;
+}
+[];
