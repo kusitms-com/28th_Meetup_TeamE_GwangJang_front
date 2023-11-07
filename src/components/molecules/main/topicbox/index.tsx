@@ -38,7 +38,8 @@ export const TopicBox = () => {
         <div className="topic-wrapper">
           {" "}
           <div>
-            <TopicTag />
+            {/* 아래 색깔 추후 데이터 카테고리에 맞게 지정 */}
+            <TopicTag color="red" />
             <div className="topic-title">주 69시간 근로시간 제도 개편</div>
           </div>
           <div className="subscribe">
