@@ -27,10 +27,6 @@ const router = () => {
             path="/"
             element={<Home />}
           />
-          <Route
-            path="/topic"
-            element={<DiscussedTopics />}
-          />
         </Route>
       </Routes>
     </BrowserRouter>
