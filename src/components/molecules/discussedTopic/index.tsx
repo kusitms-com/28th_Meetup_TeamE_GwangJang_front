@@ -16,30 +16,34 @@ const background = [background1, background2, background3, background4];
 const Topic = ({ title, subTitles, idx }: discussedTopicProps) => {
   const [hover, setHover] = useState<boolean>(false);
 
+  const spaceToDetailPage = (subTitle: string) => {
+    console.log(subTitle); // 주제별 상세페이지로 이동 로직
+  };
+
   return (
     <Container
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
     >
-      {hover && (
-        <Hover>
-          <div className="text">{title}</div>
-          <div className="sub_text">
-            {subTitles.map((subTitle, idx) => (
-              <div
-                className="sub_item"
-                key={idx}
-              >
-                <p>{subTitle}</p>
-                <img
-                  src={arrow}
-                  alt=">"
-                />
-              </div>
-            ))}
-          </div>
-        </Hover>
-      )}
+      <Hover $hover={hover}>
+        <div className="text">{title}</div>
+        <div className="sub_text">
+          {subTitles.map((subTitle, idx) => (
+            <div
+              className="sub_item"
+              key={idx}
+              onClick={() => spaceToDetailPage(subTitle)}
+            >
+              <p>{subTitle}</p>
+              <img
+                src={arrow}
+                alt=">"
+              />
+            </div>
+          ))}
+        </div>
+      </Hover>
+
       <Main $hover={hover}>
         <Title
           $hover={hover}
