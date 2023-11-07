@@ -4,6 +4,7 @@ export const TopicContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   width: 20%;
   height: 220px;
   flex-shrink: 0;
@@ -25,17 +26,12 @@ export const TopicContainer = styled.div`
   .subscribe {
     color: var(--Gray2_100, #f5f5f5);
     display: flex;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: var(--text_b2);
     line-height: 22px;
     letter-spacing: -0.21px;
 
     p {
-      color: var(--Gray2_100, #f5f5f5);
-      font-size: 14px;
       font-weight: 700;
-      line-height: 22px; /* 157.143% */
-      letter-spacing: -0.21px;
     }
   }
 `;
