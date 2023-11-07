@@ -36,7 +36,7 @@ const TopicWrapper = styled.div`
     flex-wrap: wrap;
 
     & > div {
-      flex: 0 0 calc(30% - 12px);
+      flex: 0 0 calc(40% - 12px);
       margin-bottom: 12px;
     }
   }
