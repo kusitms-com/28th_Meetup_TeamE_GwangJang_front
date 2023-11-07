@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import { KakaoCallBack } from "@/components/molecules/login/KakaoCallBack";
 import Layout from "@/layout/Layout";
 import Home from "@/pages/Home";
 import Signup from "@/pages/Signup";
@@ -12,6 +13,10 @@ const router = () => {
         <Route
           path="/login"
           element={<LoginPage />}
+        />
+        <Route
+          path="/login/kakao"
+          element={<KakaoCallBack />}
         />
         <Route
           path="/register"

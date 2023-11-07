@@ -14,3 +14,11 @@ export interface InputProps {
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
   errorLine?: boolean;
 }
+
+export interface TitleProps {
+  title: string;
+}
+
+export interface SeeMoreProps {
+  text: string;
+}
