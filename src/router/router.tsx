@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import DiscussedTopics from "@/components/organisms/Home/DiscussedTopics";
 import Layout from "@/layout/Layout";
 import Home from "@/pages/Home";
 import Signup from "@/pages/Signup";
@@ -22,10 +21,6 @@ const router = () => {
           <Route
             path="/"
             element={<Home />}
-          />
-          <Route
-            path="/topic"
-            element={<DiscussedTopics />}
           />
         </Route>
       </Routes>
