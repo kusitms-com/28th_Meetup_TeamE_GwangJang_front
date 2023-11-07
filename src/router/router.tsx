@@ -29,7 +29,7 @@ const router = () => {
           />
           <Route
             path="/topic"
-            element={<Topic />}
+            element={<DiscussedTopics />}
           />
         </Route>
       </Routes>
