@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const TopicContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
   width: 23.5%;
   height: 220px;
@@ -14,7 +12,13 @@ export const TopicContainer = styled.div`
   color: var(--White);
 
   .topic-wrapper {
+    width: 100%;
     padding: 20px;
+    display: flex;
+    /* height: 80%; */
+    flex-direction: column;
+    justify-content: space-between;
+
     .topic-title {
       color: var(--White);
       font-size: var(--text_h4);
