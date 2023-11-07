@@ -21,7 +21,7 @@ export const TopicContainer = styled.div`
 
     .topic-title {
       color: var(--White);
-      font-size: var(--text_h4);
+      font-size: var(--text_h5);
       font-weight: 700;
       line-height: 42px; /* 131.25% */
       letter-spacing: -0.48px;
@@ -31,7 +31,7 @@ export const TopicContainer = styled.div`
     .subscribe {
       color: var(--Gray2_100, #f5f5f5);
       display: flex;
-      font-size: var(--text_b2);
+      font-size: var(--text_b3);
       line-height: 22px;
       letter-spacing: -0.21px;
 
