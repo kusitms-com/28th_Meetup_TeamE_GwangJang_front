@@ -42,6 +42,7 @@ export const TopicContainer = styled.div`
   }
 
   .img-hover {
+    width: 100%;
     object-fit: cover;
     height: 100%;
     border-radius: 5px;
