@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 import Topic from "@/components/molecules/discussedTopic";
 import { topicData } from "@/dummy/topicData";
-// import { Inner } from "@/style/global";
 
 const DiscussedTopics = () => {
   return (
@@ -40,6 +39,17 @@ const Container = styled.div`
   .inner {
     width: 1200px;
     margin: 0 auto 20px;
+    @media (max-width: 1200px) {
+      display: flex;
+      width: 800px;
+      justify-content: center;
+    }
+    @media (max-width: 880px) {
+      width: 600px;
+    }
+    @media (max-width: 564px) {
+      width: 400px;
+    }
   }
   .addingTopic {
     margin-top: 20px;
@@ -65,17 +75,15 @@ const DiscussedTopicContainer = styled.div`
     flex-flow: wrap;
     display: flex;
     width: 800px;
-    zoom: 1.2;
     justify-content: space-evenly;
     gap: 20px;
+    transform: scale(0.9);
+    padding: 0;
   }
   @media (max-width: 880px) {
     width: 600px;
   }
-  @media (max-width: 720px) {
+  @media (max-width: 564px) {
     width: 400px;
-  }
-  @media (max-width: 410px) {
-    width: 300px;
   }
 `;
