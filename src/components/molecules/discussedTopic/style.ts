@@ -54,7 +54,8 @@ export const Title = styled.div<{ $hover: boolean; $idx: number }>`
   }
 `;
 
-export const Hover = styled.div`
+export const Hover = styled.div<{ $hover: boolean }>`
+  opacity: ${(props) => (props.$hover ? "1" : "0")};
   width: 100%;
   height: 100%;
   border-radius: 5px;
@@ -64,6 +65,7 @@ export const Hover = styled.div`
   left: 0;
   z-index: 1;
   cursor: pointer;
+  transition: 0.5s;
   .text {
     opacity: 1;
     padding: 18px 0 0 20px;
