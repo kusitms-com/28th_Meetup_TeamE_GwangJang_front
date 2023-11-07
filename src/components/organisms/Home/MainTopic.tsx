@@ -31,4 +31,23 @@ const MainTopicContainer = styled.div`
 const TopicWrapper = styled.div`
   display: flex;
   gap: 24px;
+
+  @media (max-width: 1200px) {
+    flex-wrap: wrap;
+
+    & > div {
+      flex: 0 0 calc(40% - 12px);
+      margin-bottom: 12px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+
+    & > div {
+      /* flex: 0 0 calc(100% - 12px); */
+      flex: 0 0 100%;
+      margin-bottom: 12px;
+    }
+  }
 `;

@@ -6,7 +6,6 @@ export const MoreBox = styled.div`
   color: var(--Gray7_600, #757575);
   align-items: center;
   font-size: 16px;
-  font-weight: 500;
   justify-content: right;
 
   .next-icon {

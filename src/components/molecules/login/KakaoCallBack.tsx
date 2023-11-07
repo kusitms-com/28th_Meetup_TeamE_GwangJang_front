@@ -30,9 +30,9 @@ export const KakaoCallBack = () => {
             },
           }
         );
+
         console.log("res:", res);
-        // const accessToken = res.data.token;
-        // console.log(accessToken);
+
         navigate("/");
       } catch (err) {
         console.error("error:", err);
