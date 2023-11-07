@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { WhiteTitle } from "@/components/atoms/title";
+import { CommunityBox } from "@/components/molecules/main/communitybox";
 import { Inner } from "@/style/global";
 
 export const MainCommunity = () => {
@@ -9,6 +10,7 @@ export const MainCommunity = () => {
       <Inner>
         {" "}
         <WhiteTitle title="지금 가장 인기있는 커뮤니티 글" />
+        <CommunityBox />
       </Inner>
     </MainCommunityBack>
   );
