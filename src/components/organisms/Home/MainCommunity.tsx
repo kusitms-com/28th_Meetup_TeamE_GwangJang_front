@@ -1,28 +1,27 @@
 import styled from "styled-components";
 
-import { CommunityBox } from "@/components/molecules/main/communitybox";
 import { Title } from "@/components/atoms/title";
-// import { Inner } from "@/style/global";
+import { SeeMore } from "@/components/atoms/more";
+import { CommunityBox } from "@/components/molecules/main/communitybox";
 
 export const MainCommunity = () => {
   return (
-    // <Inner>
-    <InnerBack>
+    <TempInner>
       <MainCommunityBack>
         {" "}
         <Title title="지금 가장 인기있는 커뮤니티 글" />
         <CommunityBox />
+        <SeeMore text="더보기" />
       </MainCommunityBack>
-    </InnerBack>
-    // </Inner>
+    </TempInner>
   );
 };
 
-const MainCommunityBack = styled.div`
+const MainCommunityBack = styled.div``;
+
+const TempInner = styled.div`
+  width: 1440px;
   height: 560px;
   background: var(--Gray4_300, #d9d9d9);
-`;
-const InnerBack = styled.div`
-  width: 1440px;
   margin: 0 auto;
 `;
