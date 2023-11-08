@@ -2,6 +2,7 @@
 import { format } from "date-fns";
 import styled from "styled-components";
 
+import bg from "@/assets/BubbleChart/bubble_bg.svg";
 import logo from "@/assets/BubbleChart/logo_gray.svg";
 import PackBubble from "@/components/molecules/packbubble";
 const BubbleChart = () => {
@@ -39,6 +40,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
+  background-image: url(${bg});
 `;
 
 const Date = styled.div`
