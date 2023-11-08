@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const CommunityContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* width: 100%; */
   width: 344px;
-  /* height: 296px; */
+  height: 296px;
   flex-shrink: 0;
-  box-shadow: 0px 15px 60px 0px rgba(117, 117, 117, 0.2);
-  background: #fff;
+  box-shadow: 0px 15px 12px 0px rgba(117, 117, 117, 0.2);
+  background: var(--Gray2_100, #f5f5f5);
+  overflow: hidden;
   flex: 1;
   border-radius: 5px;
 
@@ -43,10 +43,11 @@ export const CommunityContainer = styled.div`
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        border: 1px solid blue;
+        height: 30px;
 
         .user-info {
           display: flex;
+          align-items: center;
           gap: 10px;
           img {
             border-radius: 100%;
@@ -55,14 +56,14 @@ export const CommunityContainer = styled.div`
 
           .user-nickname {
             color: var(--Gray7_600, #757575);
-            font-size: 12px;
+            font-size: var(--text_cap1);
             line-height: 18px; /* 150% */
             letter-spacing: -0.18px;
           }
 
           .content-date {
             color: var(--Gray5_400, #bdbdbd);
-            font-size: 10px;
+            font-size: var(--text_btn1);
             font-weight: 400;
             line-height: 10px; /* 100% */
             letter-spacing: -0.15px;
@@ -70,25 +71,38 @@ export const CommunityContainer = styled.div`
         }
 
         .content-review {
-          border: 1px solid red;
           display: flex;
-          gap: 10px;
+          align-items: center;
+          gap: 8px;
+
+          //
+          color: var(--Gray6_500, #959595);
+          text-align: center;
+          font-size: 12px;
+          line-height: 18px; /* 150% */
+          letter-spacing: -0.18px;
+
+          div {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+          }
         }
       }
     }
   }
 
   .quotation {
-    padding: 18px;
+    padding: 12px 18px;
     box-sizing: border-box;
-
     display: flex;
     gap: 4px;
+    height: 40%;
     flex-direction: column;
-    height: 30%;
     border-radius: 0px 0px 5px 5px;
-    /* background: var(--Gray2_100, #f5f5f5); */
-    background: var(--Gray4_300, #d9d9d9);
+    background: var(--Gray3_200, #eee);
+    overflow: hidden;
+
     .quot-title {
       color: var(--Gray6_500, #959595);
       font-size: 10px;
@@ -99,6 +113,8 @@ export const CommunityContainer = styled.div`
     }
 
     .quot-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
       color: var(--Gray8_700, #616161);
       font-size: 14px;
       line-height: 22px; /* 157.143% */

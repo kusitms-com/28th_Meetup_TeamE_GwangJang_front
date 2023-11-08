@@ -25,7 +25,6 @@ export const Keyword = styled.div<{ color: string }>`
   border-radius: 55px;
   color: ${(props) => props.color};
   background: var(--Gray1_50, #fafafa);
-  box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.4);
 
   //text
   text-align: center;
