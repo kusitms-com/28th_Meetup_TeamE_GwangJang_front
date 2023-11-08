@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const CommunityContainer = styled.div`
   display: flex;
   flex-direction: column;
+  /* width: 100%; */
+  width: 344px;
   /* height: 296px; */
   flex-shrink: 0;
   box-shadow: 0px 15px 60px 0px rgba(117, 117, 117, 0.2);
