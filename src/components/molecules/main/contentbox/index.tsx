@@ -15,10 +15,10 @@ export const ContentBox = () => {
     <ContentContainer style={containerStyle}>
       <div className="tag-box">
         <div>
-          <TopicTag />
+          <TopicTag color="red" />
         </div>
         <div>
-          <KeywordTag />
+          <KeywordTag color="red" />
         </div>
       </div>
       <div className="text-box">
