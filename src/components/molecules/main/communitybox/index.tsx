@@ -16,14 +16,17 @@ export const CommunityBox = () => {
     <TempContainer>
       <Swiper
         spaceBetween={24}
-        slidesPerView={3.5}
+        slidesPerView={4.5}
         slidesPerGroup={3}
         loop={true}
         // onSlideChange={() => console.log("slide change")}
         // onSwiper={(swiper) => console.log(swiper)}
       >
         {mainCommunityData.map((item, idx) => (
-          <SwiperSlide key={idx}>
+          <SwiperSlide
+            key={idx}
+            style={idx == 0 ? { marginLeft: "300px" } : {}}
+          >
             <CommunityContainer>
               <div className="community-content">
                 <div className="community-tag-wrapper">
@@ -75,8 +78,8 @@ export const CommunityBox = () => {
 };
 
 const TempContainer = styled.div`
-  width: 80%;
+  /* width: 1440px; */
+  width: 100%;
   margin: 0 auto;
-  margin-left: 300px;
   overflow: hidden;
 `;
