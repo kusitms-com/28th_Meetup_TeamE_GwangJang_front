@@ -1,12 +1,13 @@
 import styled from "styled-components";
 export const Container = styled.div`
-  width: 282px;
-  height: 361px;
+  width: 252px;
+  height: 332px;
   /* margin-left: 50px; */
   position: relative;
   .topicBackground {
     width: 100%;
-    height: 50%;
+    height: 49%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
