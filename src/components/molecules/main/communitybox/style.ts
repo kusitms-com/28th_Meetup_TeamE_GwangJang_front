@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CommunityContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 30%;
+  /* width: 30%; */
   height: 319px;
   flex-shrink: 0;
   box-shadow: 0px 15px 60px 0px rgba(117, 117, 117, 0.2);
@@ -85,8 +85,8 @@ export const CommunityContainer = styled.div`
     flex-direction: column;
     height: 30%;
     border-radius: 0px 0px 5px 5px;
-    background: var(--Gray2_100, #f5f5f5);
-
+    /* background: var(--Gray2_100, #f5f5f5); */
+    background: var(--Gray4_300, #d9d9d9);
     .quot-title {
       color: var(--Gray6_500, #959595);
       font-size: 10px;
