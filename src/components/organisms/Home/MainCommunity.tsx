@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { Title } from "@/components/atoms/title";
 import { SeeMore } from "@/components/atoms/more";
+import { Title } from "@/components/atoms/title";
 import { CommunityBox } from "@/components/molecules/main/communitybox";
 
 export const MainCommunity = () => {
