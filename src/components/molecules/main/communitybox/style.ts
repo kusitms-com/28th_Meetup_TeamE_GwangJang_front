@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const CommunityContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* width: 30%; */
-  height: 319px;
+  /* height: 296px; */
   flex-shrink: 0;
   box-shadow: 0px 15px 60px 0px rgba(117, 117, 117, 0.2);
   background: #fff;
@@ -13,7 +12,7 @@ export const CommunityContainer = styled.div`
 
   .community-content {
     padding: 20px;
-    border-radius: 5px 5px 0px 0px;
+    box-sizing: border-box;
     height: 70%;
     display: flex;
     flex-direction: column;
@@ -30,7 +29,6 @@ export const CommunityContainer = styled.div`
       gap: 18px;
 
       .content-text {
-        height: 90px;
         overflow: hidden;
         color: var(--Gray9_800, #424242);
         font-size: var(--text_b3);
@@ -79,7 +77,9 @@ export const CommunityContainer = styled.div`
   }
 
   .quotation {
-    padding: 20px;
+    padding: 18px;
+    box-sizing: border-box;
+
     display: flex;
     gap: 4px;
     flex-direction: column;
