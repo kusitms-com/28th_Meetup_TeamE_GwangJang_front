@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
+import { Title } from "@/components/atoms/title";
 import Topic from "@/components/molecules/discussedTopic";
 import { topicData } from "@/dummy/topicData";
 
+const title = "광장이 지금\n얘기하고 있는 주제";
 const DiscussedTopics = () => {
   return (
     <Container>
-      <div className="inner title">주제</div>
+      <div className="inner">
+        <Title title={title} />
+      </div>
       <DiscussedTopicContainer>
         {topicData.map((data, idx) => (
           <Topic
@@ -32,23 +36,23 @@ const Container = styled.div`
   padding-top: 50px;
   padding-bottom: 105.5px;
   box-sizing: border-box;
-  @media (max-width: 1200px) {
-    padding-top: 90px;
-    padding-bottom: 90px;
+  @media (max-width: 1080px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
   .inner {
-    width: 1200px;
+    width: 1080px;
     margin: 0 auto 20px;
-    @media (max-width: 1200px) {
+    @media (max-width: 1080px) {
       display: flex;
-      width: 800px;
+      width: 770px;
       justify-content: center;
     }
     @media (max-width: 880px) {
       width: 600px;
     }
     @media (max-width: 564px) {
-      width: 400px;
+      width: 300px;
     }
   }
   .addingTopic {
@@ -68,13 +72,13 @@ const Container = styled.div`
 const DiscussedTopicContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 1200px;
+  width: 1080px;
   margin: 0 auto;
   background-color: var(--Gray3_200);
-  @media (max-width: 1200px) {
+  @media (max-width: 1080px) {
     flex-flow: wrap;
     display: flex;
-    width: 800px;
+    width: 770px;
     justify-content: space-evenly;
     gap: 20px;
     transform: scale(0.9);
@@ -84,6 +88,6 @@ const DiscussedTopicContainer = styled.div`
     width: 600px;
   }
   @media (max-width: 564px) {
-    width: 400px;
+    width: 300px;
   }
 `;
