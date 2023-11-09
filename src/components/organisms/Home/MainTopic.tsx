@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { SeeMore } from "@/components/atoms/more";
 import { Title } from "@/components/atoms/title";
 import { TopicBox } from "@/components/molecules/main/topicbox";
+import { subjectData } from "@/dummy/subjectData";
 import { Inner } from "@/style/global";
 
 export const MainTopic = () => {
@@ -16,10 +17,15 @@ export const MainTopic = () => {
             <Title title={title} />
           </div>
           <TopicWrapper>
-            <TopicBox />
-            <TopicBox />
-            <TopicBox />
-            <TopicBox />
+            {subjectData.map((data, idx) => (
+              <TopicBox
+                key={idx}
+                title={data.title}
+                subscribeCount={data.subscribeCount}
+                imgUrl={data.imgUrl}
+                category={data.category}
+              />
+            ))}
           </TopicWrapper>{" "}
           <div className="inner">
             <SeeMore text="관심 콘텐츠 더보기" />{" "}
