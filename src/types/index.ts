@@ -15,6 +15,13 @@ export interface InputProps {
   errorLine?: boolean;
 }
 
+export interface discussedTopicProps {
+  title: string;
+  subTitles: string[];
+  idx: number;
+}
+[];
+
 export interface TitleProps {
   title: string;
 }
