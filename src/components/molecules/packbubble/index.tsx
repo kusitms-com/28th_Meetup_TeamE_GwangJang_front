@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import * as Highcharts from "highcharts";
 import HighchartsMore from "highcharts/highcharts-more";
@@ -15,22 +15,39 @@ HighchartsMore(Highcharts);
 import "./theme.css";
 
 const PackBubble = () => {
-  const [width, setWidth] = useState<number>(1440); // 기본 1440-> 반응형 400으로 , 반응형 작업할 때 사용, 아마 강제로 view값 가져와서 거기에 맞게 useEffect로 줄여야할듯
+  const [width, setWidth] = useState<number>(window.innerWidth); // 기본 1440-> 반응형 400으로 , 반응형 작업할 때 사용, 아마 강제로 view값 가져와서 거기에 맞게 useEffect로 줄여야할듯
+
+  const handleResize = () => {
+    //뷰크기 강제로 강져오기
+    setWidth(window.innerWidth); // 모바일에서는 왜 1080으로 적용이 되는걸까
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize); //clean
+  }, []);
+
   const options = {
     chart: {
       type: "packedbubble",
       width: width,
-      height: 524, //750
+      height: 524,
       backgroundColor: "transparent",
-      // plotBackgroundImage: bg,
+      zIndex: 9,
     },
     legend: {
-      itemStyle: { color: "#FFF" }, //legend 폰트 바꾸는 부분
+      itemStyle: {
+        color: "#FAFAFA",
+        fontWeight: 600,
+        lineHeight: 24,
+        fontFamily: "Pretendard",
+      }, //legend 폰트 바꾸는 부분
+      lineHeight: 24,
       itemHoverStyle: { color: "#9d9a9a" },
-      itemDistance: 40,
-      padding: 5,
-      // margin: 40,
-      symbolPadding: 10,
+      itemDistance: 70,
+      padding: -5,
+      symbolPadding: 8,
+      symbolHeight: 9,
+      symbolWidth: 9,
       itemMarginBottom: 10,
       itemMarginTop: 20,
     },
@@ -44,7 +61,7 @@ const PackBubble = () => {
     plotOptions: {
       packedbubble: {
         minSize: "10%",
-        maxSize: "200%",
+        maxSize: "230%",
         zMin: 0,
         zMax: 1250,
         layoutAlgorithm: {
@@ -66,11 +83,10 @@ const PackBubble = () => {
           format: "{point.name}",
           shadow: true,
           style: {
-            // color: "#000",
             textOutline: "none",
             fontWeight: "normal",
             fontFamily: "Pretendard",
-            fontSize: 24,
+            fontSize: 18,
             transition: "opacity .1ms",
           },
         },
