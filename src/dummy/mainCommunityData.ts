@@ -1,6 +1,6 @@
 export const mainCommunityData = [
   {
-    nickname: "광장찌개",
+    nickname: "111광장찌개",
     category: "교육",
     date: "2023.10.24",
     likeCount: 24,
@@ -72,7 +72,7 @@ export const mainCommunityData = [
     quotText: "와배고픈데또졸리고 자고싶지만 잘 수 없네 광화문 메운 검은 물결 하하하",
   },
   {
-    nickname: "광장찌개",
+    nickname: "last",
     category: "교육",
 
     date: "2023.10.24",
