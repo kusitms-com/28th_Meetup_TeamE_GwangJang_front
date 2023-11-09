@@ -5,11 +5,13 @@ import { Title } from "@/components/atoms/title";
 import { CommunityBox } from "@/components/molecules/main/communitybox";
 
 export const MainCommunity = () => {
+  const title = "지금 가장 인기있는\n커뮤니티 글";
+
   return (
     <TempInner>
       <MainCommunityBack>
         <div className="inner">
-          <Title title="지금 가장 인기있는 커뮤니티 글" />
+          <Title title={title} />
         </div>
         <CommunityBox />
         <div className="inner">
@@ -28,6 +30,7 @@ const MainCommunityBack = styled.div`
   flex-direction: column;
   gap: 20px;
   margin: 0 auto;
+  padding: 50px 0px;
 
   .inner {
     width: 1080px;
@@ -48,7 +51,6 @@ const MainCommunityBack = styled.div`
 
 const TempInner = styled.div`
   background: var(--Gray4_300, #d9d9d9);
-  height: 525px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
