@@ -22,6 +22,7 @@ export const MainContent = () => {
               <ContentBox
                 key={0}
                 data={firstData}
+                category={firstData.category}
               />
             </div>
             <div className="content-grid">
@@ -29,6 +30,7 @@ export const MainContent = () => {
                 <ContentBox
                   key={idx}
                   data={data}
+                  category={data.category}
                 />
               ))}
             </div>

@@ -6,7 +6,7 @@ import { ContentDataProps } from "@/types";
 
 import { ContentContainer, EdgeContainer, HoverContent } from "./style";
 
-export const ContentBox = ({ data }: { data: ContentDataProps }) => {
+export const ContentBox = ({ data, category }: { data: ContentDataProps; category: string }) => {
   const containerStyle = {
     backgroundImage: `linear-gradient(180deg, rgba(34, 34, 34, 0.2) 57.24%, rgba(34,34,34,0.95) 87.86%),url(${data.imgUrl})`,
     backgroundSize: "cover",
@@ -37,10 +37,16 @@ export const ContentBox = ({ data }: { data: ContentDataProps }) => {
       >
         <div className="tag-box">
           <div>
-            <TopicTag color="red" />
+            <TopicTag
+              color="red"
+              category={category}
+            />
           </div>
           <div>
-            <KeywordTag color="red" />
+            <KeywordTag
+              color="red"
+              category={category}
+            />
           </div>
         </div>
         <div className="text-box">
