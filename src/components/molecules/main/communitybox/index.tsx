@@ -11,7 +11,7 @@ import { CommunityContainer } from "./style";
 
 import "swiper/css";
 
-export const CommunityBox = ({ category }: { category: string }) => {
+export const CommunityBox = () => {
   return (
     <TempContainer>
       <Swiper
@@ -32,11 +32,11 @@ export const CommunityBox = ({ category }: { category: string }) => {
                 <div className="community-tag-wrapper">
                   <TopicTag
                     color="red"
-                    category={category}
+                    category={item.category}
                   />
                   <KeywordTag
                     color="red"
-                    category={category}
+                    category={item.category}
                   />
                 </div>
                 <div className="content-wrapper">
