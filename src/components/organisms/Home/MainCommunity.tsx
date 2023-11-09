@@ -3,20 +3,18 @@ import styled from "styled-components";
 import { SeeMore } from "@/components/atoms/more";
 import { Title } from "@/components/atoms/title";
 import { CommunityBox } from "@/components/molecules/main/communitybox";
-import { Inner } from "@/style/global";
 
 export const MainCommunity = () => {
   return (
     <TempInner>
       <MainCommunityBack>
-        <Inner>
+        <div className="inner">
           <Title title="지금 가장 인기있는 커뮤니티 글" />
-        </Inner>
-
+        </div>
         <CommunityBox />
-        <Inner>
+        <div className="inner">
           <SeeMore text="더보기" />
-        </Inner>
+        </div>
       </MainCommunityBack>
     </TempInner>
   );
@@ -30,6 +28,22 @@ const MainCommunityBack = styled.div`
   flex-direction: column;
   gap: 20px;
   margin: 0 auto;
+
+  .inner {
+    width: 1080px;
+    margin: 0 auto 20px;
+    @media (max-width: 1080px) {
+      display: flex;
+      width: 100vw;
+      justify-content: center;
+    }
+    @media (max-width: 880px) {
+      width: 100vw;
+    }
+    @media (max-width: 564px) {
+      width: 100vw;
+    }
+  }
 `;
 
 const TempInner = styled.div`

@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -12,12 +14,30 @@ import { CommunityContainer } from "./style";
 import "swiper/css";
 
 export const CommunityBox = () => {
+  const [slidesPerView, setSlidesPerView] = useState(window.innerWidth <= 1080 ? 1 : 4.5);
+  const [slidesPerGroup, setSlidesPerGroup] = useState(window.innerWidth <= 1080 ? 1 : 3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesPerView(window.innerWidth <= 1080 ? 1 : 4.5);
+      setSlidesPerGroup(window.innerWidth <= 1080 ? 1 : 3);
+    };
+
+    // 이벤트 리스너 등록
+    window.addEventListener("resize", handleResize);
+
+    // 컴포넌트 언마운트 시 이벤트 리스너 제거
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <TempContainer>
       <Swiper
         spaceBetween={24}
-        slidesPerView={4.5}
-        slidesPerGroup={3}
+        slidesPerView={slidesPerView}
+        slidesPerGroup={slidesPerGroup}
         loop={true}
         // onSlideChange={() => console.log("slide change")}
         // onSwiper={(swiper) => console.log(swiper)}
@@ -88,4 +108,34 @@ const TempContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
+
+  @media (max-width: 1080px) {
+    & .swiper-container {
+      /* display: flex; */
+      width: 344px;
+    }
+  }
+
+  @media (max-width: 880px) {
+    & .swiper-container {
+      /* display: flex; */
+      width: 344px;
+    }
+
+    & .swiper-slide {
+    }
+
+    & .swiper-slide-active {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 564px) {
+    & .swiper-container {
+      /* display: flex; */
+      width: 344px;
+    }
+
+    width: 300px;
+  }
 `;
