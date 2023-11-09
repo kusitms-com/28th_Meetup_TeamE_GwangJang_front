@@ -45,12 +45,26 @@ const ContentWrapper = styled.div`
   gap: 24px;
   font-size: var(--text_h5);
 
+  @media (max-width: 880px) {
+    flex-wrap: wrap;
+  }
+
   .content-grid {
-    width: 50%;
     display: grid;
     height: 504px;
-    grid-template-columns: repeat(2, 2fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     /* font-size: var(--text_b1); */
+
+    @media (max-width: 1080px) {
+      display: flex;
+    }
+
+    @media (max-width: 880px) {
+      display: flex;
+    }
+    @media (max-width: 564px) {
+      display: flex;
+    }
   }
 `;
