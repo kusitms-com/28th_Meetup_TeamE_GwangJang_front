@@ -76,9 +76,6 @@ export const Inner = styled.div`
   min-width: 1000px;
   width: 1080px;
   margin: 0 auto;
-  background-color: white;
   justify-content: space-between;
   display: flex;
-  //
-  flex-direction: column;
 `;
