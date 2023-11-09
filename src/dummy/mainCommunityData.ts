@@ -1,6 +1,7 @@
 export const mainCommunityData = [
   {
     nickname: "광장찌개",
+    category: "교육",
     date: "2023.10.24",
     likeCount: 24,
     commentCount: 36,
@@ -11,6 +12,8 @@ export const mainCommunityData = [
   },
   {
     nickname: "광장찌개",
+    category: "교육",
+
     date: "2023.10.24",
     likeCount: 24,
     commentCount: 36,
@@ -22,6 +25,8 @@ export const mainCommunityData = [
   },
   {
     nickname: "광장찌개",
+    category: "교육",
+
     date: "2023.10.24",
     likeCount: 24,
     commentCount: 36,
@@ -32,6 +37,8 @@ export const mainCommunityData = [
   },
   {
     nickname: "광장찌개",
+    category: "교육",
+
     date: "2023.10.24",
     likeCount: 24,
     commentCount: 36,
@@ -42,6 +49,8 @@ export const mainCommunityData = [
   },
   {
     nickname: "광장찌개",
+    category: "교육",
+
     date: "2023.10.24",
     likeCount: 24,
     commentCount: 36,
@@ -52,6 +61,8 @@ export const mainCommunityData = [
   },
   {
     nickname: "광장찌개",
+    category: "교육",
+
     date: "2023.10.24",
     likeCount: 24,
     commentCount: 36,
@@ -62,6 +73,8 @@ export const mainCommunityData = [
   },
   {
     nickname: "광장찌개",
+    category: "교육",
+
     date: "2023.10.24",
     likeCount: 24,
     commentCount: 36,
