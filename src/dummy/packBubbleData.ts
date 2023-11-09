@@ -1,6 +1,6 @@
 export const packbubbleDummydata = [
   {
-    name: "일자리",
+    name: "일자리 노동",
     data: [
       {
         name: "이수영",
@@ -17,7 +17,7 @@ export const packbubbleDummydata = [
     ],
   },
   {
-    name: "노동자",
+    name: "주거 사회 안전망",
     data: [
       {
         name: "세포들",
