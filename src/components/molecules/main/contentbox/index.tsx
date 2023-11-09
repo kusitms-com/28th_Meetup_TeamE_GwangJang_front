@@ -1,8 +1,12 @@
+import { useState } from "react";
+
+import nextIcon from "@/assets/nextIcon.svg";
 import { KeywordTag, TopicTag } from "@/components/atoms/tag";
+import { ContentDataProps } from "@/types";
 
-import { ContentContainer } from "./style";
+import { ContentContainer, HoverContent } from "./style";
 
-export const ContentBox = () => {
+export const ContentBox = ({ data }: { data: ContentDataProps }) => {
   const imageUrl = "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg";
 
   const containerStyle = {
@@ -11,22 +15,41 @@ export const ContentBox = () => {
     boxShadow: "0px 15px 34px 0px rgba(207, 207, 207, 0.1)",
   };
 
+  const [hover, setHover] = useState<boolean>(false);
+
   return (
-    <ContentContainer style={containerStyle}>
-      <div className="tag-box">
-        <div>
-          <TopicTag color="red" />
+    <div
+      style={{ position: "relative" }}
+      onMouseOver={() => setHover(true)}
+      onMouseOut={() => setHover(false)}
+    >
+      <HoverContent $hover={hover}>
+        <div className="article-text">기사내용기사내용기사내용</div>
+        <div className="article-img">
+          <img
+            src={nextIcon}
+            alt=""
+          />
         </div>
-        <div>
-          <KeywordTag color="red" />
+      </HoverContent>
+
+      <ContentContainer
+        style={containerStyle}
+        $hover={hover}
+      >
+        <div className="tag-box">
+          <div>
+            <TopicTag color="red" />
+          </div>
+          <div>
+            <KeywordTag color="red" />
+          </div>
         </div>
-      </div>
-      <div className="text-box">
-        <p>기사</p>
-        <div className="content-title">
-          직접고용 위해 설립됐는데 노조탈퇴 강요…檢 SPC계열사 압수수색
+        <div className="text-box">
+          <p>{data.type}</p>
+          <div className="content-title">{data.title}</div>
         </div>
-      </div>
-    </ContentContainer>
+      </ContentContainer>
+    </div>
   );
 };
