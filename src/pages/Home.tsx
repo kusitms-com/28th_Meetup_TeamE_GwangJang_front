@@ -9,8 +9,8 @@ const Home = () => {
       <BubbleChart />
       {/* 여러가지 메인에 들어갈 organism들 */}
       <MainTopic />
-      <DiscussedTopics />
       <MainCommunity />
+      <DiscussedTopics />
     </>
   );
 };
