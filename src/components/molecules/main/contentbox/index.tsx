@@ -4,27 +4,25 @@ import nextIcon from "@/assets/nextIcon.svg";
 import { KeywordTag, TopicTag } from "@/components/atoms/tag";
 import { ContentDataProps } from "@/types";
 
-import { ContentContainer, HoverContent } from "./style";
+import { ContentContainer, EdgeContainer, HoverContent } from "./style";
 
 export const ContentBox = ({ data }: { data: ContentDataProps }) => {
-  const imageUrl = "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg";
-
   const containerStyle = {
-    backgroundImage: `linear-gradient(180deg, rgba(34, 34, 34, 0.2) 0%, #222 79.69%),url(${imageUrl})`,
-    backgroundSize: "cover", // 이미지를 컨테이너에 맞게 조절합니다.
-    boxShadow: "0px 15px 34px 0px rgba(207, 207, 207, 0.1)",
+    backgroundImage: `linear-gradient(180deg, rgba(34, 34, 34, 0.2) 57.24%, rgba(34,34,34,0.95) 87.86%),url(${data.imgUrl})`,
+    backgroundSize: "cover",
+    // boxShadow: "0px 15px 34px 0px rgba(207, 207, 207, 0.1)",
   };
 
   const [hover, setHover] = useState<boolean>(false);
 
   return (
-    <div
+    <EdgeContainer
       style={{ position: "relative" }}
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
     >
       <HoverContent $hover={hover}>
-        <div className="article-text">기사내용기사내용기사내용</div>
+        <div className="article-text">{data.content}</div>
         <div className="article-img">
           <img
             src={nextIcon}
@@ -50,6 +48,6 @@ export const ContentBox = ({ data }: { data: ContentDataProps }) => {
           <div className="content-title">{data.title}</div>
         </div>
       </ContentContainer>
-    </div>
+    </EdgeContainer>
   );
 };
