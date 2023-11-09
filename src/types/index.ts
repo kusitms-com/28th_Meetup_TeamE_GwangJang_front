@@ -22,3 +22,10 @@ export interface TitleProps {
 export interface SeeMoreProps {
   text: string;
 }
+
+export interface ContentDataProps {
+  topic: string;
+  keyword: string[];
+  type: string;
+  title: string;
+}
