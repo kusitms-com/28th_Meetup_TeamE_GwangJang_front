@@ -1,32 +1,59 @@
+import { useState } from "react";
+
+import nextIcon from "@/assets/nextIcon.svg";
 import { KeywordTag, TopicTag } from "@/components/atoms/tag";
+import { ContentDataProps } from "@/types";
 
-import { ContentContainer } from "./style";
+import { ContentContainer, EdgeContainer, HoverContent } from "./style";
 
-export const ContentBox = () => {
-  const imageUrl = "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg";
-
+export const ContentBox = ({ data, category }: { data: ContentDataProps; category: string }) => {
   const containerStyle = {
-    backgroundImage: `linear-gradient(180deg, rgba(34, 34, 34, 0.2) 0%, #222 79.69%),url(${imageUrl})`,
-    backgroundSize: "cover", // 이미지를 컨테이너에 맞게 조절합니다.
-    boxShadow: "0px 15px 34px 0px rgba(207, 207, 207, 0.1)",
+    backgroundImage: `linear-gradient(180deg, rgba(34, 34, 34, 0.2) 57.24%, rgba(34,34,34,0.95) 87.86%),url(${data.imgUrl})`,
+    backgroundSize: "cover",
+    // boxShadow: "0px 15px 34px 0px rgba(207, 207, 207, 0.1)",
   };
 
+  const [hover, setHover] = useState<boolean>(false);
+
   return (
-    <ContentContainer style={containerStyle}>
-      <div className="tag-box">
-        <div>
-          <TopicTag color="red" />
+    <EdgeContainer
+      style={{ position: "relative" }}
+      onMouseOver={() => setHover(true)}
+      onMouseOut={() => setHover(false)}
+    >
+      <HoverContent $hover={hover}>
+        <div className="article-text">{data.content}</div>
+        <div className="article-img">
+          <img
+            src={nextIcon}
+            alt=""
+          />
         </div>
-        <div>
-          <KeywordTag color="red" />
+      </HoverContent>
+
+      <ContentContainer
+        style={containerStyle}
+        $hover={hover}
+      >
+        <div className="tag-box">
+          <div>
+            <TopicTag
+              color="red"
+              category={category}
+            />
+          </div>
+          <div>
+            <KeywordTag
+              color="red"
+              category={category}
+            />
+          </div>
         </div>
-      </div>
-      <div className="text-box">
-        <p>기사</p>
-        <div className="content-title">
-          직접고용 위해 설립됐는데 노조탈퇴 강요…檢 SPC계열사 압수수색
+        <div className="text-box">
+          <p>{data.type}</p>
+          <div className="content-title">{data.title}</div>
         </div>
-      </div>
-    </ContentContainer>
+      </ContentContainer>
+    </EdgeContainer>
   );
 };
