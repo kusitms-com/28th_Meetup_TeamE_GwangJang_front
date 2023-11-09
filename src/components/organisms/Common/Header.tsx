@@ -26,6 +26,11 @@ const Header = () => {
   const SpaceTo = (page: string) => {
     navigate(page);
   };
+  const LogOut = () => {
+    localStorage.removeItem("AccessToken");
+    localStorage.removeItem("RefreshToken");
+    window.location.reload();
+  };
   return (
     <Container>
       <Inner>
@@ -53,20 +58,37 @@ const Header = () => {
             />
             <IoSearch className="searchIcon" />
           </div>
-          <AccessUser>
-            <div
-              className="login"
-              onClick={() => SpaceTo("/login")}
-            >
-              로그인
-            </div>
-            <div
-              className="register"
-              onClick={() => SpaceTo("/register")}
-            >
-              회원가입
-            </div>
-          </AccessUser>
+          {!localStorage.getItem("AccessToken") ? (
+            <AccessUser>
+              <div
+                className="login"
+                onClick={() => SpaceTo("/login")}
+              >
+                로그인
+              </div>
+              <div
+                className="register"
+                onClick={() => SpaceTo("/register")}
+              >
+                회원가입
+              </div>
+            </AccessUser>
+          ) : (
+            <AccessUser>
+              <div
+                className="login"
+                onClick={() => SpaceTo("/mypage")}
+              >
+                마이페이지
+              </div>
+              <div
+                className="register"
+                onClick={LogOut}
+              >
+                로그아웃
+              </div>
+            </AccessUser>
+          )}
         </RighttHeader>
       </Inner>
     </Container>
