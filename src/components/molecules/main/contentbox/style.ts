@@ -10,7 +10,7 @@ export const ContentContainer = styled.div<{ $hover: boolean }>`
   padding: 20px;
   box-sizing: border-box;
   width: 344px;
-  height: 240px;
+  height: 213px;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.5s;
