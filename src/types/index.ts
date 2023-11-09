@@ -28,4 +28,6 @@ export interface ContentDataProps {
   keyword: string[];
   type: string;
   title: string;
+  imgUrl: string;
+  content: string;
 }
