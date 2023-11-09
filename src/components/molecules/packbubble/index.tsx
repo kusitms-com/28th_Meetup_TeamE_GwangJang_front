@@ -6,7 +6,7 @@ import HighchartsAccessibility from "highcharts/modules/accessibility";
 import HighchartsExporting from "highcharts/modules/exporting";
 import HighchartsReact from "highcharts-react-official";
 
-import bg from "@/assets/BubbleChart/bubbleBackground.svg";
+// import bg from "@/assets/BubbleChart/bubble_bg.svg";
 import { packbubbleDummydata } from "@/dummy/packBubbleData";
 
 HighchartsExporting(Highcharts);
@@ -20,9 +20,9 @@ const PackBubble = () => {
     chart: {
       type: "packedbubble",
       width: width,
-      height: 750, //750
-      backgroundColor: "#000",
-      plotBackgroundImage: bg,
+      height: 524, //750
+      backgroundColor: "transparent",
+      // plotBackgroundImage: bg,
     },
     legend: {
       itemStyle: { color: "#FFF" }, //legend 폰트 바꾸는 부분

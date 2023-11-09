@@ -11,8 +11,9 @@
   top: 0;
   display: none;
 }
+
 .highcharts-background {
-  fill: #000;
+  fill: transparent;
 }
 .highcharts-plot-background {
   width: 1440px !important;

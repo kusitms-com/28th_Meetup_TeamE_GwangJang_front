@@ -79,6 +79,4 @@ export const Inner = styled.div`
   /* background-color: white; */
   justify-content: space-between;
   display: flex;
-  //
-  flex-direction: column;
 `;
