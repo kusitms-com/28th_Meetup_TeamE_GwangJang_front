@@ -6,4 +6,5 @@ export const TitleBox = styled.div`
   font-weight: 700;
   line-height: 34px; /* 141.667% */
   letter-spacing: -0.36px;
+  white-space: pre-wrap;
 `;

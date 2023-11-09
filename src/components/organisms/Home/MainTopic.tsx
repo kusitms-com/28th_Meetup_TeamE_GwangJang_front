@@ -6,10 +6,12 @@ import { TopicBox } from "@/components/molecules/main/topicbox";
 import { Inner } from "@/style/global";
 
 export const MainTopic = () => {
+  const title = "가장 인기있는\n주제";
+
   return (
     <Inner>
       <MainTopicContainer>
-        <Title title="가장 인기있는 주제" />
+        <Title title={title} />
         <TopicWrapper>
           <TopicBox />
           <TopicBox />
