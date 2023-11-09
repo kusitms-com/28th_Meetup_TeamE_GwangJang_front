@@ -31,10 +31,17 @@ export interface SeeMoreProps {
 }
 
 export interface ContentDataProps {
-  topic: string;
+  category: string;
   keyword: string[];
   type: string;
   title: string;
   imgUrl: string;
   content: string;
+}
+
+export interface SubjectProps {
+  title: string;
+  imgUrl: string;
+  subscribeCount: number;
+  category: string;
 }
