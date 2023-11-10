@@ -7,6 +7,7 @@ export const MoreBox = styled.div`
   align-items: center;
   font-size: 16px;
   justify-content: right;
+  cursor: pointer;
 
   .next-icon {
     color: inherit;

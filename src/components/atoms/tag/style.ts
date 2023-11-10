@@ -1,12 +1,19 @@
 import styled from "styled-components";
 
-export const Tag = styled.div<{ background: string }>`
+export const Tag = styled.div<{ $category: string }>`
   display: inline-flex;
   padding: 3px 10px;
   justify-content: center;
   align-items: center;
   border-radius: 55px;
-  background: ${(props) => props.background};
+  background: ${(props) =>
+    props.$category === "일자리·노동"
+      ? "var(--Main_Blue)"
+      : props.$category === "주거"
+      ? "var(--Sub_Purple)"
+      : props.$category === "환경"
+      ? "var(--Main_NeonGreen)"
+      : "var(--Sub_Orange)"};
 
   //text
   color: var(--Gray1_50, #fafafa);
@@ -17,13 +24,20 @@ export const Tag = styled.div<{ background: string }>`
   letter-spacing: -0.18px;
 `;
 
-export const Keyword = styled.div<{ color: string }>`
+export const Keyword = styled.div<{ $category: string }>`
   display: inline-flex;
   padding: 3px 10px;
   justify-content: center;
   align-items: center;
   border-radius: 55px;
-  color: ${(props) => props.color};
+  color: ${(props) =>
+    props.$category === "일자리·노동"
+      ? "var(--Main_Blue)"
+      : props.$category === "주거"
+      ? "var(--Sub_Purple)"
+      : props.$category === "환경"
+      ? "var(--Main_NeonGreen)"
+      : "var(--Sub_Orange)"};
   background: var(--Gray1_50, #fafafa);
   box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.4);
 

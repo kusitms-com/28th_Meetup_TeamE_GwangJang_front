@@ -1,14 +1,13 @@
 import { useState } from "react";
 
 import { TopicTag } from "@/components/atoms/tag";
+import { SubjectProps } from "@/types";
 
 import { TopicContainer } from "./style";
 
-export const TopicBox = () => {
-  const imageUrl = "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg";
-
+export const TopicBox = ({ title, imgUrl, subscribeCount, category }: SubjectProps) => {
   const containerStyle = {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(${imageUrl})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(${imgUrl})`,
     backgroundSize: "cover",
   };
 
@@ -31,7 +30,7 @@ export const TopicBox = () => {
       {isHover ? (
         <img
           className="img-hover"
-          src={imageUrl}
+          src={imgUrl}
           alt=""
         />
       ) : (
@@ -39,11 +38,11 @@ export const TopicBox = () => {
           {" "}
           <div>
             {/* 아래 색깔 추후 데이터 카테고리에 맞게 지정 */}
-            <TopicTag color="red" />
-            <div className="topic-title">주 69시간 근로시간 제도 개편</div>
+            <TopicTag category={category} />
+            <div className="topic-title">{title}</div>
           </div>
           <div className="subscribe">
-            <p>80명</p>이 구독하고 있어요
+            <p>{subscribeCount}명</p>이 구독하고 있어요
           </div>
         </div>
       )}

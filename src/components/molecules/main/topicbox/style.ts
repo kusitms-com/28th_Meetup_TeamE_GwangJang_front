@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const TopicContainer = styled.div`
   display: flex;
 
-  width: 23.5%;
+  /* width: 23.5%; */
+  width: 252px;
   height: 220px;
   flex-shrink: 0;
   border-radius: 5px;

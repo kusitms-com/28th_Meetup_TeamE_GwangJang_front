@@ -21,16 +21,29 @@ export interface discussedTopicProps {
   idx: number;
 }
 [];
+
 export interface TitleProps {
   title: string;
 }
+
 export interface SeeMoreProps {
   text: string;
+  path: string;
 }
 
-export interface discussedTopicProps {
+export interface ContentDataProps {
+  category: string;
+  keyword: string[];
+  type: string;
   title: string;
-  subTitles: string[];
-  idx: number;
+  imgUrl: string;
+  content: string;
+  link: string;
 }
-[];
+
+export interface SubjectProps {
+  title: string;
+  imgUrl: string;
+  subscribeCount: number;
+  category: string;
+}

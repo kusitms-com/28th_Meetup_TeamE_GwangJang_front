@@ -1,9 +1,9 @@
 import { Keyword, Tag } from "./style";
 
-export const TopicTag = ({ color }: { color: string }) => {
-  return <Tag background={color}>일자리 · 노동</Tag>;
+export const TopicTag = ({ category }: { category: string }) => {
+  return <Tag $category={category}>{category}</Tag>;
 };
 
-export const KeywordTag = ({ color }: { color: string }) => {
-  return <Keyword color={color}>일자리 · 노동</Keyword>;
+export const KeywordTag = ({ category }: { category: string }) => {
+  return <Keyword $category={category}>{category}</Keyword>;
 };
