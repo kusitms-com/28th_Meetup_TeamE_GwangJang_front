@@ -38,10 +38,7 @@ export const TopicBox = ({ title, imgUrl, subscribeCount, category }: SubjectPro
           {" "}
           <div>
             {/* 아래 색깔 추후 데이터 카테고리에 맞게 지정 */}
-            <TopicTag
-              color="red"
-              category={category}
-            />
+            <TopicTag category={category} />
             <div className="topic-title">{title}</div>
           </div>
           <div className="subscribe">
