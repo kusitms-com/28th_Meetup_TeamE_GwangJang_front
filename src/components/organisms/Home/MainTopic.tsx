@@ -28,7 +28,10 @@ export const MainTopic = () => {
             ))}
           </TopicWrapper>{" "}
           <div className="inner">
-            <SeeMore text="관심 콘텐츠 더보기" />{" "}
+            <SeeMore
+              text="관심 콘텐츠 더보기"
+              path="/login"
+            />
           </div>
         </MainTopicContainer>
       </Inner>

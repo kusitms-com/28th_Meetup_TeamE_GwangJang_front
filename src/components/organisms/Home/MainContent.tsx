@@ -36,7 +36,10 @@ export const MainContent = () => {
             </div>
           </ContentWrapper>{" "}
           <div className="inner">
-            <SeeMore text="더보기" />
+            <SeeMore
+              text="더보기"
+              path="/login"
+            />
           </div>
         </MainContentContainer>
       </Inner>
