@@ -1,30 +1,21 @@
 import { SlideWrapper } from "./style";
 
-export const SlideItem = ({ semiData, keyword }: MySubjectProps) => {
-  // console.log("keyword:", keyword);
-  console.log("keyword:", keyword);
-  console.log(semiData);
-
+export const SlideItem = () => {
   return (
     <SlideWrapper>
-      {/* {semiData.map((item, idx) => (
-        <div
-          className="slide-container"
-          key={idx}
-        >
-          <div className="slide-image">
-            <img
-              src={item.imgUrl}
-              alt="썸네일"
-            />
-          </div>
-          <div className="slide-text">
-            <div className="text-type">{item.type}</div>
-            <div className="text-title">{item.title}</div>
-            <div className="text-date">{item.date}</div>
-          </div>
+      <div className="slide-container">
+        <div className="slide-image">
+          <img
+            // src={}
+            alt="썸네일"
+          />
         </div>
-      ))} */}
+        <div className="slide-text">
+          <div className="text-type">type</div>
+          <div className="text-title">title</div>
+          <div className="text-date">date</div>
+        </div>
+      </div>
     </SlideWrapper>
   );
 };
