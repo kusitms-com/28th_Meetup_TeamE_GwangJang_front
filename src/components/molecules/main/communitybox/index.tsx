@@ -14,13 +14,11 @@ import { CommunityContainer } from "./style";
 import "swiper/css";
 
 export const CommunityBox = () => {
-  const [slidesPerView, setSlidesPerView] = useState(window.innerWidth <= 1080 ? 1 : 4.5);
-  const [slidesPerGroup, setSlidesPerGroup] = useState(window.innerWidth <= 1080 ? 1 : 3);
+  const [margin, setMargin] = useState((window.innerWidth - 1080) * 0.49);
 
   useEffect(() => {
     const handleResize = () => {
-      setSlidesPerView(window.innerWidth <= 1080 ? 1 : 4.5);
-      setSlidesPerGroup(window.innerWidth <= 1080 ? 1 : 3);
+      setMargin(window.innerWidth * 0.25 * 0.5);
     };
 
     // 이벤트 리스너 등록
@@ -35,17 +33,35 @@ export const CommunityBox = () => {
   return (
     <TempContainer>
       <Swiper
+        loop={false}
         spaceBetween={24}
-        slidesPerView={slidesPerView}
-        slidesPerGroup={slidesPerGroup}
-        loop={true}
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
+        breakpoints={{
+          344: {
+            slidesPerView: 1,
+            // spaceBetween: 24,
+          },
+          688: {
+            slidesPerView: 2.5,
+            // spaceBetween: 24,
+          },
+          1080: {
+            slidesPerView: 3.5,
+            // spaceBetween: 24,
+          },
+          1376: {
+            slidesPerView: 4.5,
+            // spaceBetween: 24,
+          },
+          1720: {
+            slidesPerView: 5,
+            // spaceBetween: 24,
+          },
+        }}
       >
         {mainCommunityData.map((item, idx) => (
           <SwiperSlide
             key={idx}
-            style={idx == 0 ? { marginLeft: "300px" } : {}}
+            style={idx == 0 ? { marginLeft: `${margin}px` } : {}}
           >
             <CommunityContainer>
               <div className="community-content">
@@ -109,16 +125,16 @@ const TempContainer = styled.div`
   margin: 0 auto;
   overflow: hidden;
 
-  @media (max-width: 1080px) {
+  /* @media (max-width: 1080px) {
     & .swiper-container {
-      /* display: flex; */
+      display: flex;
       width: 344px;
     }
   }
 
   @media (max-width: 880px) {
     & .swiper-container {
-      /* display: flex; */
+      display: flex;
       width: 344px;
     }
 
@@ -132,10 +148,16 @@ const TempContainer = styled.div`
 
   @media (max-width: 564px) {
     & .swiper-container {
-      /* display: flex; */
       width: 344px;
     }
-
-    width: 300px;
   }
+
+  @media (max-width: 344px) {
+    & .swiper-container {
+      margin: 0 auto;
+    }
+    & .swiper-slide {
+      margin: 0 auto;
+    }
+  } */
 `;
