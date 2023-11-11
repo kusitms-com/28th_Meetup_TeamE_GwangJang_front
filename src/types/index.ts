@@ -43,13 +43,7 @@ export interface ContentDataProps {
 
 export interface SubjectProps {
   title: string;
-  imgUrl: string;
-  subscribeCount: number;
-  category: string;
+  subTitles: string[];
+  idx: number;
 }
-
-export interface ProfileProps {
-  nickname: string;
-  profileImg: string;
-  date: string;
-}
+[];
