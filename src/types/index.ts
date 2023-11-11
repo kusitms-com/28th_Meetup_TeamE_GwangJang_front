@@ -89,3 +89,11 @@ export interface SlideItemProps {
   type: string;
   date: string;
 }
+
+export interface semiDataProps {
+  title: string;
+  type: string;
+  image: string;
+  date: string;
+}
+[];
