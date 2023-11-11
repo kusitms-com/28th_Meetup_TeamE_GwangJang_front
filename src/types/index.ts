@@ -34,3 +34,23 @@ export interface discussedTopicProps {
   idx: number;
 }
 [];
+
+export interface MySubjectTopicProps {
+  category: string;
+  data: myDataProps[];
+}
+[];
+
+export interface myDataProps {
+  category: string;
+  semiData: semiDataProps[];
+}
+[];
+
+export interface semiDataProps {
+  title: string;
+  type: string;
+  image: string;
+  date: string;
+}
+[];
