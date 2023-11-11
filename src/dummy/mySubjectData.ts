@@ -3,7 +3,7 @@ export const mySubjectData = {
   data: [
     {
       category: "SPC",
-      semidata: [
+      semiData: [
         {
           title: "SPC1",
           type: "기사",
@@ -20,7 +20,7 @@ export const mySubjectData = {
     },
     {
       category: "쿠팡 노동자 사망",
-      semidata: [
+      semiData: [
         {
           title: "쿠팡 노동자 사망1",
           type: "기사",
@@ -37,7 +37,7 @@ export const mySubjectData = {
     },
     {
       category: "이태원 참사",
-      semidata: [
+      semiData: [
         {
           title: "이태원 참사1",
           type: "기사",
@@ -54,7 +54,7 @@ export const mySubjectData = {
     },
     {
       category: "후쿠시마 오염수",
-      semidata: [
+      semiData: [
         {
           title: "후쿠시마 오염수1",
           type: "기사",
