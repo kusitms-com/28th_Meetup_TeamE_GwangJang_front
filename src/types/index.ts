@@ -14,3 +14,36 @@ export interface InputProps {
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
   errorLine?: boolean;
 }
+
+export interface discussedTopicProps {
+  title: string;
+  subTitles: string[];
+  idx: number;
+}
+[];
+
+export interface TitleProps {
+  title: string;
+}
+
+export interface SeeMoreProps {
+  text: string;
+  path: string;
+}
+
+export interface ContentDataProps {
+  category: string;
+  keyword: string[];
+  type: string;
+  title: string;
+  imgUrl: string;
+  content: string;
+  link: string;
+}
+
+export interface SubjectProps {
+  title: string;
+  imgUrl: string;
+  subscribeCount: number;
+  category: string;
+}

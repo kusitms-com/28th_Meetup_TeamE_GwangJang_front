@@ -1,0 +1,114 @@
+import styled from "styled-components";
+
+import { SeeMore } from "@/components/atoms/more";
+import { Title } from "@/components/atoms/title";
+import { TopicBox } from "@/components/molecules/main/topicbox";
+import { subjectData } from "@/dummy/subjectData";
+import { Inner } from "@/style/global";
+
+export const MainTopic = () => {
+  const title = "가장 인기있는\n주제";
+
+  return (
+    <Background>
+      <Inner>
+        <MainTopicContainer>
+          <div className="inner">
+            <Title title={title} />
+          </div>
+          <TopicWrapper>
+            {subjectData.map((data, idx) => (
+              <TopicBox
+                key={idx}
+                title={data.title}
+                subscribeCount={data.subscribeCount}
+                imgUrl={data.imgUrl}
+                category={data.category}
+              />
+            ))}
+          </TopicWrapper>{" "}
+          <div className="inner">
+            <SeeMore
+              text="관심 콘텐츠 더보기"
+              path="/login"
+            />
+          </div>
+        </MainTopicContainer>
+      </Inner>
+    </Background>
+  );
+};
+
+const Background = styled.div`
+  background-color: var(--Gray2_100);
+  padding-top: 50px;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+`;
+
+const MainTopicContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+
+  .inner {
+    width: 1080px;
+    margin: 0 auto 20px;
+    @media (max-width: 1080px) {
+      display: flex;
+      width: 100vw;
+      justify-content: center;
+    }
+    @media (max-width: 880px) {
+      width: 100vw;
+    }
+    @media (max-width: 564px) {
+      width: 100vw;
+    }
+  }
+`;
+
+const TopicWrapper = styled.div`
+  display: flex;
+  gap: 24px;
+  margin: 0 auto;
+
+  @media (max-width: 1080px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    & > div {
+      flex: 0 0 calc(40% - 12px);
+      margin-bottom: 12px;
+    }
+  }
+
+  @media (max-width: 880px) {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    justify-content: center;
+    margin: 0 auto;
+    & > div {
+      /* flex: 0 0 calc(100% - 12px); */
+      flex: 0 0 100%;
+      margin-bottom: 12px;
+    }
+  }
+
+  @media (max-width: 564px) {
+    flex-wrap: wrap;
+    width: 200px;
+    justify-content: center;
+    margin: 0 auto;
+    & > div {
+      /* flex: 0 0 calc(100% - 12px); */
+      flex: 0 0 100%;
+      margin-bottom: 12px;
+    }
+  }
+`;
