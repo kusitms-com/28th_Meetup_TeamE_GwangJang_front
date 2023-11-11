@@ -1,5 +1,7 @@
 import { FocusEvent, ChangeEvent, useState, useEffect } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import logo from "@/assets/LoginLogo.svg";
 import Input from "@/components/atoms/input";
 
@@ -23,6 +25,7 @@ import {
   SpaceToLogin,
 } from "./style";
 const Register = () => {
+  const navigate = useNavigate();
   const [userId, setUserId] = useState<string>("");
   const [password1, setPassword1] = useState<string>("");
   const [password2, setPassword2] = useState<string>("");
@@ -43,7 +46,6 @@ const Register = () => {
   const minutes = String(Math.floor((timeLeft / (1000 * 60)) % 60)).padStart(2, "0");
   const second = String(Math.floor((timeLeft / 1000) % 60)).padStart(2, "0");
 
-  //error
   const [focus, setFocus] = useState<boolean>(false);
   //const [password1Error, setPassword1Error] = useState<boolean>(false);
   const [password1Error, setPassword1Error] = useState<boolean>(false);
@@ -64,7 +66,8 @@ const Register = () => {
   const [errorNicknameLine, setErrorNicknameLine] = useState<boolean>(false);
 
   const [emailcodeCheck, setEmailcodeCheck] = useState<boolean>(false);
-  const [emailcodeShow, setEmailcodeShow] = useState<boolean>(false);
+  const [emailcodeCheckShow, setEmailcodeCheckShow] = useState<boolean>(false);
+  const [emailcodeError, setEmailcodeError] = useState<boolean>(false);
 
   //유효성 검사 및 input 변경 함수
 
@@ -83,6 +86,8 @@ const Register = () => {
   //id 입력
   const handleIdChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    setDuplicateShow(false);
+    setErrorIdLine(false);
     if (value.length < 11) {
       setUserIdNum(value.length);
       setUserId(value);
@@ -137,6 +142,8 @@ const Register = () => {
 
   const handleNicknameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    setDuplicateShowNickname(false);
+    setErrorNicknameLine(false);
     if (value.length < 11) {
       setNickname(value);
     }
@@ -172,8 +179,16 @@ const Register = () => {
     }
   };
 
+  // 이메일 요청 버튼 누를시,
+  const RequestEmail = () => {
+    setEmailCodeShow(true);
+    setEmailError(false);
+  };
+
   const handleEmailCodeChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    setEmailcodeError(true);
+    setEmailcodeCheckShow(false);
     const regex = /^[0-9]*$/;
     if (value.length < 7) {
       if (regex.test(value)) {
@@ -182,26 +197,32 @@ const Register = () => {
     }
   };
 
-  // 이메일 요청 버튼 누를시,
-  const RequestEmail = () => {
-    setEmailCodeShow(true);
-    setEmailError(false);
-  };
-
   const EmailCodeCheck = () => {
     if (!emailcodeCheck) {
       setEmailcodeCheck(true);
-      setEmailcodeShow(true); // 일단 버튼을 누르면 hide 클래스 제거 -> 시간 멈추기 기능넣어여함.
+      setEmailcodeCheckShow(true); // 일단 버튼을 누르면 hide 클래스 제거 -> 시간 멈추기 기능넣어여함.
     } else {
       setEmailcodeCheck(false);
-      setEmailcodeShow(true); // 일단 버튼을 누르면 hide 클래스 제거
+      setEmailcodeCheckShow(true); // 일단 버튼을 누르면 hide 클래스 제거
+      setEmailcodeError(true);
     }
   };
 
-  // const ResendEmailCode=()=>{}
+  const ResendEmailCode = () => {
+    setTimeLeft(MINUTES_IN_MS); // 시간 초기화
+    setEmailCode(""); //재전송 api
+  };
+
+  const BirthChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (value.length < 9) {
+      setBirth(e.target.value);
+    }
+  };
 
   //이메일 타이머 작동
   useEffect(() => {
+    //error
     if (emailCodeShow) {
       const timer = setInterval(() => {
         setTimeLeft((prevTime) => prevTime - INTERVAL);
@@ -228,7 +249,9 @@ const Register = () => {
       password2 &&
       nickname && //닉네임 중복체크 넣으면 된다.
       !emailError &&
-      emailcodeCheck
+      emailcodeCheck &&
+      birth &&
+      gender
     ) {
       setRegisterFlag(false);
     } else {
@@ -255,6 +278,8 @@ const Register = () => {
     nickname, //닉네임 중복체크 넣으면 된다.
     emailError,
     emailcodeCheck,
+    birth,
+    gender,
   ]);
 
   return (
@@ -263,6 +288,7 @@ const Register = () => {
         <img
           src={logo}
           alt="광장"
+          onClick={() => navigate("/")}
         />
         <p>회원가입</p>
       </RegisterTitle>
@@ -276,12 +302,12 @@ const Register = () => {
                 type="text"
                 value={userId}
                 onChange={handleIdChange}
-                placeholder="아이디를 입력해주세요"
+                placeholder="아이디를 입력해주세요."
                 errorLine={errorIdLine}
               />
               <DuplicateBtn
                 disabled={duplicate}
-                className={duplicate ? "title" : ""}
+                className={duplicateShow ? "title" : ""}
                 onClick={DuplicateCheck}
               >
                 중복확인
@@ -365,7 +391,7 @@ const Register = () => {
               />
               <DuplicateBtn
                 disabled={duplicateNickname}
-                className={duplicateNickname ? "title" : ""}
+                className={duplicateShowNickname ? "title" : ""}
                 onClick={DuplicateCheckNickname}
               >
                 중복확인
@@ -404,7 +430,7 @@ const Register = () => {
             </RequestBtn>
           </EmailBox>
 
-          {emailCodeShow && (
+          <div className={emailCodeShow ? "codeContainer " : "none"}>
             <EmailCodeBox>
               <p className="caption">이메일로 전송된 인증코드를 입력해주세요.</p>
               <div className="inputEmailCode">
@@ -413,15 +439,22 @@ const Register = () => {
                   value={emailCode}
                   onChange={handleEmailCodeChange}
                   placeholder="인증코드 6자리 입력"
+                  errorLine={emailcodeError}
                 />
                 <div className="timer">
                   {minutes}:{second}
                 </div>
-                <EmailCodeCheckBtn onClick={EmailCodeCheck}>확인</EmailCodeCheckBtn>
+                <EmailCodeCheckBtn
+                  //disabled={} 나중에 코드 체크 했을 때, 오는 서버의 Data 값으로 disabled 처리 하거나 다시 요소 올리기
+                  emailcodeCheck={emailcodeCheck}
+                  onClick={EmailCodeCheck}
+                >
+                  확인
+                </EmailCodeCheckBtn>
               </div>
               <div className="parityCheck">
                 <div>
-                  {emailcodeShow ? (
+                  {emailcodeCheckShow ? (
                     emailcodeCheck ? (
                       <p className="success">인증 완료 되었어요.</p>
                     ) : (
@@ -436,41 +469,41 @@ const Register = () => {
                 <p className="caption1">이메일을 받지 못하셨나요? </p>
                 <p
                   className="caption2"
-                  // onClick={ResendEmailCode}
+                  onClick={ResendEmailCode}
                 >
                   요청 재전송하기
                 </p>
               </div>
             </EmailCodeBox>
-          )}
+          </div>
 
           <BirthBox>
-            <p className="title">생년월일(선택)</p>
+            <p className="title">생년월일</p>
             <p className="caption">8자리의 생년월일을 띄어쓰기 없이 입력해주세요.</p>
             <div className="inputBirth">
               <Input
                 type="text"
                 value={birth}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => setBirth(e.target.value)}
+                onChange={BirthChange}
                 placeholder="ex) 20010412"
               />
             </div>
           </BirthBox>
 
           <GenderBox>
-            <p className="title">성별(선택)</p>
+            <p className="title">성별</p>
             <div className="Btns">
               <GenderCheckBtn
                 gender={gender}
-                text="M"
-                onClick={() => setGender("M")}
+                text="MALE"
+                onClick={() => setGender("MALE")}
               >
                 남성
               </GenderCheckBtn>
               <GenderCheckBtn
                 gender={gender}
-                text="W"
-                onClick={() => setGender("W")}
+                text="FEMALE"
+                onClick={() => setGender("FEMALE")}
               >
                 여성
               </GenderCheckBtn>
@@ -483,7 +516,7 @@ const Register = () => {
             <p className="caption1">이미 회원이신가요?</p>
             <p
               className="caption2"
-              // onClick={spaceToLogin}
+              onClick={() => navigate("/login")}
             >
               로그인
             </p>
