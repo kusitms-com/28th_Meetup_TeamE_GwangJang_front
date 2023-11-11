@@ -138,7 +138,6 @@ export const RighttHeader = styled.div`
 export const HeaderInput = styled.input`
   margin-right: 29px;
   width: 250px;
-  height: 30px;
   outline: none;
   border-radius: 5px;
   opacity: 0.4;

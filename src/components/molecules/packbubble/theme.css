@@ -2,9 +2,9 @@
 .highcharts-root {
   position: relative;
 }
-/* .highcharts-container {
-  width: 80rem !important;
-} */
+.highcharts-container {
+  z-index: 1 !important;
+}
 .highcharts-title {
   position: absolute;
   right: 0;
@@ -48,30 +48,24 @@ image[width="1420"] {
   fill-opacity: 1;
   fill: #0084ff !important;
 }
-
+.highcharts-legend-item text {
+  font-size: 1rem !important;
+}
 .highcharts-legend-item.highcharts-series-0 .highcharts-point {
   fill: #ff9900;
-}
-.highcharts-legend-item.highcharts-series-0 .highcharts-graph {
-  stroke: #ff9900;
+  width: 9px !important;
 }
 .highcharts-legend-item.highcharts-series-1 .highcharts-point {
   fill: #957bff;
 }
-.highcharts-legend-item.highcharts-series-1 .highcharts-graph {
-  stroke: #957bff;
-}
 .highcharts-legend-item.highcharts-series-2 .highcharts-point {
   fill: #1ae276;
-}
-.highcharts-legend-item.highcharts-series-2 .highcharts-graph {
-  stroke: #1ae276;
 }
 .highcharts-legend-item.highcharts-series-3 .highcharts-point {
   fill: #0084ff;
 }
-.highcharts-legend-item.highcharts-series-3 .highcharts-graph {
-  stroke: #0084ff;
+.highcharts-legend-item .highcharts-graph {
+  stroke: transparent;
 }
 
 .highcharts-series-0 .highcharts-label.highcharts-data-label text {
