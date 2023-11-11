@@ -2,6 +2,7 @@ import BubbleChart from "@/components/organisms/Home/BubbleChart";
 import DiscussedTopics from "@/components/organisms/Home/DiscussedTopics";
 import { MainCommunity } from "@/components/organisms/Home/MainCommunity";
 import { MainContent } from "@/components/organisms/Home/MainContent";
+import { LoginTopic } from "@/components/organisms/Home/LoginTopic";
 import { MainTopic } from "@/components/organisms/Home/MainTopic";
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
       <MainContent />
       <MainCommunity />
       <DiscussedTopics />
+      <LoginTopic selectedKeyword="SPC" />
     </>
   );
 };
