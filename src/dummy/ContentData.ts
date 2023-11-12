@@ -1,6 +1,7 @@
 export const contentData = [
   {
     category: "일자리·노동",
+    link: "https://www.naver.com/",
     keyword: ["SPC", "사망", "이채민이챔"],
     type: "기사",
     title: "SPC 빵 만들다 숨진 23살…“제 딸 박선빈, 기억해주세요”",
@@ -12,6 +13,8 @@ export const contentData = [
   {
     category: "일자리·노동",
     keyword: ["SPC", "사망", "이채민이챔"],
+    link: "https://www.naver.com/",
+
     type: "기사",
     title: "직접고용 위해 설립됐는데 노조탈퇴 강요…檢 SPC계열사 압수수색",
     imgUrl: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
@@ -21,6 +24,8 @@ export const contentData = [
   {
     category: "환경",
     keyword: ["SPC", "사망", "이채민이챔"],
+    link: "https://www.naver.com/",
+
     type: "기사",
     title: "SPC 빵 만들다 숨진 23살…“제 딸 박선빈, 기억해주세요”",
     imgUrl: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
@@ -30,6 +35,8 @@ export const contentData = [
   {
     category: "일자리·노동",
     keyword: ["SPC", "사망", "이채민이챔"],
+    link: "https://www.naver.com/",
+
     type: "기사",
     title: "SPC 빵 만들다 숨진 23살…“제 딸 박선빈, 기억해주세요”",
     imgUrl: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
@@ -39,6 +46,8 @@ export const contentData = [
   {
     category: "교육",
     keyword: ["SPC", "사망", "이채민이챔"],
+    link: "https://www.naver.com/",
+
     type: "기사",
     title: "SPC 빵 만들다 숨진 23살…“제 딸 박선빈, 기억해주세요”",
     imgUrl: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",

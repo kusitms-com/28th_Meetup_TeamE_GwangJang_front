@@ -28,6 +28,7 @@ export interface TitleProps {
 
 export interface SeeMoreProps {
   text: string;
+  path: string;
 }
 
 export interface ContentDataProps {
@@ -37,6 +38,7 @@ export interface ContentDataProps {
   title: string;
   imgUrl: string;
   content: string;
+  link: string;
 }
 
 export interface SubjectProps {

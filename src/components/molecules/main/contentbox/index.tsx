@@ -15,8 +15,13 @@ export const ContentBox = ({ data, category }: { data: ContentDataProps; categor
 
   const [hover, setHover] = useState<boolean>(false);
 
+  const onClick = () => {
+    window.open(`${data.link}`, "_blank");
+  };
+
   return (
     <EdgeContainer
+      onClick={onClick}
       style={{ position: "relative" }}
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
@@ -37,16 +42,10 @@ export const ContentBox = ({ data, category }: { data: ContentDataProps; categor
       >
         <div className="tag-box">
           <div>
-            <TopicTag
-              color="red"
-              category={category}
-            />
+            <TopicTag category={category} />
           </div>
           <div>
-            <KeywordTag
-              color="red"
-              category={category}
-            />
+            <KeywordTag category={category} />
           </div>
         </div>
         <div className="text-box">
