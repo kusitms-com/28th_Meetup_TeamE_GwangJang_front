@@ -3,9 +3,8 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import commentImg from "@/assets/comment.svg";
-import likeImg from "@/assets/like.svg";
-import temp from "@/assets/react.svg";
+import { CommentButton, LikeButton } from "@/components/atoms/button";
+import { Profile } from "@/components/atoms/profile";
 import { KeywordTag, TopicTag } from "@/components/atoms/tag";
 import { mainCommunityData } from "@/dummy/mainCommunityData";
 
@@ -78,31 +77,14 @@ export const CommunityBox = () => {
                 <div className="content-wrapper">
                   <div className="content-text">{item.communityText}</div>
                   <div className="status-info">
-                    <div className="user-info">
-                      <img
-                        src={temp}
-                        alt=""
-                      />
-                      <div>
-                        <p className="user-nickname">{item.nickname}</p>
-                        <p className="content-date">{item.date}</p>
-                      </div>{" "}
-                    </div>
+                    <Profile
+                      nickname={item.nickname}
+                      profileImg={item.profileImg}
+                      date={item.date}
+                    />
                     <div className="content-review">
-                      <div>
-                        <img
-                          src={likeImg}
-                          alt="좋아요"
-                        />
-                        <p>{item.likeCount}</p>
-                      </div>
-                      <div>
-                        <img
-                          src={commentImg}
-                          alt="좋아요"
-                        />
-                        <p>{item.commentCount}</p>
-                      </div>
+                      <LikeButton likeCount={item.likeCount} />
+                      <CommentButton commentCount={item.commentCount} />
                     </div>
                   </div>
                 </div>

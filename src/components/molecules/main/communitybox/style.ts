@@ -45,31 +45,6 @@ export const CommunityContainer = styled.div`
         flex-direction: row;
         height: 30px;
 
-        .user-info {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          img {
-            border-radius: 100%;
-            object-fit: cover;
-          }
-
-          .user-nickname {
-            color: var(--Gray7_600, #757575);
-            font-size: var(--text_cap1);
-            line-height: 18px; /* 150% */
-            letter-spacing: -0.18px;
-          }
-
-          .content-date {
-            color: var(--Gray5_400, #bdbdbd);
-            font-size: var(--text_btn1);
-            font-weight: 400;
-            line-height: 10px; /* 100% */
-            letter-spacing: -0.15px;
-          }
-        }
-
         .content-review {
           display: flex;
           align-items: center;
