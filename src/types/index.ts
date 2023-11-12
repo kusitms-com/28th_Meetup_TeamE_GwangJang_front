@@ -1,4 +1,21 @@
-import React, { ChangeEvent, FocusEvent } from "react";
+import React, { ChangeEvent, FocusEvent, KeyboardEvent } from "react";
+
+export interface loginType {
+  id: string;
+  pw: string;
+}
+export interface emailCodeType {
+  email: string;
+  emailCode: string;
+}
+export interface localRegisterType {
+  userId: string;
+  password2: string;
+  nickname: string;
+  gender: string;
+  email: string;
+  birthDate: string;
+}
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -13,6 +30,7 @@ export interface InputProps {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
   errorLine?: boolean;
+  onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
 }
 
 export interface discussedTopicProps {
