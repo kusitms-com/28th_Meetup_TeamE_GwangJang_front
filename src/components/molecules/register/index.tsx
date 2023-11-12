@@ -220,6 +220,10 @@ const Register = () => {
     }
   };
 
+  const RegisterOk = () => {
+    //회원가입 api 발동과 동시에 회원가입 완료 되었다는 모달창 띄우기
+  };
+
   //이메일 타이머 작동
   useEffect(() => {
     //error
@@ -248,6 +252,7 @@ const Register = () => {
       password2Error &&
       password2 &&
       nickname && //닉네임 중복체크 넣으면 된다.
+      duplicateNickname &&
       !emailError &&
       emailcodeCheck &&
       birth &&
@@ -276,6 +281,7 @@ const Register = () => {
     password2Error,
     password2,
     nickname, //닉네임 중복체크 넣으면 된다.
+    duplicateNickname,
     emailError,
     emailcodeCheck,
     birth,
@@ -510,7 +516,12 @@ const Register = () => {
             </div>
           </GenderBox>
 
-          <RegisterBtn disabled={registerFlag}>회원가입 완료</RegisterBtn>
+          <RegisterBtn
+            disabled={registerFlag}
+            onClick={RegisterOk}
+          >
+            회원가입 완료
+          </RegisterBtn>
 
           <SpaceToLogin>
             <p className="caption1">이미 회원이신가요?</p>
