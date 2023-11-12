@@ -18,12 +18,11 @@ export const KakaoCallBack = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            // "Content-type": "application/x-www-form-urlencoded;charset=utf-8",
           },
         }
       )
       .then((res) => {
-        console.log(res);
+        console.log(res); // res -> "registrationStatus": true navigate / 라우팅 false 이면  navigate /addInfomation
         navigate("/");
       })
       .catch((err) => {
