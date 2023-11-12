@@ -16,6 +16,12 @@ export const mySubjectData = {
           image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
           date: "2023.10.24",
         },
+        {
+          title: "SPC3",
+          type: "기사",
+          image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+          date: "2023.10.24",
+        },
       ],
     },
     {
@@ -63,6 +69,12 @@ export const mySubjectData = {
         },
         {
           title: "후쿠시마 오염수2",
+          type: "기사",
+          image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+          date: "2023.10.24",
+        },
+        {
+          title: "후쿠시마 오염수3",
           type: "기사",
           image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
           date: "2023.10.24",
