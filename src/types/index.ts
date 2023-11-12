@@ -29,6 +29,15 @@ export interface ButtonProps {
   // 다른 버튼 관련 프로퍼티 추가
 }
 
+export interface CategoryButtonProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+  // color: string;
+  // background: string;
+  // border: string;
+  isCorrect: boolean;
+}
+
 export interface InputProps {
   value: string;
   type: string;
@@ -71,3 +80,9 @@ export interface SubjectProps {
   idx: number;
 }
 [];
+
+export interface SlideItemProps {
+  title: string;
+  type: string;
+  date: string;
+}
