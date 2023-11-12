@@ -15,7 +15,10 @@ export const MainCommunity = () => {
         </div>
         <CommunityBox />
         <div className="inner">
-          <SeeMore text="더보기" />
+          <SeeMore
+            text="더보기"
+            path="/login"
+          />
         </div>
       </MainCommunityBack>
     </TempInner>
