@@ -128,9 +128,7 @@ export const CommunityBox = () => {
         }}
       >
         {mainCommunityData.map((item, idx) => (
-          <SwiperSlide
-            key={idx}
-          >
+          <SwiperSlide key={idx}>
             <CommunityContainer>
               <div className="community-content">
                 <div className="community-tag-wrapper">
