@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { KakaoCallBack } from "@/components/molecules/login/KakaoCallBack";
 import Layout from "@/layout/Layout";
+import AddInfoPage from "@/pages/AddInfoPage";
 import Home from "@/pages/Home";
 import LocalRegisterPage from "@/pages/LocalRegisterPage";
 import { LoginPage } from "@/pages/LoginPage";
@@ -26,6 +27,10 @@ const router = () => {
         <Route
           path="/localRegister"
           element={<LocalRegisterPage />}
+        />
+        <Route
+          path="/addInfomation"
+          element={<AddInfoPage />}
         />
         <Route element={<Layout />}>
           <Route
