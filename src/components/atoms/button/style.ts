@@ -15,7 +15,7 @@ export const KakaoBtn = styled.button<ButtonProps>`
   background: #ffe812;
   gap: 4px;
   border: none;
-  font-size: var(--text_b2);
+  font-size: var(--text_b1);
   font-weight: 600;
 `;
 
@@ -39,4 +39,5 @@ export const TestBtn = styled.button<ButtonProps>`
   font-style: normal;
   font-weight: 600;
   line-height: 18px; /* 100% */
+  margin-top: 40px;
 `;

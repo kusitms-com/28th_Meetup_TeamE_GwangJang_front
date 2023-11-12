@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
-import Register from "@/components/molecules/register";
+import AddInfomation from "@/components/molecules/AddInfomation";
 
-const Signup = () => {
+const AddInfoPage = () => {
   return (
     <Container>
-      <Register />
+      <AddInfomation />
     </Container>
   );
 };
 
-export default Signup;
+export default AddInfoPage;
 
 const Container = styled.div`
   width: 100vw;
   display: flex;
   justify-content: center;
-  margin-top: 162px;
+  margin-top: 100px;
   padding-bottom: 83px;
 `;

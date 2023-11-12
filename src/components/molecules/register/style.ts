@@ -13,13 +13,25 @@ export const RegisterTitle = styled.div`
     font-size: var(--text_h4);
     font-weight: 700;
   }
+  img {
+    cursor: pointer;
+  }
 `;
 export const RegisterBox = styled.div`
   display: flex;
   justify-content: center;
   gap: var(--text_b3);
   color: var(--Gray7_600, #757575);
-
+  .codeContainer {
+    width: 100%;
+    background-color: var(--Gray2_100);
+    margin-top: 20px;
+    display: block;
+    transition: 3s;
+  }
+  .none {
+    display: none;
+  }
   .title {
     color: var(--Gray10_900);
   }
@@ -109,6 +121,11 @@ export const EmailCodeBox = styled.div`
 
   .resend {
     display: flex;
+    margin-top: 10px;
+    .caption1,
+    .caption2 {
+      font-size: var(--text_cap1);
+    }
     .caption2 {
       margin-left: 6px;
       text-decoration: underline;
@@ -144,6 +161,7 @@ export const SpaceToLogin = styled.div`
   display: flex;
   justify-content: center;
   .caption2 {
+    margin-left: 10px;
     text-decoration: underline;
     color: var(--Gray9_800, #424242);
     cursor: pointer;
@@ -181,18 +199,20 @@ export const RequestBtn = styled.button`
   font-size: var(--text_b1);
 `;
 
-export const EmailCodeCheckBtn = styled.div`
+export const EmailCodeCheckBtn = styled.div<{ emailcodeCheck: boolean }>`
   cursor: pointer;
   box-sizing: border-box;
   border-radius: 5px;
-  background: var(--Main_Blue, #0084ff);
+  background-color: ${(props) =>
+    props.emailcodeCheck ? "var(--Gray3_200, #eee)" : "   var(--Main_Blue, #0084ff)"};
+  color: ${(props) =>
+    props.emailcodeCheck ? "var(--Gray6_500, #959595)" : "   var(--White, #fff)"};
   width: 42px;
   height: 28px;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
   right: 16px;
-  color: var(--White, #fff);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -226,7 +246,7 @@ export const RegisterBtn = styled.button`
 
   height: 56px;
   width: 100%;
-
+  cursor: ${(props) => (!props.disabled ? "pointer" : "")};
   font-weight: 600;
   font-size: var(--text_b1);
   display: flex;

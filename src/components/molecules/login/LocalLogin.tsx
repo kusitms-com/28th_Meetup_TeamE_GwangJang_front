@@ -7,7 +7,7 @@ import Input from "@/components/atoms/input";
 
 export const LocalLogin = () => {
   const [id, setId] = useState<string>("");
-  const [pwd, setPwd] = useState<string>("");
+  const [pw, setPw] = useState<string>("");
 
   return (
     <>
@@ -20,8 +20,8 @@ export const LocalLogin = () => {
         />
         <Input
           type="password"
-          value={pwd}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => setPwd(e.target.value)}
+          value={pw}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setPw(e.target.value)}
           placeholder="비밀번호 (영문, 숫자, 특수문자 포함 8~30자)"
         />
       </InputBox>

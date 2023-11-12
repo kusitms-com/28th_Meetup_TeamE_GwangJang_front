@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import logo from "@/assets/LoginLogo.svg";
@@ -5,12 +6,14 @@ import KakaoLogin from "@/components/molecules/login/KakaoLogin";
 import { LocalLogin } from "@/components/molecules/login/LocalLogin";
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
   return (
     <LoginContainer>
       <LoginTitle>
         <img
           src={logo}
           alt="광장"
+          onClick={() => navigate("/")}
         />
         <p>로그인</p>
       </LoginTitle>
@@ -21,17 +24,22 @@ export const LoginPage = () => {
           <p>또는</p>
           <div></div>
         </OrLine>
-        <KakaoLogin />
-      </LoginBox>{" "}
+        <KakaoLogin page="login" />
+      </LoginBox>
       <EtcBox>
         <div className="findProp">
-          <p>아이디 찾기</p>
+          <p className="notActive">아이디 찾기</p>
           <p>|</p>
-          <p>비밀번호 찾기</p>
+          <p className="notActive">비밀번호 찾기</p>
         </div>
         <div className="notUser">
           <p>아직 회원이 아니신가요?</p>
-          <p className="sign-up">회원가입</p>
+          <p
+            className="sign-up"
+            onClick={() => navigate("/register")}
+          >
+            회원가입
+          </p>
         </div>
       </EtcBox>
     </LoginContainer>
@@ -44,14 +52,18 @@ const LoginContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 136px;
+  img {
+    cursor: pointer;
+  }
 `;
 
 const LoginTitle = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: row;
-  gap: 14px;
   margin-bottom: 28px;
+  gap: 14px;
   p {
     color: var(--Gray10_900, #212121);
     font-size: 32px;
@@ -66,9 +78,8 @@ const OrLine = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 8.9px;
+  margin: 14px 0 5px;
   div {
-    /* width: 50%; */
     width: 165px;
     height: 1px;
     background: #d9d9d9;
@@ -82,7 +93,6 @@ const OrLine = styled.div`
     font-family: Pretendard;
     font-size: 12px;
     font-style: normal;
-    font-weight: 500;
     line-height: 18px; /* 150% */
     letter-spacing: -0.18px;
   }
@@ -91,7 +101,6 @@ const OrLine = styled.div`
 const LoginBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 14px;
 `;
 
 const EtcBox = styled.div`
@@ -105,12 +114,9 @@ const EtcBox = styled.div`
     gap: 10px;
     color: var(--Gray7_600);
     text-align: center;
-
-    /* TextButton1_M */
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+  }
+  .notActive {
+    cursor: pointer;
   }
 
   .notUser {
@@ -120,19 +126,13 @@ const EtcBox = styled.div`
 
     /* TextButton1_M */
     font-family: Pretendard;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    font-size: 1rem;
     gap: 14px;
 
     .sign-up {
       color: var(--Main_Blue);
-      /* TextButton2_Sb */
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
+      font-size: 1rem;
+      cursor: pointer;
       text-decoration-line: underline;
     }
   }

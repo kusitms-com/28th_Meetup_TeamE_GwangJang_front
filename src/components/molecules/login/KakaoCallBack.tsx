@@ -6,38 +6,30 @@ import { SyncLoader } from "react-spinners";
 import styled from "styled-components";
 
 export const KakaoCallBack = () => {
+  
   const navigate = useNavigate();
-
-  //인가코드
-  const CODE = new URL(window.location.href).searchParams.get("code");
-  // console.log("인가코드:", CODE);
-
   useEffect(() => {
-    const getToken = async () => {
-      console.log("getToken 호출");
-      console.log("인가코드:", CODE);
+    const Code = new URL(window.location.href).searchParams.get("code");
+    console.log("인가코드:", Code);
+    axios
+      .post(
+        "https://api.gwang-jang.co.kr/member/auth/signIn/kakao",
+        { token: Code },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res); // res -> "registrationStatus": true navigate / 라우팅 false 이면  navigate /addInfomation
+        navigate("/");
+      })
+      .catch((err) => {
+        console.error("error:", err);
+      });
+  }, [navigate]);
 
-      axios
-        .post(
-          "https://api.gwang-jang.co.kr/member/auth/signIn/kakao",
-          { token: CODE },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.error("error:", err);
-        });
-
-      navigate("/");
-    };
-    getToken();
-  }, [CODE]);
 
   return (
     <LoadingBox>
