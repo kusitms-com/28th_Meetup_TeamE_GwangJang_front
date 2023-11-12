@@ -6,7 +6,6 @@ import { SyncLoader } from "react-spinners";
 import styled from "styled-components";
 
 export const KakaoCallBack = () => {
-  
   const navigate = useNavigate();
   useEffect(() => {
     const Code = new URL(window.location.href).searchParams.get("code");
@@ -29,7 +28,6 @@ export const KakaoCallBack = () => {
         console.error("error:", err);
       });
   }, [navigate]);
-
 
   return (
     <LoadingBox>
