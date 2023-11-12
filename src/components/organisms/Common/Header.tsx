@@ -27,8 +27,8 @@ const Header = () => {
     navigate(page);
   };
   const LogOut = () => {
-    localStorage.removeItem("AccessToken");
-    localStorage.removeItem("RefreshToken");
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
     window.location.reload();
   };
   return (
@@ -58,7 +58,7 @@ const Header = () => {
             />
             <IoSearch className="searchIcon" />
           </div>
-          {!localStorage.getItem("AccessToken") ? (
+          {!localStorage.getItem("accessToken") ? (
             <AccessUser>
               <div
                 className="login"
