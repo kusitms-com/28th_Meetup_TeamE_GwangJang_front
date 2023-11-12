@@ -17,29 +17,27 @@ export const KakaoCallBack = () => {
       console.log("getToken 호출");
       console.log("인가코드:", CODE);
 
-      try {
-        const res = await axios.post(
+      axios
+        .post(
           "https://api.gwang-jang.co.kr/member/auth/signIn/kakao",
-          {
-            token: CODE,
-          },
+          { token: CODE },
           {
             headers: {
               "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": "*",
             },
           }
-        );
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.error("error:", err);
+        });
 
-        console.log("res:", res);
-
-        navigate("/");
-      } catch (err) {
-        console.error("error:", err);
-      }
+      navigate("/");
     };
     getToken();
-  }, []);
+  }, [CODE]);
 
   return (
     <LoadingBox>
