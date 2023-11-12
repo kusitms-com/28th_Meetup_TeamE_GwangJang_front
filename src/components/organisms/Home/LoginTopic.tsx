@@ -1,3 +1,7 @@
+import styled from "styled-components";
+
+import { CategoryFilter } from "@/components/molecules/categoryFilter";
+import { SlideItem } from "@/components/molecules/slideItem";
 import { mySubjectData } from "@/dummy/mySubjectData";
 
 export const LoginTopic = ({ selectedKeyword }: { selectedKeyword: string }) => {
@@ -11,17 +15,37 @@ export const LoginTopic = ({ selectedKeyword }: { selectedKeyword: string }) => 
   //     console.error(`No data found for the keyword: ${selectedKeyword}`);
   //     return null;
   //   }
+
   return (
     <>
+      <div>
+        <CategoryFilter />
+      </div>
       {mySubjectData.data.map((item, idx) => (
-        <div>
+        <SlideContainer key={idx}>
           {/* {item.category == selectedKeyword && {
             }} */}
           {item.semiData.map((data, idx) => (
-            <>{data.type}</>
+            <SlideItemWrapper key={idx}>
+              <SlideItem
+                title={data.title}
+                type={data.type}
+                date={data.date}
+              />
+            </SlideItemWrapper>
           ))}
-        </div>
+        </SlideContainer>
       ))}
     </>
   );
 };
+
+const SlideContainer = styled.div`
+  display: flex;
+  gap: 24px;
+  background-color: pink;
+`;
+
+const SlideItemWrapper = styled.div`
+  display: flex;
+`;
