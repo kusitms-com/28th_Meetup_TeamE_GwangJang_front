@@ -100,40 +100,4 @@ const TempContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-
-  /* @media (max-width: 1080px) {
-    & .swiper-container {
-      display: flex;
-      width: 344px;
-    }
-  }
-
-  @media (max-width: 880px) {
-    & .swiper-container {
-      display: flex;
-      width: 344px;
-    }
-
-    & .swiper-slide {
-    }
-
-    & .swiper-slide-active {
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 564px) {
-    & .swiper-container {
-      width: 344px;
-    }
-  }
-
-  @media (max-width: 344px) {
-    & .swiper-container {
-      margin: 0 auto;
-    }
-    & .swiper-slide {
-      margin: 0 auto;
-    }
-  } */
 `;
