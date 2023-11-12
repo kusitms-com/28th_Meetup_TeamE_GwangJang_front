@@ -6,6 +6,15 @@ export interface ButtonProps {
   // 다른 버튼 관련 프로퍼티 추가
 }
 
+export interface CategoryButtonProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+  // color: string;
+  // background: string;
+  // border: string;
+  isCorrect: boolean;
+}
+
 export interface InputProps {
   value: string;
   type: string;
@@ -35,22 +44,8 @@ export interface discussedTopicProps {
 }
 [];
 
-export interface MySubjectTopicProps {
-  category: string;
-  data: myDataProps[];
-}
-[];
-
-export interface myDataProps {
-  category: string;
-  semiData: semiDataProps[];
-}
-[];
-
-export interface semiDataProps {
+export interface SlideItemProps {
   title: string;
   type: string;
-  image: string;
   date: string;
 }
-[];
