@@ -45,3 +45,9 @@ export interface SubjectProps {
   subscribeCount: number;
   category: string;
 }
+
+export interface ProfileProps {
+  nickname: string;
+  profileImg: string;
+  date: string;
+}
