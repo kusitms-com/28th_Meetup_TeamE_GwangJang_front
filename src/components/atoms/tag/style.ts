@@ -39,7 +39,6 @@ export const Keyword = styled.div<{ $category: string }>`
       ? "var(--Main_NeonGreen)"
       : "var(--Sub_Orange)"};
   background: var(--Gray1_50, #fafafa);
-  box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.4);
 
   //text
   text-align: center;

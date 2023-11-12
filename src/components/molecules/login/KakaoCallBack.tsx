@@ -10,11 +10,12 @@ export const KakaoCallBack = () => {
 
   //인가코드
   const CODE = new URL(window.location.href).searchParams.get("code");
-  console.log("인가코드:", CODE);
+  // console.log("인가코드:", CODE);
 
   useEffect(() => {
     const getToken = async () => {
       console.log("getToken 호출");
+      console.log("인가코드:", CODE);
 
       axios
         .post(
@@ -23,7 +24,6 @@ export const KakaoCallBack = () => {
           {
             headers: {
               "Content-Type": "application/json",
-              // "Content-type": "application/x-www-form-urlencoded;charset=utf-8",
             },
           }
         )
