@@ -246,7 +246,7 @@ export const RegisterBtn = styled.button`
 
   height: 56px;
   width: 100%;
-
+  cursor: ${(props) => (!props.disabled ? "pointer" : "")};
   font-weight: 600;
   font-size: var(--text_b1);
   display: flex;
