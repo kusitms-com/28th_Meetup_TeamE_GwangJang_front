@@ -22,6 +22,18 @@ export const mySubjectData = {
           image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
           date: "2023.10.24",
         },
+        {
+          title: "SPC4",
+          type: "기사",
+          image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+          date: "2023.10.24",
+        },
+        {
+          title: "SPC5",
+          type: "기사",
+          image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+          date: "2023.10.24",
+        },
       ],
     },
     {
