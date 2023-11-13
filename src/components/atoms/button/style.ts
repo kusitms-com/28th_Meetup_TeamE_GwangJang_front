@@ -50,22 +50,16 @@ export const CateButton = styled.button<CategoryButtonProps>`
   justify-content: center;
   align-items: center;
   border-radius: 25px;
-
-  border: none;
-
-  color: var(--White, #fff);
   text-align: center;
+
   font-family: Pretendard; //왜 적용이 안되지???
+
   font-size: var(--text_b2);
   line-height: 24px;
   letter-spacing: -0.24px;
 
-  //
-  /* ${(props) =>
-    props.color === "var(--White, #fff)" &&
-    `
-      color: ${props.isCorrect ? "#FFF" : "var(--Gray9_800)"};
-      background: ${props.isCorrect ? "var(--Main_Blue)" : "#FFF"};
-      border: ${props.isCorrect ? "1px solid var(--Main_Blue)" : "1px solid var(--Gray5_400)"};
-    `} */
+  background-color: ${({ isSelected }) => (isSelected ? "var(--Main_Blue)" : "#FFF")};
+  color: ${({ isSelected }) => (isSelected ? "#FFF" : "var(--Gray9_800)")};
+  border: ${({ isSelected }) =>
+    isSelected ? "1px solid var(--Main_Blue)" : "1px solid var(--Gray5_400)"};
 `;
