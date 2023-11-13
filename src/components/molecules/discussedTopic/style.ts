@@ -65,7 +65,6 @@ export const Hover = styled.div<{ $hover: boolean }>`
   top: 0;
   left: 0;
   z-index: 1;
-  cursor: pointer;
   transition: 0.5s;
   .text {
     opacity: 1;
@@ -85,6 +84,7 @@ export const Hover = styled.div<{ $hover: boolean }>`
     flex-direction: column;
   }
   .sub_item {
+    font-size: var(--text_b3);
     margin: 0 20px;
     width: calc(100% - 40px);
     height: 37px;
@@ -97,5 +97,6 @@ export const Hover = styled.div<{ $hover: boolean }>`
     padding: 0 10px;
     box-sizing: border-box;
     align-items: center;
+    cursor: pointer;
   }
 `;
