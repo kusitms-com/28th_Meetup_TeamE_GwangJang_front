@@ -1,4 +1,4 @@
-export const videoData = [
+export const tempVideoData = [
   {
     title: "지금 시각은 새벽 4시 2분입니다.",
     type: "유튜브 영상",

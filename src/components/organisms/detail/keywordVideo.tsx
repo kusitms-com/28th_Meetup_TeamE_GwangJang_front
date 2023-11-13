@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { SubTitle } from "@/components/atoms/title";
 import { ArticleCarousel } from "@/components/molecules/carousel/ArticleCarousel";
-import { videoData } from "@/dummy/VideoData";
+import { tempVideoData } from "@/dummy/tempVideoData";
 
 export const KeywordVideo = () => {
   return (
@@ -11,7 +11,7 @@ export const KeywordVideo = () => {
         <SubTitle title="관련 영상으로 더 알아보기" />
       </div>
       <div>
-        <ArticleCarousel data={videoData} />
+        <ArticleCarousel data={tempVideoData} />
       </div>
     </Background>
   );
