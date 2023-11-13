@@ -2,7 +2,13 @@ import { FocusEvent, ChangeEvent, useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import { getDuplicateNickname, postEmail, postEmailCode, putLocalRegister } from "@/apis";
+import {
+  getDuplicateId,
+  getDuplicateNickname,
+  postEmail,
+  postEmailCode,
+  postLocalRegister,
+} from "@/apis";
 import logo from "@/assets/LoginLogo.svg";
 import Loading from "@/components/atoms/Loading";
 import Input from "@/components/atoms/input";
@@ -98,18 +104,22 @@ const Register = () => {
     }
   };
   const DuplicateCheck = () => {
+    getDuplicateId(userId)
+      .then((res) => {
+        console.log(res);
+        if (!res.data.data.isChecked) {
+          setDuplicate(true);
+          setDuplicateShow(true); // 일단 버튼을 누르면 hide 클래스 제거
+        } else {
+          setDuplicate(false);
+          setDuplicateShow(true); // 일단 버튼을 누르면 hide 클래스 제거
+          setErrorIdLine(true); //에러 라인 전달
+        }
+      })
+      .catch((err) => console.log(err));
     // 로딩 후.
     // api 요청해야함. 요청이 오면
     // if 성공이 오면 듀플리케이트 값 true로 하고 show true
-
-    if (!duplicate) {
-      setDuplicate(true);
-      setDuplicateShow(true); // 일단 버튼을 누르면 hide 클래스 제거
-    } else {
-      setDuplicate(false);
-      setDuplicateShow(true); // 일단 버튼을 누르면 hide 클래스 제거
-      setErrorIdLine(true); //에러 라인 전달
-    }
   };
 
   //비밀번호 1번째 입력
@@ -251,9 +261,12 @@ const Register = () => {
   };
 
   const RegisterOk = () => {
-    putLocalRegister({ userId, password2, nickname, gender, email, birthDate })
+    postLocalRegister({ userId, password2, nickname, gender, email, birthDate })
       .then((res) => {
-        console.log(res);
+        console.log(res.data.data);
+        localStorage.setItem("accessToken", res.data.data.accessToken);
+        localStorage.setItem("refreshToken", res.data.data.refreshToken);
+        navigate("/");
       })
       .catch((err) => console.log(err));
 
@@ -298,17 +311,17 @@ const Register = () => {
     } else {
       setRegisterFlag(true);
     }
-    // console.log(
-    //   duplicate,
-    //   userId,
-    //   password1Error,
-    //   password1,
-    //   password2Error,
-    //   password2,
-    //   nickname,
-    //   emailError,
-    //   emailcodeCheck
-    // );
+    console.log(
+      duplicate,
+      userId,
+      password1Error,
+      password1,
+      password2Error,
+      password2,
+      nickname,
+      emailError,
+      emailcodeCheck
+    );
   }, [
     duplicate,
     userId,
@@ -349,7 +362,6 @@ const Register = () => {
                 errorLine={errorIdLine}
               />
               <DuplicateBtn
-                disabled={duplicate}
                 className={duplicateShow ? "title" : ""}
                 onClick={DuplicateCheck}
               >
