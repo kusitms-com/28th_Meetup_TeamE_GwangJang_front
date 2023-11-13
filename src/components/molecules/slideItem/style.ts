@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const SlideWrapper = styled.div`
   display: flex;
+  justify-content: center;
   gap: 24px;
 
   .slide-container {
