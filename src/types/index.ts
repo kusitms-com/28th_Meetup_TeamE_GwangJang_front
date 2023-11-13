@@ -9,10 +9,7 @@ export interface ButtonProps {
 export interface CategoryButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  // color: string;
-  // background: string;
-  // border: string;
-  isCorrect: boolean;
+  isSelected: boolean;
 }
 
 export interface InputProps {
