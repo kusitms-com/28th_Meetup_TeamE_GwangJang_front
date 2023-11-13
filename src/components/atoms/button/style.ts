@@ -46,7 +46,6 @@ export const CateButton = styled.button<CategoryButtonProps>`
   cursor: pointer;
   display: flex;
   padding: 8px 16px;
-  height: 40px;
   justify-content: center;
   align-items: center;
   border-radius: 25px;
@@ -62,4 +61,40 @@ export const CateButton = styled.button<CategoryButtonProps>`
   color: ${({ isSelected }) => (isSelected ? "#FFF" : "var(--Gray9_800)")};
   border: ${({ isSelected }) =>
     isSelected ? "1px solid var(--Main_Blue)" : "1px solid var(--Gray5_400)"};
+`;
+
+export const PrevArrow = styled.div`
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  z-index: 1;
+`;
+
+export const NextArrow = styled.div`
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  z-index: 1;
+`;
+
+export const BorderStyleButton = styled.div`
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  padding: 7px;
+  border-radius: 4px;
+  border: 1px solid var(--Gray3_200, #eee);
+  line-height: 18px;
+  letter-spacing: -0.18px;
+  cursor: pointer;
+
+  div {
+    color: var(--Gray7_600, #757575);
+    font-size: var(--text_cap1);
+  }
+
+  p {
+    color: var(--Gray10_900);
+    font-size: var(--text_cap1);
+  }
 `;
