@@ -36,11 +36,11 @@ export const CommentButton = ({ commentCount }: { commentCount: number }) => {
   );
 };
 
-export const CategoryButton = ({ children, isCorrect, onClick }: CategoryButtonProps) => {
+export const CategoryButton = ({ children, isSelected, onClick }: CategoryButtonProps) => {
   return (
     <CateButton
       onClick={onClick}
-      isCorrect={isCorrect}
+      isSelected={isSelected}
     >
       {children}
     </CateButton>
