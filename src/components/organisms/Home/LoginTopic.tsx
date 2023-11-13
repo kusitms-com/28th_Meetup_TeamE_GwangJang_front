@@ -1,5 +1,4 @@
 import { useRecoilValue } from "recoil";
-
 import styled from "styled-components";
 
 import { CategoryFilter } from "@/components/molecules/categoryFilter";
