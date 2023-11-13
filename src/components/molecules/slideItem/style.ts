@@ -4,6 +4,7 @@ export const SlideWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 24px;
+  box-shadow: 0px 15px 35px 0px rgba(66, 66, 66, 0.05);
 
   .slide-container {
     flex-direction: column;
@@ -11,7 +12,6 @@ export const SlideWrapper = styled.div`
     height: 288px;
     border-radius: 5px;
     background: #fff;
-    box-shadow: 0px 15px 35px 0px rgba(66, 66, 66, 0.05);
 
     .slide-image {
       height: 50%;
