@@ -1,11 +1,5 @@
-import HomeBanner from "@/components/organisms/Home/HomeBanner";
-
 const Home = () => {
-  return (
-    <>
-      <HomeBanner />
-    </>
-  );
+  return <></>;
 };
 
 export default Home;
