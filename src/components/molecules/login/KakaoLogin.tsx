@@ -9,7 +9,6 @@ const KakaoLogin = ({ page }: { page: string }) => {
   const handleKakaoLogin = () => {
     window.location.href = kakaoURL;
   };
-  console.log(page);
 
   return (
     <KakaoButton onClick={handleKakaoLogin}>

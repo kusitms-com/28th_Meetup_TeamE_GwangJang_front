@@ -2,7 +2,15 @@ import { FocusEvent, ChangeEvent, useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 
+import {
+  getDuplicateId,
+  getDuplicateNickname,
+  postEmail,
+  postEmailCode,
+  postLocalRegister,
+} from "@/apis";
 import logo from "@/assets/LoginLogo.svg";
+import Loading from "@/components/atoms/Loading";
 import Input from "@/components/atoms/input";
 
 import {
@@ -35,7 +43,7 @@ const Register = () => {
   const [nickname, setNickname] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [emailCode, setEmailCode] = useState<string>("");
-  const [birth, setBirth] = useState<string>("");
+  const [birthDate, setBirthDate] = useState<string>("");
   const [gender, setGender] = useState<string>("");
   const [emailCodeShow, setEmailCodeShow] = useState<boolean>(false);
   const [registerFlag, setRegisterFlag] = useState<boolean>(true);
@@ -69,6 +77,8 @@ const Register = () => {
   const [emailcodeCheckShow, setEmailcodeCheckShow] = useState<boolean>(false);
   const [emailcodeError, setEmailcodeError] = useState<boolean>(false);
 
+  const [loading, setLoading] = useState<boolean>(false);
+
   //유효성 검사 및 input 변경 함수
 
   const handleFocus = (e: FocusEvent<HTMLInputElement>) => {
@@ -94,18 +104,22 @@ const Register = () => {
     }
   };
   const DuplicateCheck = () => {
+    getDuplicateId(userId)
+      .then((res) => {
+        console.log(res);
+        if (!res.data.data.isChecked) {
+          setDuplicate(true);
+          setDuplicateShow(true); // 일단 버튼을 누르면 hide 클래스 제거
+        } else {
+          setDuplicate(false);
+          setDuplicateShow(true); // 일단 버튼을 누르면 hide 클래스 제거
+          setErrorIdLine(true); //에러 라인 전달
+        }
+      })
+      .catch((err) => console.log(err));
     // 로딩 후.
     // api 요청해야함. 요청이 오면
     // if 성공이 오면 듀플리케이트 값 true로 하고 show true
-
-    if (!duplicate) {
-      setDuplicate(true);
-      setDuplicateShow(true); // 일단 버튼을 누르면 hide 클래스 제거
-    } else {
-      setDuplicate(false);
-      setDuplicateShow(true); // 일단 버튼을 누르면 hide 클래스 제거
-      setErrorIdLine(true); //에러 라인 전달
-    }
   };
 
   //비밀번호 1번째 입력
@@ -150,18 +164,23 @@ const Register = () => {
   };
   //닉네임 중복 체크
   const DuplicateCheckNickname = () => {
+    getDuplicateNickname(nickname)
+      .then((res) => {
+        console.log(res);
+        if (!res.data.data.isDuplicated) {
+          setDuplicateNickname(true);
+          setDuplicateShowNickname(true); // 일단 버튼을 누르면 hide 클래스 제거
+        } else {
+          setDuplicateNickname(false);
+          setDuplicateShowNickname(true); // 일단 버튼을 누르면 hide 클래스 제거
+          setErrorNicknameLine(true); //에러 라인 전달
+        }
+      })
+      .catch((err) => console.log(err));
+
     // 로딩 후.
     // api 요청해야함. 요청이 오면
     // if 성공이 오면 듀플리케이트 값 true로 하고 show true
-
-    if (!duplicateNickname) {
-      setDuplicateNickname(true);
-      setDuplicateShowNickname(true); // 일단 버튼을 누르면 hide 클래스 제거
-    } else {
-      setDuplicateNickname(false);
-      setDuplicateShowNickname(true); // 일단 버튼을 누르면 hide 클래스 제거
-      setErrorNicknameLine(true); //에러 라인 전달
-    }
   };
 
   // 이메일 유효성 검사
@@ -181,8 +200,15 @@ const Register = () => {
 
   // 이메일 요청 버튼 누를시,
   const RequestEmail = () => {
-    setEmailCodeShow(true);
-    setEmailError(false);
+    setLoading(true);
+    postEmail(email)
+      .then((res) => {
+        setEmailCodeShow(true);
+        setEmailError(false);
+        console.log(res);
+        setLoading(false);
+      })
+      .catch((err) => console.log(err));
   };
 
   const handleEmailCodeChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -198,29 +224,52 @@ const Register = () => {
   };
 
   const EmailCodeCheck = () => {
-    if (!emailcodeCheck) {
-      setEmailcodeCheck(true);
-      setEmailcodeCheckShow(true); // 일단 버튼을 누르면 hide 클래스 제거 -> 시간 멈추기 기능넣어여함.
-    } else {
-      setEmailcodeCheck(false);
-      setEmailcodeCheckShow(true); // 일단 버튼을 누르면 hide 클래스 제거
-      setEmailcodeError(true);
-    }
+    postEmailCode({ email, emailCode })
+      .then((res) => {
+        console.log(res);
+        if (res.data.data.isChecked) {
+          setEmailcodeCheck(true);
+          setEmailcodeCheckShow(true); // 일단 버튼을 누르면 hide 클래스 제거 -> 시간 멈추기 기능넣어여함.
+          setEmailcodeError(false);
+        } else {
+          setEmailcodeCheck(false);
+          setEmailcodeCheckShow(true); // 일단 버튼을 누르면 hide 클래스 제거
+          setEmailcodeError(true);
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   const ResendEmailCode = () => {
-    setTimeLeft(MINUTES_IN_MS); // 시간 초기화
-    setEmailCode(""); //재전송 api
+    setLoading(true);
+    postEmail(email)
+      .then((res) => {
+        setEmailCode(""); //재전송 api
+        setEmailError(false);
+        setTimeLeft(MINUTES_IN_MS); // 시간 초기화
+        setLoading(false);
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
   };
 
   const BirthChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (value.length < 9) {
-      setBirth(e.target.value);
+      setBirthDate(e.target.value);
     }
   };
 
   const RegisterOk = () => {
+    postLocalRegister({ userId, password2, nickname, gender, email, birthDate })
+      .then((res) => {
+        console.log(res.data.data);
+        localStorage.setItem("accessToken", res.data.data.accessToken);
+        localStorage.setItem("refreshToken", res.data.data.refreshToken);
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
+
     //회원가입 api 발동과 동시에 회원가입 완료 되었다는 모달창 띄우기
   };
 
@@ -255,7 +304,7 @@ const Register = () => {
       duplicateNickname &&
       !emailError &&
       emailcodeCheck &&
-      birth &&
+      birthDate &&
       gender
     ) {
       setRegisterFlag(false);
@@ -284,12 +333,13 @@ const Register = () => {
     duplicateNickname,
     emailError,
     emailcodeCheck,
-    birth,
+    birthDate,
     gender,
   ]);
 
   return (
     <Container>
+      {loading ? <Loading /> : ""}
       <RegisterTitle>
         <img
           src={logo}
@@ -312,7 +362,6 @@ const Register = () => {
                 errorLine={errorIdLine}
               />
               <DuplicateBtn
-                disabled={duplicate}
                 className={duplicateShow ? "title" : ""}
                 onClick={DuplicateCheck}
               >
@@ -396,7 +445,7 @@ const Register = () => {
                 errorLine={errorNicknameLine}
               />
               <DuplicateBtn
-                disabled={duplicateNickname}
+                //disabled={duplicateNickname} // 성공하면 바꿀 수 없게
                 className={duplicateShowNickname ? "title" : ""}
                 onClick={DuplicateCheckNickname}
               >
@@ -447,7 +496,7 @@ const Register = () => {
                   placeholder="인증코드 6자리 입력"
                   errorLine={emailcodeError}
                 />
-                <div className="timer">
+                <div className={emailcodeCheck ? "none" : "timer"}>
                   {minutes}:{second}
                 </div>
                 <EmailCodeCheckBtn
@@ -489,7 +538,7 @@ const Register = () => {
             <div className="inputBirth">
               <Input
                 type="text"
-                value={birth}
+                value={birthDate}
                 onChange={BirthChange}
                 placeholder="ex) 20010412"
               />

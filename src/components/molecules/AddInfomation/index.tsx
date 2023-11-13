@@ -1,6 +1,11 @@
 import { ChangeEvent, useEffect, useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+
+import { getDuplicateNickname, putKakaoRegister } from "@/apis";
 import Input from "@/components/atoms/input";
+import { accessTokenState } from "@/recoil/atoms";
 
 import {
   BirthBox,
@@ -15,6 +20,8 @@ import { AddInfoBox, Container, Title } from "./style";
 const addInfoText = "회원 가입을 위한\n추가 정보를 입력해주세요.";
 
 const AddInfomation = () => {
+  const navigate = useNavigate();
+  const accessToken = useRecoilValue(accessTokenState);
   const [nickname, setNickname] = useState<string>("");
   const [duplicateShowNickname, setDuplicateShowNickname] = useState<boolean>(false);
   const [duplicateNickname, setDuplicateNickname] = useState<boolean>(false);
@@ -37,14 +44,19 @@ const AddInfomation = () => {
     // api 요청해야함. 요청이 오면
     // if 성공이 오면 듀플리케이트 값 true로 하고 show true
 
-    if (!duplicateNickname) {
-      setDuplicateNickname(true);
-      setDuplicateShowNickname(true); // 일단 버튼을 누르면 hide 클래스 제거
-    } else {
-      setDuplicateNickname(false);
-      setDuplicateShowNickname(true); // 일단 버튼을 누르면 hide 클래스 제거
-      setErrorNicknameLine(true); //에러 라인 전달
-    }
+    getDuplicateNickname(nickname)
+      .then((res) => {
+        console.log(res);
+        if (!res.data.data.isDuplicated) {
+          setDuplicateNickname(true);
+          setDuplicateShowNickname(true); // 일단 버튼을 누르면 hide 클래스 제거
+        } else {
+          setDuplicateNickname(false);
+          setDuplicateShowNickname(true); // 일단 버튼을 누르면 hide 클래스 제거
+          setErrorNicknameLine(true); //에러 라인 전달
+        }
+      })
+      .catch((err) => console.log(err));
   };
   const BirthChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -53,6 +65,15 @@ const AddInfomation = () => {
     }
   };
   const RegisterOk = () => {
+    putKakaoRegister({ nickname, birth, gender, accessToken })
+      .then((res) => {
+        console.log(res.data.data);
+        localStorage.setItem("accessToken", res.data.data.accessToken);
+        localStorage.setItem("refreshToken", res.data.data.refreshToken);
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
+
     console.log("aa");
     //추가정보 기입 api 발동과 동시에 회원가입 완료 되었다는 모달창 띄우기
   };
@@ -83,7 +104,6 @@ const AddInfomation = () => {
               errorLine={errorNicknameLine}
             />
             <DuplicateBtn
-              disabled={duplicateNickname}
               className={duplicateShowNickname ? "title" : ""}
               onClick={DuplicateCheckNickname}
             >
