@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { emailCodeType, localRegisterType, loginType } from "@/types";
+import { addRegisterType, emailCodeType, localRegisterType, loginType } from "@/types";
 
 const GwangjangAxios = axios.create({
   baseURL: "https://api.gwang-jang.co.kr",
@@ -13,6 +13,11 @@ export const postLocalLogin = async ({ id, pw }: loginType) => {
 
 export const postKakaoLogin = async (Code: string | null) => {
   const res = await GwangjangAxios.post("/member/auth/signIn/kakao", { token: Code });
+  return res;
+};
+
+export const getDuplicateId = async (userId: string) => {
+  const res = await GwangjangAxios.get(`/member/auth/loginId/${userId}`);
   return res;
 };
 
@@ -31,7 +36,7 @@ export const postEmailCode = async ({ email, emailCode }: emailCodeType) => {
   return res;
 };
 
-export const putLocalRegister = async ({
+export const postLocalRegister = async ({
   userId,
   password2,
   nickname,
@@ -39,7 +44,7 @@ export const putLocalRegister = async ({
   email,
   birthDate,
 }: localRegisterType) => {
-  const res = await GwangjangAxios.put("/member/auth/signUp/local", {
+  const res = await GwangjangAxios.post("/member/auth/signUp", {
     id: userId,
     pw: password2,
     nickname,
@@ -47,5 +52,27 @@ export const putLocalRegister = async ({
     email,
     birthDate,
   });
+  return res;
+};
+
+export const putKakaoRegister = async ({
+  nickname,
+  gender,
+  birth,
+  accessToken,
+}: addRegisterType) => {
+  const res = await GwangjangAxios.put(
+    "/member/auth/signUp/kakao",
+    {
+      nickname,
+      gender,
+      birthDate: birth,
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }
+  );
   return res;
 };
