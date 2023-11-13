@@ -1,60 +1,54 @@
-import Slider from "react-slick";
-import { useRecoilValue } from "recoil";
 import styled from "styled-components";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { SeeMore } from "@/components/atoms/more";
+import { Title } from "@/components/atoms/title";
+import { TopicCarousel } from "@/components/molecules/carousel/TopicCarousel";
 import { CategoryFilter } from "@/components/molecules/categoryFilter";
-import { SlideItem } from "@/components/molecules/slideItem";
-import { filteredDataSelector } from "@/recoil/atoms";
 
 export const LoginTopic = () => {
-  const filteredData = useRecoilValue(filteredDataSelector);
-
-  const maxSlidesToShow = Math.min(filteredData.length, 4);
-
-  const SliderSetting = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: maxSlidesToShow,
-  };
-
   return (
-    <>
-      <CategorySlideWrapper>
-        <CategoryFilter />
-        <StyledSlider {...SliderSetting}>
-          {filteredData.map((data, idx) => (
-            <SlideItemWrapper key={idx}>
-              <SlideItem
-                title={data.title}
-                type={data.type}
-                date={data.date}
-              />
-            </SlideItemWrapper>
-          ))}
-        </StyledSlider>
-      </CategorySlideWrapper>
-    </>
+    <Background>
+      <div className="inner">
+        <Title title="나의 관심 주제" />
+      </div>
+      <div className="inner">
+        <CategoryFilter />{" "}
+      </div>
+      <TopicCarousel />
+      <div className="inner">
+        <SeeMore
+          text="관심 콘텐츠 더보기"
+          path="/login"
+        />
+      </div>
+    </Background>
   );
 };
 
-const StyledSlider = styled(Slider)`
-  width: 1080px;
-  display: flex;
-  margin: 0 auto;
-  gap: 24px;
-  background-color: pink;
-`;
-
-const SlideItemWrapper = styled.div`
-  display: flex;
-`;
-
-const CategorySlideWrapper = styled.div`
+const Background = styled.div`
+  background: var(--Gray2_100);
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
+  padding: 50px 0px;
+
+  .inner {
+    width: 1080px;
+    margin: 0 auto;
+
+    @media (max-width: 1080px) {
+      display: flex;
+      width: 770px;
+      justify-content: center;
+    }
+    @media (max-width: 880px) {
+      width: 600px;
+    }
+    @media (max-width: 564px) {
+      width: 300px;
+    }
+  }
 `;
