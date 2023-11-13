@@ -17,3 +17,11 @@ export const WhiteTitleBox = styled.div`
   line-height: 34px; /* 141.667% */
   letter-spacing: -0.36px;
 `;
+
+export const SubTitleBox = styled.div`
+  color: var(--Gray9_800);
+  font-size: var(--text_h5);
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: -0.36px;
+`;
