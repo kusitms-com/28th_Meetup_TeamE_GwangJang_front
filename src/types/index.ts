@@ -16,6 +16,12 @@ export interface localRegisterType {
   email: string;
   birthDate: string;
 }
+export interface addRegisterType {
+  nickname: string;
+  gender: string;
+  birth: string;
+  accessToken: string;
+}
 
 export interface ButtonProps {
   children: React.ReactNode;
