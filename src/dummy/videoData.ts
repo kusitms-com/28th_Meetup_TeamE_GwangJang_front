@@ -1,0 +1,42 @@
+export const videoData = [
+  {
+    title: "지금 시각은 새벽 4시 2분입니다.",
+    type: "유튜브 영상",
+    image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+    date: "2023.10.24",
+    likeCount: 24,
+    quotCount: 39,
+  },
+  {
+    title: "지금 막 3분으로 넘어감",
+    type: "유튜브 영상",
+    image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+    date: "2023.10.24",
+    likeCount: 24,
+    quotCount: 39,
+  },
+  {
+    title: "SPC3",
+    type: "유튜브 영상",
+    image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+    date: "2023.10.24",
+    likeCount: 24,
+    quotCount: 39,
+  },
+  {
+    title: "SPC4",
+    type: "유튜브 영상",
+    image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+    date: "2023.10.24",
+    likeCount: 24,
+    quotCount: 39,
+  },
+  {
+    title: "SPC5",
+    type: "유튜브 영상",
+    image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+    date: "2023.10.24",
+    likeCount: 24,
+    quotCount: 39,
+  },
+];
