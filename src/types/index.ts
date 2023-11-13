@@ -52,10 +52,16 @@ export interface ContentDataProps {
 
 export interface SubjectProps {
   title: string;
-  subTitles: string[];
-  idx: number;
+  imgUrl: string;
+  subscribeCount: number;
+  category: string;
 }
-[];
+
+export interface ProfileProps {
+  nickname: string;
+  profileImg: string;
+  date: string;
+}
 
 export interface SlideItemProps {
   title: string;

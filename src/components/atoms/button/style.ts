@@ -52,9 +52,6 @@ export const CateButton = styled.button<CategoryButtonProps>`
   border-radius: 25px;
 
   border: none;
-  /* color: ${(props) => props.color};
-  background: ${(props) => props.background};
-  border: ${(props) => props.border}; */
 
   color: var(--White, #fff);
   text-align: center;
@@ -64,11 +61,11 @@ export const CateButton = styled.button<CategoryButtonProps>`
   letter-spacing: -0.24px;
 
   //
-  ${(props) =>
+  /* ${(props) =>
     props.color === "var(--White, #fff)" &&
     `
       color: ${props.isCorrect ? "#FFF" : "var(--Gray9_800)"};
       background: ${props.isCorrect ? "var(--Main_Blue)" : "#FFF"};
       border: ${props.isCorrect ? "1px solid var(--Main_Blue)" : "1px solid var(--Gray5_400)"};
-    `}
+    `} */
 `;
