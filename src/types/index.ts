@@ -95,3 +95,21 @@ export interface semiDataProps {
   type: string;
   date: string;
 }
+
+export interface ArticleDataProps {
+  data: {
+    title: string;
+    type: string;
+    date: string;
+    likeCount: number;
+    quotCount: number;
+  }[];
+}
+
+export interface ArticleItemProps {
+  title: string;
+  type: string;
+  date: string;
+  likeCount: number;
+  quotCount: number;
+}
