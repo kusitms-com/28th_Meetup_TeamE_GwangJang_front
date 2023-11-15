@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
 export const SlideWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  box-shadow: 0px 15px 35px 0px rgba(66, 66, 66, 0.05);
-
   .slide-container {
     flex-direction: column;
     width: 252px;
@@ -48,9 +43,20 @@ export const SlideWrapper = styled.div`
         letter-spacing: -0.24px;
       }
 
-      .text-date {
-        color: var(--Gray6_500, #959595);
-        font-size: var(--text_b3);
+      .last-text {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        .button-wrapper {
+          display: flex;
+          gap: 6px;
+        }
+
+        .text-date {
+          color: var(--Gray6_500, #959595);
+          font-size: var(--text_b3);
+        }
       }
     }
   }
