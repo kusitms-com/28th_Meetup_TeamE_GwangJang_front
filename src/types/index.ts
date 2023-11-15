@@ -77,3 +77,11 @@ export interface ProfileProps {
   profileImg: string;
   date: string;
 }
+
+export interface DetailTitleProps {
+  category: string;
+  title: string;
+  count: number;
+  oneline: string;
+  id: number;
+}
