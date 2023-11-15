@@ -1,22 +1,30 @@
-import temp from "@/assets/main_logo.svg";
-import { SlideItemProps } from "@/types";
+import { LikeBorderButton, QuotBorderButton } from "@/components/atoms/button";
+import { ArticleItemProps } from "@/types";
 
 import { SlideWrapper } from "./style";
 
-export const SlideItem = ({ title, type, date }: SlideItemProps) => {
+export const SlideItem = ({ data }: { data: ArticleItemProps }) => {
   return (
     <SlideWrapper>
       <div className="slide-container">
         <div className="slide-image">
           <img
-            src={temp}
+            src={data.image}
             alt="썸네일"
           />
         </div>
         <div className="slide-text">
-          <div className="text-type">{type}</div>
-          <div className="text-title">{title}</div>
-          <div className="text-date">{date}</div>
+          <div className="text-type">{data.type}</div>
+          <div className="text-title">{data.title}</div>
+          <div className="last-text">
+            <div className="text-date">{data.date}</div>
+            {data.likeCount !== undefined || data.quotCount !== undefined ? (
+              <div className="button-wrapper">
+                {data.likeCount !== undefined && <LikeBorderButton likeCount={data.likeCount} />}
+                {data.quotCount !== undefined && <QuotBorderButton likeCount={data.quotCount} />}
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </SlideWrapper>

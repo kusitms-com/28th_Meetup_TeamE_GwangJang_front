@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { NextArrowButton, PrevArrowButton } from "@/components/atoms/button";
 import { ArticleDataProps } from "@/types";
 
-import { ArticleItem } from "../articleItem";
+import { SlideItem } from "../slideItem";
 
 export const ArticleCarousel = ({ data }: ArticleDataProps) => {
   const maxSlidesToShow = Math.min(data.length, 4);
@@ -63,13 +63,7 @@ export const ArticleCarousel = ({ data }: ArticleDataProps) => {
       >
         {data.map((item, idx) => (
           <SlideItemWrapper key={idx}>
-            <ArticleItem
-              title={item.title}
-              type={item.type}
-              date={item.date}
-              likeCount={item.likeCount}
-              quotCount={item.quotCount}
-            />
+            <SlideItem data={item} />
           </SlideItemWrapper>
         ))}
       </StyledSlider>

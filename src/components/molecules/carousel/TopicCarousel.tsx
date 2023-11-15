@@ -8,8 +8,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { NextArrowButton, PrevArrowButton } from "@/components/atoms/button";
-import { SlideItem } from "@/components/molecules/slideItem";
+// import { SlideItem } from "@/components/molecules/slideItem";
 import { filteredDataSelector } from "@/recoil/atoms";
+
+import { SlideItem } from "../slideItem";
 
 export const TopicCarousel = () => {
   const filteredData = useRecoilValue(filteredDataSelector);
@@ -65,11 +67,7 @@ export const TopicCarousel = () => {
       >
         {filteredData.map((data, idx) => (
           <SlideItemWrapper key={idx}>
-            <SlideItem
-              title={data.title}
-              type={data.type}
-              date={data.date}
-            />
+            <SlideItem data={data} />
           </SlideItemWrapper>
         ))}
       </StyledSlider>
