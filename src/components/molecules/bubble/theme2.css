@@ -1,0 +1,54 @@
+@import "https://code.highcharts.com/css/highcharts.css";
+.highcharts-root:has(.highcharts-bubble-series) {
+  position: relative;
+  /* left: -100px; */
+}
+div[data-highcharts-chart="0"] {
+  position: relative;
+  left: -45px;
+}
+
+.highcharts-title {
+  display: none;
+}
+.highcharts-bubble-series .highcharts-point {
+  fill-opacity: 0.8 !important;
+  fill: #212121 !important;
+  stroke: #212121 !important;
+}
+.highcharts-series-hover .highcharts-color-0,
+.highcharts-series-hover .highcharts-color-1,
+.highcharts-series-hover .highcharts-color-2,
+.highcharts-series-hover .highcharts-color-3,
+.highcharts-series-hover .highcharts-color-4,
+.highcharts-series-hover .highcharts-color-5,
+.highcharts-series-hover .highcharts-color-6,
+.highcharts-series-hover .highcharts-color-7,
+.highcharts-series-hover .highcharts-color-8,
+.highcharts-series-hover .highcharts-color-9 {
+  fill: var(--highcharts-color-2);
+  stroke: var(--highcharts-color-2);
+}
+
+.highcharts-color-0,
+.highcharts-color-1,
+.highcharts-color-2,
+.highcharts-color-3,
+.highcharts-color-4,
+.highcharts-color-5,
+.highcharts-color-6,
+.highcharts-color-7,
+.highcharts-color-8,
+.highcharts-color-9 {
+  fill: var(--highcharts-color-2) !important;
+  stroke: var(--highcharts-color-2) !important;
+}
+
+.highcharts-grid-line {
+  stroke-width: 0;
+}
+
+.highcharts-axis-labels,
+.highcharts-axis {
+  display: none;
+}
