@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const SlideWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+
   .slide-container {
     flex-direction: column;
     width: 252px;

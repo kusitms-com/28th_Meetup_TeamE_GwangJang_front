@@ -79,6 +79,20 @@ export const TopicCarousel = () => {
   );
 };
 
+const CategorySlideWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  justify-content: center;
+  width: 1120px;
+  margin: 0 auto;
+
+  @media (max-width: 1400px) {
+    width: 80%;
+  }
+`;
+
 const StyledSlider = styled(Slider)`
   width: 1080px;
   display: flex;
@@ -86,8 +100,8 @@ const StyledSlider = styled(Slider)`
   margin: 0 auto;
   gap: 24px;
 
-  @media (max-width: 1080px) {
-    width: 75%;
+  @media (max-width: 1360px) {
+    width: 100%;
   }
 `;
 
@@ -97,25 +111,8 @@ const SlideItemWrapper = styled.div`
 
 const ArrowContainer = styled.div`
   display: flex;
-  width: 72%;
-  /* width: 1200px; */
+  width: 100%;
   justify-content: space-between;
+  align-items: center;
   position: absolute;
-  top: 40%;
-  /* left: 12.43%; */
-  left: 14%;
-
-  margin: 0 auto;
-  @media (max-width: 1440px) {
-    width: 80%;
-    left: 10%;
-  }
-`;
-
-const CategorySlideWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  position: relative;
-  justify-content: center;
 `;
