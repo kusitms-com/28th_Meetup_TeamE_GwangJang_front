@@ -41,3 +41,20 @@ export const TestBtn = styled.button<ButtonProps>`
   line-height: 18px; /* 100% */
   margin-top: 40px;
 `;
+
+export const SubscribeBtn = styled.button`
+  border-radius: 85px;
+  border: 1px solid var(--Main_Blue, #0084ff);
+  display: flex;
+  padding: 15px 17px 15px 20px;
+  justify-content: center;
+  align-items: center;
+  color: var(--Main_Blue, #0084ff);
+  background-color: var(--White);
+  font-size: var(--text_b1);
+  font-weight: 600;
+  line-height: 18px;
+  gap: 5px;
+  box-sizing: content-box;
+  cursor: pointer;
+`;
