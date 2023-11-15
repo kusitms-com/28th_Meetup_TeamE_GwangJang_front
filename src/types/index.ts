@@ -100,6 +100,7 @@ export interface ArticleDataProps {
   data: {
     title: string;
     type: string;
+    image: string;
     date: string;
     likeCount: number;
     quotCount: number;
@@ -109,7 +110,8 @@ export interface ArticleDataProps {
 export interface ArticleItemProps {
   title: string;
   type: string;
+  image?: string;
   date: string;
-  likeCount: number;
-  quotCount: number;
+  likeCount?: number;
+  quotCount?: number;
 }
