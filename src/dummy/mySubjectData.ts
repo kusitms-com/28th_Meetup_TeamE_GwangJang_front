@@ -51,6 +51,12 @@ export const mySubjectData = {
           image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
           date: "2023.10.24",
         },
+        {
+          title: "쿠팡 노동자 사망3",
+          type: "기사",
+          image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+          date: "2023.10.24",
+        },
       ],
     },
     {
@@ -64,6 +70,12 @@ export const mySubjectData = {
         },
         {
           title: "이태원 참사2",
+          type: "기사",
+          image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+          date: "2023.10.24",
+        },
+        {
+          title: "이태원 참사3",
           type: "기사",
           image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
           date: "2023.10.24",
@@ -87,6 +99,12 @@ export const mySubjectData = {
         },
         {
           title: "후쿠시마 오염수3",
+          type: "기사",
+          image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+          date: "2023.10.24",
+        },
+        {
+          title: "후쿠시마 오염수4",
           type: "기사",
           image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
           date: "2023.10.24",
