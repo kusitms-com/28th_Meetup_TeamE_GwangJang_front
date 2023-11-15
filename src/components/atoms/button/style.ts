@@ -68,6 +68,11 @@ export const PrevArrow = styled.div`
   position: relative;
   display: flex;
   z-index: 1;
+
+  img {
+    border-radius: 100%;
+    box-shadow: 0px 15px 35px 0px rgba(66, 66, 66, 0.15);
+  }
 `;
 
 export const NextArrow = styled.div`
@@ -75,6 +80,11 @@ export const NextArrow = styled.div`
   position: relative;
   display: flex;
   z-index: 1;
+
+  img {
+    border-radius: 100%;
+    box-shadow: 0px 15px 35px 0px rgba(66, 66, 66, 0.15);
+  }
 `;
 
 export const BorderStyleButton = styled.div`
