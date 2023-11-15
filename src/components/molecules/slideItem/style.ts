@@ -21,30 +21,37 @@ export const SlideWrapper = styled.div`
 
     .slide-text {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       gap: 8px;
       flex-direction: column;
       height: 50%;
-      padding: 18px;
+      padding: 14px 18px;
       box-sizing: border-box;
       line-height: 14px;
       letter-spacing: -0.21px;
 
-      .text-type {
-        color: var(--Main_Blue);
-        font-weight: 600;
-        font-size: var(--text_b3);
-      }
+      .top-text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        overflow: hidden;
 
-      .text-title {
-        color: var(--Gray10_900);
-        font-size: var(--text_b2);
-        line-height: 24px;
-        letter-spacing: -0.24px;
+        .text-type {
+          color: var(--Main_Blue);
+          font-weight: 600;
+          font-size: var(--text_b3);
+        }
+
+        .text-title {
+          color: var(--Gray10_900);
+          font-size: var(--text_b2);
+          line-height: 24px;
+          letter-spacing: -0.24px;
+        }
       }
 
       .last-text {
-        align-items: center;
+        align-items: flex-end;
         display: flex;
         justify-content: space-between;
 

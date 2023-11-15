@@ -14,8 +14,10 @@ export const SlideItem = ({ data }: { data: ArticleItemProps }) => {
           />
         </div>
         <div className="slide-text">
-          <div className="text-type">{data.type}</div>
-          <div className="text-title">{data.title}</div>
+          <div className="top-text">
+            <div className="text-type">{data.type}</div>
+            <div className="text-title">{data.title}</div>
+          </div>
           <div className="last-text">
             <div className="text-date">{data.date}</div>
             {data.likeCount !== undefined || data.quotCount !== undefined ? (
