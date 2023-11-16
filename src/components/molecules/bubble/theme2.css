@@ -1,11 +1,9 @@
 @import "https://code.highcharts.com/css/highcharts.css";
 .highcharts-root:has(.highcharts-bubble-series) {
   position: relative;
-  /* left: -100px; */
 }
 div[data-highcharts-chart="0"] {
   position: relative;
-  left: -45px;
 }
 
 .highcharts-title {
@@ -14,7 +12,8 @@ div[data-highcharts-chart="0"] {
 .highcharts-bubble-series .highcharts-point {
   fill-opacity: 0.8 !important;
   fill: #212121 !important;
-  stroke: #212121 !important;
+  stroke: #08c76b !important;
+  filter: drop-shadow(0px 6px 30px rgba(26, 226, 118, 0.3)) !important;
 }
 .highcharts-series-hover .highcharts-color-0,
 .highcharts-series-hover .highcharts-color-1,
@@ -26,7 +25,7 @@ div[data-highcharts-chart="0"] {
 .highcharts-series-hover .highcharts-color-7,
 .highcharts-series-hover .highcharts-color-8,
 .highcharts-series-hover .highcharts-color-9 {
-  fill: var(--highcharts-color-2);
+  fill: none;
   stroke: var(--highcharts-color-2);
 }
 
@@ -40,7 +39,7 @@ div[data-highcharts-chart="0"] {
 .highcharts-color-7,
 .highcharts-color-8,
 .highcharts-color-9 {
-  fill: var(--highcharts-color-2) !important;
+  fill: rgba(26, 226, 118, 0.75) !important;
   stroke: var(--highcharts-color-2) !important;
 }
 
