@@ -3,6 +3,7 @@ import HighchartsMore from "highcharts/highcharts-more";
 import HighchartsAccessibility from "highcharts/modules/accessibility";
 import HighchartsExporting from "highcharts/modules/exporting";
 import HighchartsReact from "highcharts-react-official";
+import styled from "styled-components";
 
 import backgroundImg from "@/assets/Bubble/detail-bubbleBackground.svg";
 HighchartsExporting(Highcharts);
@@ -17,8 +18,9 @@ const Bubble = () => {
       type: "bubble",
       plotBorderWidth: 0,
       height: 500,
-      width: 1190,
-      marginLeft: 100,
+      width: 1080,
+      marginLeft: 0,
+      marginRight: 0,
       plotBackgroundImage: backgroundImg,
     },
 
@@ -75,12 +77,25 @@ const Bubble = () => {
     },
   };
 
+  const aa = false; // 임시로 테스트
+
   return (
-    <HighchartsReact
-      highcharts={Highcharts}
-      options={options}
-    />
+    <Container $aa={aa}>
+      <HighchartsReact
+        highcharts={Highcharts}
+        options={options}
+      />
+    </Container>
   );
 };
 
 export default Bubble;
+
+const Container = styled.div<{ $aa: boolean }>`
+  .highcharts-bubble-series .highcharts-point {
+    filter: ${(props) =>
+      props.$aa
+        ? "drop-shadow(0px 6px 30px rgba(26, 226, 118, 1)) !important;"
+        : "drop-shadow(0px 6px 30px rgba(26, 226, 118, 0.3)) !important;"};
+  }
+`;
