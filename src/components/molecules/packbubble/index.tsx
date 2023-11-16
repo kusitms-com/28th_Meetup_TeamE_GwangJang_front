@@ -76,8 +76,7 @@ const PackBubble = () => {
           click: function (e: any) {
             console.log(e.point.name);
             navigate("/detail");
-            window.location.reload();
-            setWidth(width - 100); // 반응형 할 때, 사용 임시
+            //setWidth(width - 100); // 반응형 할 때, 사용 임시
           },
         },
         dataLabels: {
