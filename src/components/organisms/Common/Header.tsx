@@ -36,7 +36,8 @@ const Header = () => {
   useEffect(() => {
     const urlSplit = document.location.href.split("/");
     setLink(urlSplit[urlSplit.length - 1]);
-  }, [link]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [link, document.location.href]);
   return (
     <Container $link={link}>
       <Inner>
@@ -74,7 +75,7 @@ const Header = () => {
               </div>
               <div
                 className="register"
-                onClick={() => SpaceTo("/register")}
+                onClick={() => SpaceTo("/detail")}
               >
                 회원가입
               </div>
