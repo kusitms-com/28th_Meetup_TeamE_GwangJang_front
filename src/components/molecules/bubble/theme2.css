@@ -39,7 +39,7 @@ div[data-highcharts-chart="0"] {
 .highcharts-color-7,
 .highcharts-color-8,
 .highcharts-color-9 {
-  fill: rgba(26, 226, 118, 0.75) !important;
+  fill: rgba(26, 226, 118, 0.8) !important;
   stroke: var(--highcharts-color-2) !important;
 }
 
