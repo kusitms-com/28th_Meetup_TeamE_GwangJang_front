@@ -22,8 +22,13 @@ export const SlideItem = ({ data }: { data: ArticleItemProps }) => {
             <div className="text-date">{data.date}</div>
             {data.likeCount !== undefined || data.quotCount !== undefined ? (
               <div className="button-wrapper">
-                {data.likeCount !== undefined && <LikeBorderButton likeCount={data.likeCount} />}
-                {data.quotCount !== undefined && <QuotBorderButton likeCount={data.quotCount} />}
+                {data.likeCount !== undefined && (
+                  <LikeBorderButton
+                    likeCount={data.likeCount}
+                    initialLikeStatus="true"
+                  />
+                )}
+                {data.quotCount !== undefined && <QuotBorderButton quotCount={data.quotCount} />}
               </div>
             ) : null}
           </div>

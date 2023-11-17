@@ -79,20 +79,8 @@ export interface SubjectProps {
 }
 
 export interface ProfileProps {
-  nickname: string;
-  profileImg: string;
-  date: string;
-}
-
-export interface SlideItemProps {
-  title: string;
-  type: string;
-  date: string;
-}
-
-export interface semiDataProps {
-  title: string;
-  type: string;
+  nickname?: string;
+  profileImg?: string;
   date: string;
 }
 
@@ -114,4 +102,26 @@ export interface ArticleItemProps {
   date: string;
   likeCount?: number;
   quotCount?: number;
+}
+
+export interface CategoryBarProps {
+  onSelectTab: (idx: number) => void;
+}
+
+export interface CommunityItemProps {
+  id: number;
+  communityText: string;
+  date: string;
+  writerId: string;
+  nickname: string;
+  profileImg: string;
+  area: string;
+  subject: string;
+  keyword: string;
+  likeCount: number;
+  commentCount: number;
+  contentsId: number;
+  contents: null;
+  likeStatus: string;
+  quotText: string;
 }
