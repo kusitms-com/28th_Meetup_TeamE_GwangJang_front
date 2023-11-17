@@ -13,9 +13,14 @@ export const SeeMore = ({ text, path }: SeeMoreProps) => {
   };
 
   return (
-    <MoreBox onClick={onClick}>
-      <div>{text}</div>
-      <MdOutlineNavigateNext className="next-icon" />
+    <MoreBox>
+      <div
+        className="onClick-item"
+        onClick={onClick}
+      >
+        <div>{text}</div>
+        <MdOutlineNavigateNext className="next-icon" />
+      </div>
     </MoreBox>
   );
 };
