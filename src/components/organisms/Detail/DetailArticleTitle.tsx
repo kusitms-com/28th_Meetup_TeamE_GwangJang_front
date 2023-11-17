@@ -3,7 +3,7 @@ import styled from "styled-components";
 import bg from "@/assets/DetailTitle/detail-background.png";
 import DetailTitle from "@/components/molecules/DetailTitle";
 import { detailTitleData } from "@/dummy/detailTitleData";
-const DetailArticleTitle = () => {
+export const DetailArticleTitle = () => {
   return (
     <Container>
       <img
@@ -16,8 +16,6 @@ const DetailArticleTitle = () => {
     </Container>
   );
 };
-
-export default DetailArticleTitle;
 
 export const Container = styled.div`
   width: 100%;

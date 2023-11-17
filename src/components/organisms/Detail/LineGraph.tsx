@@ -3,7 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 import arrow from "@/assets/bottom_arrow.svg";
-const LineGraph = () => {
+export const LineGraph = () => {
   const [showGraph, setShowGraph] = useState<boolean>(false);
   return (
     <Container>
@@ -29,8 +29,6 @@ const LineGraph = () => {
     </Container>
   );
 };
-
-export default LineGraph;
 
 const Container = styled.div`
   width: 100%; // 기본 100%  반응형 작업할 때 400Px로 잡기

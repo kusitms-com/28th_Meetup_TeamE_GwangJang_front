@@ -1,9 +1,9 @@
+import { BubbleGraph } from "@/components/organisms/Detail/BubbleGraph";
+import { DetailArticleTitle } from "@/components/organisms/Detail/DetailArticleTitle";
+import { KeywordArticle } from "@/components/organisms/Detail/KeywordArticle";
+import { LineGraph } from "@/components/organisms/Detail/LineGraph";
+import { KeywordVideo } from "@/components/organisms/Detail/keywordVideo";
 import { CommunityPreview } from "@/components/organisms/SubjectDetail/CommunityPreview";
-import BubbleGraph from "@/components/organisms/detail/BubbleGraph";
-import DetailArticleTitle from "@/components/organisms/detail/DetailArticleTitle";
-import { KeywordArticle } from "@/components/organisms/detail/KeywordArticle";
-import LineGraph from "@/components/organisms/detail/LineGraph";
-import { KeywordVideo } from "@/components/organisms/detail/keywordVideo";
 
 const DetailPage = () => {
   return (

@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Bubble from "@/components/molecules/bubble";
-const BubbleGraph = () => {
+export const BubbleGraph = () => {
   const Month = [1, 2, 3, 4, 5, 6];
 
   return (
@@ -25,8 +25,6 @@ const BubbleGraph = () => {
     </Container>
   );
 };
-
-export default BubbleGraph;
 
 const Container = styled.div`
   width: 100%; // 기본 100%  반응형 작업할 때 400Px로 잡기
