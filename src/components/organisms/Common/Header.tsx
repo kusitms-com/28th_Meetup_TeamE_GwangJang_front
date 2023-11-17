@@ -75,7 +75,7 @@ const Header = () => {
               </div>
               <div
                 className="register"
-                onClick={() => SpaceTo("/detail")}
+                onClick={() => SpaceTo("/register")}
               >
                 회원가입
               </div>
