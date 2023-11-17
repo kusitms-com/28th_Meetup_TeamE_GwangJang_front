@@ -17,6 +17,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 160px;
   }
   .subscribeText {
     color: var(--Gray7_600, #757575);
