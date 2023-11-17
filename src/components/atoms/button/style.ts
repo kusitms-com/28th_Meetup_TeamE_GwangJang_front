@@ -42,15 +42,15 @@ export const TestBtn = styled.button<ButtonProps>`
   margin-top: 40px;
 `;
 
-export const SubscribeBtn = styled.button`
+export const SubscribeBtn = styled.button<{ $onOff: boolean }>`
   border-radius: 85px;
-  border: 1px solid var(--Main_Blue, #0084ff);
+  border: ${({ $onOff }) => (!$onOff ? "1px solid var(--Main_Blue)" : "none")};
   display: flex;
-  padding: 15px 17px 15px 20px;
+  padding: ${({ $onOff }) => (!$onOff ? "15px 17px 15px 20px" : "16px 53px 16px 55px")};
   justify-content: center;
   align-items: center;
-  color: var(--Main_Blue, #0084ff);
-  background-color: var(--White);
+  color: ${({ $onOff }) => (!$onOff ? "var(--Main_Blue, #0084ff)" : "var(--Gray6_500)")};
+  background-color: ${({ $onOff }) => (!$onOff ? "var(--White)" : "var(--Gray3_200, #EEE)")};
   font-size: var(--text_b1);
   font-weight: 600;
   line-height: 18px;

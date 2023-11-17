@@ -3,7 +3,7 @@ import commentImg from "@/assets/comment.svg";
 import likeImg from "@/assets/like.svg";
 import plus from "@/assets/plus_blue.svg";
 import prevImg from "@/assets/prevArrowImg.svg";
-import { ButtonProps, CategoryButtonProps } from "@/types/index.ts";
+import { ButtonProps, CategoryButtonProps, SubscribeButtonProps } from "@/types/index.ts";
 
 import {
   BorderStyleButton,
@@ -47,16 +47,25 @@ export const CommentButton = ({ commentCount }: { commentCount: number }) => {
   );
 };
 
-export const SubscribeButton = () => {
+export const SubscribeButton = ({ onClick, onOff }: SubscribeButtonProps) => {
   return (
-    <SubscribeBtn>
-      <div>주제 구독하기</div>
-      <img
-        className="plus"
-        src={plus}
-        alt="+"
-        width={14}
-      />
+    <SubscribeBtn
+      onClick={onClick}
+      $onOff={onOff}
+    >
+      {!onOff ? (
+        <>
+          <div>주제 구독하기</div>
+          <img
+            className="plus"
+            src={plus}
+            alt="+"
+            width={14}
+          />
+        </>
+      ) : (
+        <div>구독 중</div>
+      )}
     </SubscribeBtn>
   );
 };
