@@ -67,3 +67,26 @@ export const BigUserInfo = styled.div`
     }
   }
 `;
+
+export const LongUserInfo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: var(--text_cap1);
+  text-align: center;
+  img {
+    border-radius: 24px;
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+  }
+
+  .user-nickname {
+    color: var(--Gray9_800, #424242);
+  }
+
+  .content-date {
+    color: var(--Gray5_400, #bdbdbd);
+    padding-top: 1px;
+  }
+`;
