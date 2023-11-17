@@ -13,7 +13,6 @@ const formatDate = (inputDate: string) => {
   return formattedDate;
 };
 
-
 export const Profile = ({ nickname, profileImg, date }: ProfileProps) => {
   profileImg = temp;
 
@@ -33,7 +32,6 @@ export const Profile = ({ nickname, profileImg, date }: ProfileProps) => {
   );
 };
 
-
 export const LongProfile = ({ nickname, profileImg, date }: ProfileProps) => {
   profileImg = temp;
 
@@ -46,6 +44,8 @@ export const LongProfile = ({ nickname, profileImg, date }: ProfileProps) => {
       <p className="user-nickname">{nickname}</p>
       <p className="content-date">{date}</p>
     </LongUserInfo>
+  );
+};
 
 export const BigProfile = ({ nickname, profileImg, date }: ProfileProps) => {
   profileImg = temp;
@@ -62,6 +62,5 @@ export const BigProfile = ({ nickname, profileImg, date }: ProfileProps) => {
         <p className="content-date">{formattedDate}</p>
       </div>
     </BigUserInfo>
-
   );
 };
