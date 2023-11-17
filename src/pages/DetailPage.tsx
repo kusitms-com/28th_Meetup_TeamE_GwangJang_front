@@ -1,11 +1,11 @@
 import BubbleGraph from "@/components/organisms/Detail/BubbleGraph";
-import DetailArticleTtile from "@/components/organisms/Detail/DetailArticleTtile";
+import DetailArticleTitle from "@/components/organisms/Detail/DetailArticleTitle";
 import LineGraph from "@/components/organisms/Detail/LineGraph";
 
 const DetailPage = () => {
   return (
     <>
-      <DetailArticleTtile />
+      <DetailArticleTitle />
       <BubbleGraph />
       <LineGraph />
     </>
