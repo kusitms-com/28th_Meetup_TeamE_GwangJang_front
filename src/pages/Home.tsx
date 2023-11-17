@@ -1,11 +1,11 @@
+import { KeywordArticle } from "@/components/organisms/Detail/KeywordArticle";
+import { KeywordVideo } from "@/components/organisms/Detail/keywordVideo";
 import BubbleChart from "@/components/organisms/Home/BubbleChart";
 import DiscussedTopics from "@/components/organisms/Home/DiscussedTopics";
 import { LoginTopic } from "@/components/organisms/Home/LoginTopic";
 import { MainCommunity } from "@/components/organisms/Home/MainCommunity";
 import { MainContent } from "@/components/organisms/Home/MainContent";
 import { MainTopic } from "@/components/organisms/Home/MainTopic";
-import { KeywordArticle } from "@/components/organisms/detail/KeywordArticle";
-import { KeywordVideo } from "@/components/organisms/detail/keywordVideo";
 
 import { SubjectDetailPage } from "./SubjectDetailPage";
 
