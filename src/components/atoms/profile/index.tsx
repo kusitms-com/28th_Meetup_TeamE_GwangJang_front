@@ -1,10 +1,23 @@
 import temp from "@/assets/react.svg";
 import { ProfileProps } from "@/types";
 
-import { LongUserInfo, UserInfo } from "./style";
+import { BigUserInfo, UserInfo, LongUserInfo } from "./style";
+
+const formatDate = (inputDate: string) => {
+  if (!inputDate) {
+    return "";
+  }
+  console.log("실행");
+  const date = new Date(inputDate);
+  const formattedDate = date.toLocaleDateString();
+  return formattedDate;
+};
+
 
 export const Profile = ({ nickname, profileImg, date }: ProfileProps) => {
   profileImg = temp;
+
+  const formattedDate = formatDate(date);
 
   return (
     <UserInfo>
@@ -14,11 +27,12 @@ export const Profile = ({ nickname, profileImg, date }: ProfileProps) => {
       />
       <div>
         <p className="user-nickname">{nickname}</p>
-        <p className="content-date">{date}</p>
-      </div>{" "}
+        <p className="content-date">{formattedDate}</p>
+      </div>
     </UserInfo>
   );
 };
+
 
 export const LongProfile = ({ nickname, profileImg, date }: ProfileProps) => {
   profileImg = temp;
@@ -32,5 +46,22 @@ export const LongProfile = ({ nickname, profileImg, date }: ProfileProps) => {
       <p className="user-nickname">{nickname}</p>
       <p className="content-date">{date}</p>
     </LongUserInfo>
+
+export const BigProfile = ({ nickname, profileImg, date }: ProfileProps) => {
+  profileImg = temp;
+  const formattedDate = formatDate(date);
+
+  return (
+    <BigUserInfo>
+      <img
+        src={profileImg}
+        alt=""
+      />
+      <div>
+        <p className="user-nickname">{nickname}</p>
+        <p className="content-date">{formattedDate}</p>
+      </div>
+    </BigUserInfo>
+
   );
 };

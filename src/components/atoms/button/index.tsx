@@ -1,10 +1,25 @@
+import { useState } from "react";
+
+import { BiCommentDetail } from "react-icons/bi";
+import { PiThumbsUpBold } from "react-icons/pi";
+
 import nextImg from "@/assets/NextArrowImg.svg";
 import commentImg from "@/assets/comment.svg";
 import likeImg from "@/assets/like.svg";
+import plus from "@/assets/plus_blue.svg";
 import prevImg from "@/assets/prevArrowImg.svg";
-import { ButtonProps, CategoryButtonProps } from "@/types/index.ts";
+import { ButtonProps, CategoryButtonProps, SubscribeButtonProps } from "@/types/index.ts";
 
-import { BorderStyleButton, CateButton, KakaoBtn, NextArrow, PrevArrow, TestBtn } from "./style.ts";
+import {
+  BorderStyleButton,
+  BorderStyleButtonTemp,
+  CateButton,
+  KakaoBtn,
+  NextArrow,
+  PrevArrow,
+  TestBtn,
+  SubscribeBtn,
+} from "./style.ts";
 
 export const KakaoButton = ({ children, onClick }: ButtonProps) => {
   return <KakaoBtn onClick={onClick}>{children}</KakaoBtn>;
@@ -35,6 +50,29 @@ export const CommentButton = ({ commentCount }: { commentCount: number }) => {
       />
       <p>{commentCount}</p>
     </div>
+  );
+};
+
+export const SubscribeButton = ({ onClick, onOff }: SubscribeButtonProps) => {
+  return (
+    <SubscribeBtn
+      onClick={onClick}
+      $onOff={onOff}
+    >
+      {!onOff ? (
+        <>
+          <div>주제 구독하기</div>
+          <img
+            className="plus"
+            src={plus}
+            alt="+"
+            width={14}
+          />
+        </>
+      ) : (
+        <div>구독 중</div>
+      )}
+    </SubscribeBtn>
   );
 };
 
@@ -71,23 +109,45 @@ export const NextArrowButton = ({ onClick }: { onClick?: () => void }) => {
   );
 };
 
-export const LikeBorderButton = ({ likeCount }: { likeCount: number }) => {
+export const LikeBorderButton = ({
+  likeCount,
+  initialLikeStatus,
+}: {
+  likeCount: number;
+  initialLikeStatus: string;
+}) => {
+  const isStatus = initialLikeStatus === "true";
+  const [likeStatus, setLikeStatus] = useState(isStatus);
+
+  const handleButtonClick = () => {
+    setLikeStatus((prevLikeStatus) => !prevLikeStatus);
+  };
+
+  return (
+    <BorderStyleButtonTemp
+      likeStatus={likeStatus}
+      onClick={handleButtonClick}
+    >
+      <PiThumbsUpBold />
+      <p>{likeCount}</p>
+    </BorderStyleButtonTemp>
+  );
+};
+
+export const QuotBorderButton = ({ quotCount }: { quotCount: number }) => {
   return (
     <BorderStyleButton>
-      <img
-        src={likeImg}
-        alt="좋아요"
-      />
-      <p>{likeCount}</p>
+      <div>인용</div>
+      <p>{quotCount}</p>
     </BorderStyleButton>
   );
 };
 
-export const QuotBorderButton = ({ likeCount }: { likeCount: number }) => {
+export const CommentBorderButton = ({ commentCount }: { commentCount: number }) => {
   return (
     <BorderStyleButton>
-      <div>인용</div>
-      <p>{likeCount}</p>
+      <BiCommentDetail />
+      <p>{commentCount}</p>
     </BorderStyleButton>
   );
 };

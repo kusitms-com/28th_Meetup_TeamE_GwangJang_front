@@ -42,6 +42,22 @@ export const TestBtn = styled.button<ButtonProps>`
   margin-top: 40px;
 `;
 
+export const SubscribeBtn = styled.button<{ $onOff: boolean }>`
+  border-radius: 85px;
+  border: ${({ $onOff }) => (!$onOff ? "1px solid var(--Main_Blue)" : "none")};
+  display: flex;
+  padding: ${({ $onOff }) => (!$onOff ? "15px 17px 15px 20px" : "16px 53px 16px 55px")};
+  justify-content: center;
+  align-items: center;
+  color: ${({ $onOff }) => (!$onOff ? "var(--Main_Blue, #0084ff)" : "var(--Gray6_500)")};
+  background-color: ${({ $onOff }) => (!$onOff ? "var(--White)" : "var(--Gray3_200, #EEE)")};
+  font-size: var(--text_b1);
+  font-weight: 600;
+  line-height: 18px;
+  gap: 5px;
+  box-sizing: content-box;
+  cursor: pointer;
+`;
 export const CateButton = styled.button<CategoryButtonProps>`
   cursor: pointer;
   display: flex;
@@ -97,6 +113,11 @@ export const BorderStyleButton = styled.div`
   line-height: 18px;
   letter-spacing: -0.18px;
   cursor: pointer;
+  align-items: center;
+
+  svg {
+    fill: var(--Gray6_500);
+  }
 
   div {
     color: var(--Gray7_600, #757575);
@@ -106,5 +127,57 @@ export const BorderStyleButton = styled.div`
   p {
     color: var(--Gray10_900);
     font-size: var(--text_cap1);
+  }
+
+  &:hover {
+    background-color: var(--Main_Blue);
+
+    svg {
+      fill: white;
+    }
+
+    div {
+      color: white;
+    }
+
+    p {
+      color: white;
+    }
+  }
+`;
+
+export const BorderStyleButtonTemp = styled.div<{ likeStatus: boolean }>`
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  padding: 7px;
+  border-radius: 4px;
+  border: ${(props) =>
+    props.likeStatus ? "1px solid var(--Main_Blue)" : "1px solid var(--Gray3_200)"};
+  line-height: 18px;
+  letter-spacing: -0.18px;
+  cursor: pointer;
+  align-items: center;
+
+  svg {
+    /* font-weight: 800; */
+    fill: ${(props) => (props.likeStatus ? "var(--Main_Blue)" : "var(--Gray6_500)")};
+  }
+
+  p {
+    color: ${(props) => (props.likeStatus ? "var(--Main_Blue)" : "var(--Gray10_900)")};
+    font-size: var(--text_cap1);
+  }
+
+  &:hover {
+    background-color: var(--Main_Blue);
+
+    svg {
+      fill: white;
+    }
+
+    p {
+      color: white;
+    }
   }
 `;

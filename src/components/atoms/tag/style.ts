@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Tag = styled.div<{ $category: string }>`
   display: inline-flex;
-  padding: 3px 10px;
+  padding: 5px 10px 3px;
   justify-content: center;
   align-items: center;
   border-radius: 55px;

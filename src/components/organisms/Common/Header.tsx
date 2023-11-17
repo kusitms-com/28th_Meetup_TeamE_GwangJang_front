@@ -1,16 +1,16 @@
-import { ChangeEvent, KeyboardEvent, useState } from "react";
+import { ChangeEvent, KeyboardEvent, useEffect, useState } from "react";
 
 import { IoSearch } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-import background from "@/assets/BubbleChart/header_bg.svg";
+import background from "@/assets/BubbleChart/header_bg.png";
 import logo from "@/assets/main_logo.svg";
 import { Inner } from "@/style/global";
 const Header = () => {
   const navigate = useNavigate();
   const [searchText, setSearchText] = useState<string>("");
-
+  const [link, setLink] = useState<string>("");
   const Search = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchText(value);
@@ -25,14 +25,21 @@ const Header = () => {
 
   const SpaceTo = (page: string) => {
     navigate(page);
+    // window.location.reload(); // 일단 임시로 해결
   };
   const LogOut = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
     window.location.reload();
   };
+
+  useEffect(() => {
+    const urlSplit = document.location.href.split("/");
+    setLink(urlSplit[urlSplit.length - 1]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [link, document.location.href]);
   return (
-    <Container>
+    <Container $link={link}>
       <Inner>
         <LeftHeader>
           <img
@@ -43,7 +50,7 @@ const Header = () => {
           />
           <div
             className="community"
-            onClick={() => SpaceTo("/")}
+            onClick={() => SpaceTo("/community")}
           >
             커뮤니티
           </div>
@@ -97,11 +104,13 @@ const Header = () => {
 
 export default Header;
 
-export const Container = styled.div`
-  background-image: url(${background});
+export const Container = styled.div<{ $link: string }>`
+  background-image: ${(props) => (props.$link ? "" : `url(${background})`)};
   display: flex;
   height: 60px;
   color: var(--Gray5_400);
+  background: ${(props) => (props.$link ? "rgba(33, 33, 33, 0.9);" : "")};
+  background-size: 100% 60px;
 `;
 export const LeftHeader = styled.div`
   display: flex;

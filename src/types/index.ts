@@ -34,6 +34,10 @@ export interface CategoryButtonProps {
   onClick?: () => void;
   isSelected: boolean;
 }
+export interface SubscribeButtonProps {
+  onClick?: () => void;
+  onOff: boolean;
+}
 
 export interface InputProps {
   value: string;
@@ -84,6 +88,14 @@ export interface ProfileProps {
   date: string;
 }
 
+export interface DetailTitleProps {
+  category: string;
+  title: string;
+  count: number;
+  oneline: string;
+  id: number;
+}
+
 export interface SlideItemProps {
   title: string;
   type: string;
@@ -93,6 +105,8 @@ export interface SlideItemProps {
 export interface semiDataProps {
   title: string;
   type: string;
+  nickname?: string;
+  profileImg?: string;
   date: string;
 }
 
@@ -114,4 +128,26 @@ export interface ArticleItemProps {
   date: string;
   likeCount?: number;
   quotCount?: number;
+}
+
+export interface CategoryBarProps {
+  onSelectTab: (idx: number) => void;
+}
+
+export interface CommunityItemProps {
+  id: number;
+  communityText: string;
+  date: string;
+  writerId: string;
+  nickname: string;
+  profileImg: string;
+  area: string;
+  subject: string;
+  keyword: string;
+  likeCount: number;
+  commentCount: number;
+  contentsId: number;
+  contents: null;
+  likeStatus: string;
+  quotText: string;
 }

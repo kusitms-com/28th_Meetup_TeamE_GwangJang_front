@@ -32,19 +32,19 @@ image[width="1420"] {
   stroke-width: 0;
 }
 
-.highcharts-series-0:hover .highcharts-point {
+.highcharts-series-0.highcharts-packedbubble-series:hover .highcharts-point {
   fill-opacity: 1;
   fill: #ff9900;
 }
-.highcharts-series-1:hover .highcharts-point {
+.highcharts-series-1.highcharts-packedbubble-series:hover .highcharts-point {
   fill-opacity: 1;
   fill: #957bff !important;
 }
-.highcharts-series-2:hover .highcharts-point {
+.highcharts-series-2.highcharts-packedbubble-series:hover .highcharts-point {
   fill-opacity: 1;
   fill: #1ae276 !important;
 }
-.highcharts-series-3:hover .highcharts-point {
+.highcharts-series-3.highcharts-packedbubble-series:hover .highcharts-point {
   fill-opacity: 1;
   fill: #0084ff !important;
 }
@@ -68,24 +68,26 @@ image[width="1420"] {
   stroke: transparent;
 }
 
-.highcharts-series-0 .highcharts-label.highcharts-data-label text {
+.highcharts-series-0.highcharts-packedbubble-series .highcharts-label.highcharts-data-label text {
   fill: #ff9900 !important;
   color: #ff9900 !important;
 }
-.highcharts-series-1 .highcharts-label.highcharts-data-label text {
+.highcharts-series-1.highcharts-packedbubble-series .highcharts-label.highcharts-data-label text {
   fill: #957bff !important;
   color: #957bff !important;
 }
-.highcharts-series-2 .highcharts-label.highcharts-data-label text {
+.highcharts-series-2.highcharts-packedbubble-series .highcharts-label.highcharts-data-label text {
   fill: #1ae276 !important;
   color: #1ae276 !important;
 }
-.highcharts-series-3 .highcharts-label.highcharts-data-label text {
+.highcharts-series-3.highcharts-packedbubble-series .highcharts-label.highcharts-data-label text {
   fill: #0084ff !important;
   color: #0084ff !important;
 }
 
-.highcharts-series-hover .highcharts-label.highcharts-data-label text {
+.highcharts-packedbubble-series.highcharts-series-hover
+  .highcharts-label.highcharts-data-label
+  text {
   color: #fff !important;
   fill: #fff !important;
 }
