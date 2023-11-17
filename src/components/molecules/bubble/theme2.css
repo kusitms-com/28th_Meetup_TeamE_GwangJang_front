@@ -12,10 +12,9 @@ div[data-highcharts-chart="0"] {
 .highcharts-bubble-series .highcharts-point {
   fill-opacity: 0.8 !important;
   fill: #212121 !important;
-  stroke: #08c76b !important;
-  filter: drop-shadow(0px 6px 30px rgba(26, 226, 118, 0.3)) !important;
+  /* stroke: #08c76b !important; */
 }
-.highcharts-series-hover .highcharts-color-0,
+/* .highcharts-series-hover .highcharts-color-0,
 .highcharts-series-hover .highcharts-color-1,
 .highcharts-series-hover .highcharts-color-2,
 .highcharts-series-hover .highcharts-color-3,
@@ -27,9 +26,9 @@ div[data-highcharts-chart="0"] {
 .highcharts-series-hover .highcharts-color-9 {
   fill: none;
   stroke: var(--highcharts-color-2);
-}
+} */
 
-.highcharts-color-0,
+/* .highcharts-color-0,
 .highcharts-color-1,
 .highcharts-color-2,
 .highcharts-color-3,
@@ -39,9 +38,9 @@ div[data-highcharts-chart="0"] {
 .highcharts-color-7,
 .highcharts-color-8,
 .highcharts-color-9 {
-  fill: rgba(26, 226, 118, 0.8) !important;
-  stroke: var(--highcharts-color-2) !important;
-}
+  fill: #000 !important;
+  
+} */
 
 .highcharts-grid-line {
   stroke-width: 0;
