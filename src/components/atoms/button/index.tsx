@@ -1,13 +1,19 @@
 import nextImg from "@/assets/NextArrowImg.svg";
 import commentImg from "@/assets/comment.svg";
 import likeImg from "@/assets/like.svg";
-
 import plus from "@/assets/plus_blue.svg";
 import prevImg from "@/assets/prevArrowImg.svg";
 import { ButtonProps, CategoryButtonProps } from "@/types/index.ts";
 
-import { BorderStyleButton, CateButton, KakaoBtn, NextArrow, PrevArrow, TestBtn, SubscribeBtn } from "./style.ts";
-
+import {
+  BorderStyleButton,
+  CateButton,
+  KakaoBtn,
+  NextArrow,
+  PrevArrow,
+  TestBtn,
+  SubscribeBtn,
+} from "./style.ts";
 
 export const KakaoButton = ({ children, onClick }: ButtonProps) => {
   return <KakaoBtn onClick={onClick}>{children}</KakaoBtn>;
@@ -41,7 +47,6 @@ export const CommentButton = ({ commentCount }: { commentCount: number }) => {
   );
 };
 
-
 export const SubscribeButton = () => {
   return (
     <SubscribeBtn>
@@ -53,7 +58,7 @@ export const SubscribeButton = () => {
         width={14}
       />
     </SubscribeBtn>
-    );
+  );
 };
 
 export const CategoryButton = ({ children, isSelected, onClick }: CategoryButtonProps) => {

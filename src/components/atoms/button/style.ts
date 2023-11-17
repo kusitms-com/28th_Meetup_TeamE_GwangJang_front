@@ -123,5 +123,4 @@ export const BorderStyleButton = styled.div`
     color: var(--Gray10_900);
     font-size: var(--text_cap1);
   }
-
 `;
