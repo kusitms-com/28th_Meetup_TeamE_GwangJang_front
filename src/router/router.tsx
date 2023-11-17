@@ -3,9 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { KakaoCallBack } from "@/components/molecules/login/KakaoCallBack";
 import Layout from "@/layout/Layout";
 import AddInfoPage from "@/pages/AddInfoPage";
-
-import DetailPage from "@/pages/DetailPage";
 import { CommunityPage } from "@/pages/CommunityPage";
+import DetailPage from "@/pages/DetailPage";
 import Home from "@/pages/Home";
 import LocalRegisterPage from "@/pages/LocalRegisterPage";
 import { LoginPage } from "@/pages/LoginPage";
@@ -41,16 +40,12 @@ const router = () => {
             element={<Home />}
           />
           <Route
-
             path="/detail/:id"
             element={<DetailPage />}
-             />
-<Route
-           path="/community"
+          />
+          <Route
+            path="/community"
             element={<CommunityPage />}
-         
-            
-
           />
         </Route>
       </Routes>
