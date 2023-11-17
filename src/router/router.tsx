@@ -39,7 +39,7 @@ const router = () => {
             element={<Home />}
           />
           <Route
-            path="/detail"
+            path="/detail/:id"
             element={<DetailPage />}
           />
         </Route>
