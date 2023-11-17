@@ -95,7 +95,12 @@ const Container = styled.div<{ $aa: boolean }>`
   .highcharts-bubble-series .highcharts-point {
     filter: ${(props) =>
       props.$aa
-        ? "drop-shadow(0px 6px 30px rgba(26, 226, 118, 1)) !important;"
+        ? "drop-shadow(0px 6px 30px rgba(26, 226, 118, 1)) !important;" //환경
         : "drop-shadow(0px 6px 30px rgba(26, 226, 118, 0.3)) !important;"};
   }
+  /* 
+  filter: drop-shadow(0px 6px 30px rgba(255, 153, 0, 0.30)); 교육
+  filter: drop-shadow(0px 6px 30px rgba(0, 132, 255, 0.30)); 일자리노동
+  filter: drop-shadow(0px 6px 30px rgba(119, 85, 255, 0.30));  주거 사회안전망
+   */
 `;
