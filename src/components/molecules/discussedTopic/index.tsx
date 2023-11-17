@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import arrow from "@/assets/discussedTopic/arrow_right.svg";
 import donut from "@/assets/discussedTopic/donut_topic.svg";
-import background4 from "@/assets/discussedTopic/topic1_bg.svg";
-import background1 from "@/assets/discussedTopic/topic2_bg.svg";
-import background2 from "@/assets/discussedTopic/topic3_bg.svg";
-import background3 from "@/assets/discussedTopic/topic4_bg.svg";
+import background4 from "@/assets/discussedTopic/topic1.png";
+import background1 from "@/assets/discussedTopic/topic2.png";
+import background2 from "@/assets/discussedTopic/topic3.png";
+import background3 from "@/assets/discussedTopic/topic4.png";
 import plus from "@/assets/discussedTopic/topic_plus.svg";
 import { discussedTopicProps } from "@/types";
 

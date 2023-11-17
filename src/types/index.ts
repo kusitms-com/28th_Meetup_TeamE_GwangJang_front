@@ -34,6 +34,10 @@ export interface CategoryButtonProps {
   onClick?: () => void;
   isSelected: boolean;
 }
+export interface SubscribeButtonProps {
+  onClick?: () => void;
+  onOff: boolean;
+}
 
 export interface InputProps {
   value: string;
@@ -79,6 +83,28 @@ export interface SubjectProps {
 }
 
 export interface ProfileProps {
+  nickname: string;
+  profileImg: string;
+  date: string;
+}
+
+export interface DetailTitleProps {
+  category: string;
+  title: string;
+  count: number;
+  oneline: string;
+  id: number;
+}
+
+export interface SlideItemProps {
+  title: string;
+  type: string;
+  date: string;
+}
+
+export interface semiDataProps {
+  title: string;
+  type: string;
   nickname?: string;
   profileImg?: string;
   date: string;

@@ -5,8 +5,8 @@ import HighchartsMore from "highcharts/highcharts-more";
 import HighchartsAccessibility from "highcharts/modules/accessibility";
 import HighchartsExporting from "highcharts/modules/exporting";
 import HighchartsReact from "highcharts-react-official";
+import { useNavigate } from "react-router-dom";
 
-// import bg from "@/assets/BubbleChart/bubble_bg.svg";
 import { packbubbleDummydata } from "@/dummy/packBubbleData";
 
 HighchartsExporting(Highcharts);
@@ -16,7 +16,7 @@ import "./theme.css";
 
 const PackBubble = () => {
   const [width, setWidth] = useState<number>(window.innerWidth); // 기본 1440-> 반응형 400으로 , 반응형 작업할 때 사용, 아마 강제로 view값 가져와서 거기에 맞게 useEffect로 줄여야할듯
-
+  const navigate = useNavigate();
   const handleResize = () => {
     //뷰크기 강제로 강져오기
     setWidth(window.innerWidth); // 모바일에서는 왜 1080으로 적용이 되는걸까
@@ -75,7 +75,9 @@ const PackBubble = () => {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           click: function (e: any) {
             console.log(e.point.name);
-            setWidth(width - 100); // 반응형 할 때, 사용 임시
+            navigate(`/detail/${e.point.id}`);
+            //1부터 9까지 숫자가 들어오면 거기에 맞춰서 라우팅 하는게 맞을듯
+            //setWidth(width - 100); // 반응형 할 때, 사용 임시
           },
         },
         dataLabels: {

@@ -6,8 +6,9 @@ import { PiThumbsUpBold } from "react-icons/pi";
 import nextImg from "@/assets/NextArrowImg.svg";
 import commentImg from "@/assets/comment.svg";
 import likeImg from "@/assets/like.svg";
+import plus from "@/assets/plus_blue.svg";
 import prevImg from "@/assets/prevArrowImg.svg";
-import { ButtonProps, CategoryButtonProps } from "@/types/index.ts";
+import { ButtonProps, CategoryButtonProps, SubscribeButtonProps } from "@/types/index.ts";
 
 import {
   BorderStyleButton,
@@ -17,6 +18,7 @@ import {
   NextArrow,
   PrevArrow,
   TestBtn,
+  SubscribeBtn,
 } from "./style.ts";
 
 export const KakaoButton = ({ children, onClick }: ButtonProps) => {
@@ -48,6 +50,29 @@ export const CommentButton = ({ commentCount }: { commentCount: number }) => {
       />
       <p>{commentCount}</p>
     </div>
+  );
+};
+
+export const SubscribeButton = ({ onClick, onOff }: SubscribeButtonProps) => {
+  return (
+    <SubscribeBtn
+      onClick={onClick}
+      $onOff={onOff}
+    >
+      {!onOff ? (
+        <>
+          <div>주제 구독하기</div>
+          <img
+            className="plus"
+            src={plus}
+            alt="+"
+            width={14}
+          />
+        </>
+      ) : (
+        <div>구독 중</div>
+      )}
+    </SubscribeBtn>
   );
 };
 
