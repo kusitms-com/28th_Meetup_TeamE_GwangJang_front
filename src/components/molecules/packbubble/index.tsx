@@ -75,7 +75,8 @@ const PackBubble = () => {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           click: function (e: any) {
             console.log(e.point.name);
-            navigate("/detail");
+            navigate(`/detail/${e.point.id}`);
+            //1부터 9까지 숫자가 들어오면 거기에 맞춰서 라우팅 하는게 맞을듯
             //setWidth(width - 100); // 반응형 할 때, 사용 임시
           },
         },
