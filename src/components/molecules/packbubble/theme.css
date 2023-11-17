@@ -22,8 +22,8 @@
 image[width="1420"] {
   width: 1440px !important;
   height: 680px !important;
-  x: 0 !important;
-  y: 0 !important;
+  /* x: 0 !important;
+  y: 0 !important; */
 }
 .highcharts-legend-item {
   margin-right: 101px;
