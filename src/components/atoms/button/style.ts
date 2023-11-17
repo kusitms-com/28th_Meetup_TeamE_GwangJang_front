@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ButtonProps } from "@/types/index.ts";
+import { ButtonProps, CategoryButtonProps } from "@/types/index.ts";
 
 export const KakaoBtn = styled.button<ButtonProps>`
   cursor: pointer;
@@ -57,4 +57,71 @@ export const SubscribeBtn = styled.button`
   gap: 5px;
   box-sizing: content-box;
   cursor: pointer;
+`;
+export const CateButton = styled.button<CategoryButtonProps>`
+  cursor: pointer;
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  text-align: center;
+
+  font-family: Pretendard; //왜 적용이 안되지???
+
+  font-size: var(--text_b2);
+  line-height: 24px;
+  letter-spacing: -0.24px;
+
+  background-color: ${({ isSelected }) => (isSelected ? "var(--Main_Blue)" : "#FFF")};
+  color: ${({ isSelected }) => (isSelected ? "#FFF" : "var(--Gray9_800)")};
+  border: ${({ isSelected }) =>
+    isSelected ? "1px solid var(--Main_Blue)" : "1px solid var(--Gray5_400)"};
+`;
+
+export const PrevArrow = styled.div`
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  z-index: 1;
+
+  img {
+    border-radius: 100%;
+    box-shadow: 0px 15px 35px 0px rgba(66, 66, 66, 0.15);
+  }
+`;
+
+export const NextArrow = styled.div`
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  z-index: 1;
+
+  img {
+    border-radius: 100%;
+    box-shadow: 0px 15px 35px 0px rgba(66, 66, 66, 0.15);
+  }
+`;
+
+export const BorderStyleButton = styled.div`
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  padding: 7px;
+  border-radius: 4px;
+  border: 1px solid var(--Gray3_200, #eee);
+  line-height: 18px;
+  letter-spacing: -0.18px;
+  cursor: pointer;
+
+  div {
+    color: var(--Gray7_600, #757575);
+    font-size: var(--text_cap1);
+  }
+
+  p {
+    color: var(--Gray10_900);
+    font-size: var(--text_cap1);
+  }
+
 `;

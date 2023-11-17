@@ -1,0 +1,42 @@
+export const articleData = [
+  {
+    title: "지금 시각은 새벽 4시 2분입니다.",
+    type: "기사",
+    image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+    date: "2023.10.24",
+    likeCount: 24,
+    quotCount: 39,
+  },
+  {
+    title: "지금 막 3분으로 넘어감dddd미ㅑ더리먀너딜먼얄머ㅣ댜ㅓㄹ미ㅑ어림댜ㅓ리먀너일머댤",
+    type: "기사",
+    image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+    date: "2023.10.24",
+    likeCount: 24,
+    quotCount: 39,
+  },
+  {
+    title: "SPC3ss미ㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅁㅁㅁㅁㅁ",
+    type: "기사",
+    image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+    date: "2023.10.24",
+    likeCount: 24,
+    quotCount: 39,
+  },
+  {
+    title: "SPC4",
+    type: "기사",
+    image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+    date: "2023.10.24",
+    likeCount: 24,
+    quotCount: 39,
+  },
+  {
+    title: "SPC5",
+    type: "기사",
+    image: "https://gwanghwamun.seoul.go.kr/resources/client2022/images/bg_info_mo.jpg",
+    date: "2023.10.24",
+    likeCount: 24,
+    quotCount: 39,
+  },
+];
