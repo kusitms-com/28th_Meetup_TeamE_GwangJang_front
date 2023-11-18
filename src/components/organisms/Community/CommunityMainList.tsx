@@ -68,8 +68,8 @@ export const FirstWrapper = styled.div`
   flex-direction: column;
   gap: 30px;
   /* width: 690px; */
-  width: 63.8%; // 690/1080 비율
-  margin: 0 auto;
+  //width: 63.8%; // 690/1080 비율
+  padding-top: 30px;
 `;
 
 export const CommunityMainListContainer = styled.div`

@@ -21,7 +21,7 @@ export const KeywordArticle = () => {
 };
 
 const Background = styled.div`
-  background: var(--Gray2_100);
+  background-color: var(--Gray3_200);
   display: flex;
   flex-direction: column;
   padding: 30px 0px;
