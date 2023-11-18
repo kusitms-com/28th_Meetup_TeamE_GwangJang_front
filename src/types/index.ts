@@ -152,6 +152,17 @@ export interface CommunityItemProps {
   quotText: string;
 }
 
+export interface SimilarTopicesProps {
+  id: number;
+  topic: string;
+  item: SimilarTopicProps[];
+}
+
+export interface SimilarTopicProps {
+  subscibeCount: number;
+  topic: string;
+  area: string;
+}
 export interface ToptopicProps {
   id: number;
   area: string;
