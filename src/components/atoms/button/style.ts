@@ -46,7 +46,7 @@ export const SubscribeBtn = styled.button<{ $onOff: boolean }>`
   border-radius: 85px;
   border: ${({ $onOff }) => (!$onOff ? "1px solid var(--Main_Blue)" : "none")};
   display: flex;
-  padding: ${({ $onOff }) => (!$onOff ? "15px 17px 15px 20px" : "16px 53px 16px 55px")};
+  padding: ${({ $onOff }) => (!$onOff ? "15px 17px 15px 20px" : "16px 52px 16px 52px")};
   justify-content: center;
   align-items: center;
   color: ${({ $onOff }) => (!$onOff ? "var(--Main_Blue, #0084ff)" : "var(--Gray6_500)")};
