@@ -151,3 +151,13 @@ export interface CommunityItemProps {
   likeStatus: string;
   quotText: string;
 }
+
+export interface CommentItemProps {
+  data: {
+    talk: string;
+    createAt: string;
+    writerId: string;
+    nickname: string;
+    profileImg: string;
+  }[];
+}
