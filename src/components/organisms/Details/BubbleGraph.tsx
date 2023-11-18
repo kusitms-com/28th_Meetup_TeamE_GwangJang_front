@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import Bubble from "@/components/molecules/bubble";
 export const BubbleGraph = () => {
-  const Month = [1, 2, 3, 4, 5, 6];
+  const Month = [1, 2, 3, 4, 5, 6, 7];
 
   return (
     <Container>
@@ -84,7 +84,7 @@ const BubbleBottom = styled.div`
   color: var(--Gray8_700, #616161);
   line-height: 24px;
   justify-content: space-around;
-  padding: 0 30px;
+  padding: 0 45px;
   box-sizing: border-box;
   align-items: center;
   border-bottom-left-radius: 5px;
