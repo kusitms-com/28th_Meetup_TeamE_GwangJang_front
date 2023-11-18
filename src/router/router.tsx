@@ -4,6 +4,7 @@ import { KakaoCallBack } from "@/components/molecules/login/KakaoCallBack";
 import Layout from "@/layout/Layout";
 import AddInfoPage from "@/pages/AddInfoPage";
 import { CommunityPage } from "@/pages/CommunityPage";
+import DetailCommunityPage from "@/pages/DetailCommunityPage";
 import DetailPage from "@/pages/DetailPage";
 import Home from "@/pages/Home";
 import LocalRegisterPage from "@/pages/LocalRegisterPage";
@@ -46,6 +47,10 @@ const router = () => {
           <Route
             path="/community"
             element={<CommunityPage />}
+          />
+          <Route
+            path="/detailcommunity/:topicid/:comunnityid"
+            element={<DetailCommunityPage />}
           />
         </Route>
       </Routes>
