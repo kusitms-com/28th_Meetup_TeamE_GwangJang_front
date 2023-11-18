@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 import { BubbleGraph } from "@/components/organisms/Details/BubbleGraph";
+import { CommunityPreview } from "@/components/organisms/Details/CommunityPreview";
 import { DetailArticleTitle } from "@/components/organisms/Details/DetailArticleTitle";
 import { KeywordArticle } from "@/components/organisms/Details/KeywordArticle";
 import { LineGraph } from "@/components/organisms/Details/LineGraph";
 import SimilarTopic from "@/components/organisms/Details/SimilarTopic";
 import { KeywordVideo } from "@/components/organisms/Details/keywordVideo";
-import { CommunityPreview } from "@/components/organisms/SubjectDetail/CommunityPreview";
 import { similartopicData } from "@/dummy/similartopicData";
 
 const DetailPage = () => {

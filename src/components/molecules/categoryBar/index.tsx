@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { CategoryBarProps } from "@/types";
 
-import { CategoryBarContainer } from "./style";
+import { CategoryBarContainer, Container } from "./style";
 
 export const CategoryBar = ({ onSelectTab }: CategoryBarProps) => {
   const [currentTab, setCurrentTab] = useState(0);
@@ -21,27 +21,29 @@ export const CategoryBar = ({ onSelectTab }: CategoryBarProps) => {
   };
 
   return (
-    <CategoryBarContainer>
-      {areaList.map((el, idx) => {
-        return (
-          <div className="area-wrapper">
-            <div
-              className={idx === currentTab ? "tab-focused" : "tab"}
-              key={idx}
-              onClick={() => selectTab(idx)}
-            >
-              {el.name !== "전체" && (
-                <div
-                  className="circle"
-                  style={{ backgroundColor: el.color }}
-                ></div>
-              )}
-              <p>{el.name}</p>
+    <Container>
+      <CategoryBarContainer>
+        {areaList.map((el, idx) => {
+          return (
+            <div className="area-wrapper">
+              <div
+                className={idx === currentTab ? "tab-focused" : "tab"}
+                key={idx}
+                onClick={() => selectTab(idx)}
+              >
+                {el.name !== "전체" && (
+                  <div
+                    className="circle"
+                    style={{ backgroundColor: el.color }}
+                  ></div>
+                )}
+                <p>{el.name}</p>
+              </div>
+              <div className={idx === currentTab ? "focus-bottom" : "not-focused"}></div>
             </div>
-            <div className={idx === currentTab ? "focus-bottom" : "not-focused"}></div>
-          </div>
-        );
-      })}
-    </CategoryBarContainer>
+          );
+        })}
+      </CategoryBarContainer>
+    </Container>
   );
 };
