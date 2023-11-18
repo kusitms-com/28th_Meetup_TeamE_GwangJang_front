@@ -1,9 +1,10 @@
 import bg from "@/assets/discussedTopic/topic1_bg.svg";
 import { TopicTag } from "@/components/atoms/tag";
+import { SimilarTopicProps } from "@/types";
 
 import { Container, Top, Bottom, Middle } from "./style";
 
-export const SimilarTopicBox = () => {
+export const SimilarTopicBox = ({ data }: { data: SimilarTopicProps }) => {
   const containerStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(${bg})`,
     backgroundSize: "cover",
@@ -14,11 +15,11 @@ export const SimilarTopicBox = () => {
       $string="similar"
     >
       <Top>
-        <div className="title">일회용품 어쩌고</div>
-        <TopicTag category="환경" />
+        <div className="title">{data.topic}</div>
+        <TopicTag category={data.area} />
       </Top>
       <Bottom>
-        <p>80명</p>이 구독하고 있어요
+        <p>{data.subscibeCount}명</p>이 구독하고 있어요
       </Bottom>
     </Container>
   );
