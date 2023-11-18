@@ -184,3 +184,25 @@ export interface PopularCommunityProps {
   contentsId: number;
   contents: null;
 }
+
+export interface ToptopicProps {
+  id: number;
+  area: string;
+  subject: string;
+}
+
+export interface PopularCommunityProps {
+  id: number;
+  communityText: string;
+  date: string;
+  writerId: string;
+  nickname: string;
+  profileImg: string;
+  area: string;
+  subject: string;
+  keyword: string;
+  likeCount: number;
+  commentCount: number;
+  contentsId: number;
+  contents: null;
+}
