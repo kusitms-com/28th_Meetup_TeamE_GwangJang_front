@@ -18,7 +18,7 @@ export const KeywordVideo = () => {
 };
 
 const Background = styled.div`
-  background: var(--Gray2_100);
+  background-color: var(--Gray3_200);
   display: flex;
   flex-direction: column;
   padding: 50px 0px;
