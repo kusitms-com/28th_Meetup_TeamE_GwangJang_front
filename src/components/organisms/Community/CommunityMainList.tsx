@@ -69,7 +69,6 @@ export const FirstWrapper = styled.div`
   gap: 30px;
   /* width: 690px; */
   //width: 63.8%; // 690/1080 비율
-  margin: 0 auto;
   padding-top: 30px;
 `;
 

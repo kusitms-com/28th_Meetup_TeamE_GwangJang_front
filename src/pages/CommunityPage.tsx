@@ -41,5 +41,6 @@ export const Bottom = styled.div`
     margin: 0 auto;
     display: flex;
     padding-bottom: 152px;
+    justify-content: space-between;
   }
 `;
