@@ -4,7 +4,7 @@ import temp from "@/assets/main_logo.svg";
 import { Comment } from "@/components/molecules/comment";
 import { CommentData } from "@/dummy/commentData";
 
-export const CommunityList = () => {
+export const CommentList = () => {
   return (
     <CommunityListWrapper>
       <div className="comment-count">
