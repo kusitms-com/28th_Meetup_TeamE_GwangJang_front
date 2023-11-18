@@ -40,6 +40,6 @@ export const Middle = styled.div`
     font-weight: 600;
     line-height: 24px;
     letter-spacing: -0.24px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 `;

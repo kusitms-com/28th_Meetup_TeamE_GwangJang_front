@@ -1,5 +1,6 @@
 import bg from "@/assets/discussedTopic/topic1_bg.svg";
 import { TopicTag } from "@/components/atoms/tag";
+import { ToptopicProps } from "@/types";
 
 import { Container, Top, Bottom, Middle } from "./style";
 
@@ -24,7 +25,7 @@ export const SimilarTopicBox = () => {
   );
 };
 
-export const TopTopicBox = () => {
+export const TopTopicBox = ({ data }: { data: ToptopicProps }) => {
   const containerStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(${bg})`,
     backgroundSize: "cover",
@@ -35,8 +36,8 @@ export const TopTopicBox = () => {
       $string="top"
     >
       <Middle>
-        <div className="title">교권침해 이태원참사</div>
-        <TopicTag category="환경" />
+        <div className="title">{data.subject}</div>
+        <TopicTag category={data.area} />
       </Middle>
     </Container>
   );
