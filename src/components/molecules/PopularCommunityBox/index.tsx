@@ -1,20 +1,19 @@
+import moment from "moment";
+
 import { LongProfile } from "@/components/atoms/profile";
+import { PopularCommunityProps } from "@/types";
 
 import { Container } from "./style";
 
-const PopularCommunityBox = () => {
+const PopularCommunityBox = ({ data }: { data: PopularCommunityProps }) => {
   return (
     <Container>
       <LongProfile
-        nickname="aaa"
-        profileImg="aa"
-        date="12312"
+        nickname={data.nickname}
+        profileImg={data.profileImg}
+        date={moment(data.date).format("YYYY.MM.DD")}
       />
-      <p className="text">
-        SPC와 관련된 노동 또는 환경 문제를 고려하여 SPC 불매 운동을 지지하는 사람들은, 기업이 사회적
-        책임을 SPC와 관련된 노동 또는 환경 문제를 고려하여 SPC 불매 운동을 지지하는 사람들은, 기업이
-        사회적 책임을
-      </p>
+      <p className="text">{data.communityText}</p>
     </Container>
   );
 };

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CommunityMainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* width: 690px; */
+  width: 690px;
   /* width: 47.91%; */
   max-width: 690px;
   /* width: 100%; */

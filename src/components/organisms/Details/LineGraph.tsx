@@ -34,6 +34,7 @@ const Container = styled.div`
   width: 100%; // 기본 100%  반응형 작업할 때 400Px로 잡기
   margin: 0 auto;
   padding-top: 20px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
