@@ -160,7 +160,7 @@ export interface CommentItemProps {
     nickname: string;
     profileImg: string;
   }[];
-
+}
 export interface SimilarTopicesProps {
   id: number;
   topic: string;
