@@ -11,7 +11,7 @@ const SimilarTopic = ({ data }: { data: SimilarTopicesProps }) => {
         <div className="title-top">
           <p>{data.topic}</p> 와
         </div>
-        <div>비슷한 주제에요</div>
+        <div>비슷한 주제예요</div>
       </div>
 
       <TopicWraaper>
