@@ -152,6 +152,15 @@ export interface CommunityItemProps {
   quotText: string;
 }
 
+export interface CommentItemProps {
+  data: {
+    talk: string;
+    createAt: string;
+    writerId: string;
+    nickname: string;
+    profileImg: string;
+  }[];
+
 export interface SimilarTopicesProps {
   id: number;
   topic: string;
