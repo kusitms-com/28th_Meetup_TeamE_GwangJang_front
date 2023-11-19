@@ -28,4 +28,5 @@ export const MyPostWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  justify-content: center;
 `;

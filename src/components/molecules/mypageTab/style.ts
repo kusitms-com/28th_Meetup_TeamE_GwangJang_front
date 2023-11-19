@@ -6,7 +6,7 @@ export const MyPageTabContainer = styled.div`
   display: flex;
   gap: 30px;
   border-bottom: 1px solid var(--Gray4_300, #d9d9d9);
-  margin: 20px;
+  margin: 20px 0px;
 
   .tab-text {
     color: var(--Gray6_500, #959595);
