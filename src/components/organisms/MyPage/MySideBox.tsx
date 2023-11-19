@@ -98,8 +98,7 @@ export const MySideBoxWrapper = styled.div`
     margin: 0px 10px;
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    gap: 16px;
+    gap: 6px;
 
     p {
       color: var(--Gray7_600, #757575);
