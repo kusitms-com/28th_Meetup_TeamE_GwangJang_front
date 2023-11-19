@@ -64,7 +64,7 @@ export const MySideBoxWrapper = styled.div`
   border-radius: 5px;
   background: var(--Gray1_50, #fafafa);
   width: 313px;
-  /* height: 823px; */
+  height: 100%;
   flex-shrink: 0;
   box-shadow: 0px 15px 35px 0px rgba(66, 66, 66, 0.05);
 

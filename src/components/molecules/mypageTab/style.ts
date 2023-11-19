@@ -33,6 +33,6 @@ export const MyPageTabContainer = styled.div`
 
   .not-focused {
     margin-top: 10px;
-    border-bottom: 2px solid var(--Gray1_50);
+    border-bottom: 2px solid var(--Gray3_200);
   }
 `;
