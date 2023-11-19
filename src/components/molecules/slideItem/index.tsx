@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { LikeBorderButton, QuotBorderButton } from "@/components/atoms/button";
 import { ArticleItemProps } from "@/types";
 

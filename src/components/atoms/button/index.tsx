@@ -135,11 +135,15 @@ export const LikeBorderButton = ({
 };
 
 export const QuotBorderButton = ({ quotCount }: { quotCount: number }) => {
+  //인용 버튼 클릭 시 모달창 오픈
+
   return (
-    <BorderStyleButton>
-      <div>인용</div>
-      <p>{quotCount}</p>
-    </BorderStyleButton>
+    <>
+      <BorderStyleButton>
+        <div>인용</div>
+        <p>{quotCount}</p>
+      </BorderStyleButton>
+    </>
   );
 };
 
