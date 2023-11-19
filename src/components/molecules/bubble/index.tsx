@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import * as Highcharts from "highcharts";
 import HighchartsMore from "highcharts/highcharts-more";
@@ -6,6 +6,7 @@ import HighchartsAccessibility from "highcharts/modules/accessibility";
 import HighchartsExporting from "highcharts/modules/exporting";
 import HighchartsReact from "highcharts-react-official";
 import { useParams } from "react-router-dom";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
 
 import backgroundImg from "@/assets/Bubble/detail-bubbleBackground.svg";
@@ -14,9 +15,10 @@ HighchartsAccessibility(Highcharts);
 HighchartsMore(Highcharts);
 import "./theme2.css";
 import { bubbleDummydata } from "@/dummy/bubbleData";
+import { areaState } from "@/recoil/atoms";
 
 const Bubble = () => {
-  const [area, setArea] = useState<string>("");
+  const [area, setArea] = useRecoilState<string>(areaState);
 
   const options = {
     chart: {
@@ -92,7 +94,7 @@ const Bubble = () => {
     } else if (id === "9" || id === "10") {
       setArea("교육");
     }
-  }, [area, id]);
+  }, [area, id, setArea]);
 
   return (
     <Container $area={area}>
