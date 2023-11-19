@@ -103,7 +103,8 @@ export const NextArrow = styled.div`
   }
 `;
 
-export const BorderStyleButton = styled.div`
+export const BorderStyleButton = styled.button`
+  border: none;
   display: flex;
   gap: 5px;
   flex-direction: row;
