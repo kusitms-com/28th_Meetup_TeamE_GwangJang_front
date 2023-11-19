@@ -5,6 +5,13 @@ import { TopTopicBox } from "@/components/molecules/longTopicBox";
 import { MySubscribeData } from "@/dummy/MySubscribeData";
 
 export const MySideBox = () => {
+  //로그아웃
+  const LogOut = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    window.location.reload();
+  };
+
   return (
     <>
       <MySideBoxWrapper>
@@ -42,7 +49,12 @@ export const MySideBox = () => {
 
         <div className="my-line"></div>
 
-        <div className="my-logout">로그아웃</div>
+        <div
+          className="my-logout"
+          onClick={LogOut}
+        >
+          로그아웃
+        </div>
       </MySideBoxWrapper>
     </>
   );
