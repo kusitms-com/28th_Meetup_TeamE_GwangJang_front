@@ -16,7 +16,7 @@ export const CategoryBarContainer = styled.div`
   margin: 0 auto;
   padding: 0px 10px;
   box-sizing: border-box;
-
+  margin-top: -3px;
   .area-wrapper {
     .tab {
       height: inherit;

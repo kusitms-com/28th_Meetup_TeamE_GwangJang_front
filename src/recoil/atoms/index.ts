@@ -25,3 +25,9 @@ export const filteredDataSelector = selector({
     );
   },
 });
+
+export const areaState = atom({
+  // 주제뱔 상세페이지 접속시, 쿼리스트링의 영역값을 저장
+  key: "src/atoms/auth.tsx-areaState",
+  default: "",
+});
