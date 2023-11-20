@@ -25,3 +25,9 @@ export const filteredDataSelector = selector({
     );
   },
 });
+
+//마이페이지 탭
+export const selectedTabState = atom({
+  key: "selectedTabState",
+  default: 0,
+});
