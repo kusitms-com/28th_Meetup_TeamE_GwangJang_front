@@ -19,6 +19,10 @@ export const MySideBox = () => {
     setNewNickname("");
   };
 
+  const cancelEditing = () => {
+    setIsEditing(false);
+  };
+
   const nicknameUpdate = () => {
     alert("닉네임이 변경되었습니다");
     setIsEditing(false);
@@ -57,7 +61,20 @@ export const MySideBox = () => {
                   onChange={(e) => setNewNickname(e.target.value)}
                   placeholder="변경할 닉네임을 입력해주세요."
                 />
-                <button onClick={nicknameUpdate}>변경</button>
+                <div className="btn-wrapper">
+                  <button
+                    className="cancel-btn"
+                    onClick={cancelEditing}
+                  >
+                    취소
+                  </button>
+                  <button
+                    className="change-btn"
+                    onClick={nicknameUpdate}
+                  >
+                    변경
+                  </button>
+                </div>
               </div>
             ) : (
               <>
@@ -171,7 +188,9 @@ export const MySideBoxWrapper = styled.div`
 
       .change-nick {
         display: flex;
-        gap: 10px;
+        gap: 20px;
+        flex-direction: column;
+        justify-content: center;
 
         input {
           padding: 10px;
@@ -185,14 +204,32 @@ export const MySideBoxWrapper = styled.div`
           }
         }
 
-        button {
-          border-radius: 5px;
-          width: 60px;
-          height: inherit;
-          color: white;
-          border: none;
-          font-family: Pretendard; //안먹혀서
-          background-color: var(--Main_Blue);
+        .btn-wrapper {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+
+          .change-btn {
+            border-radius: 5px;
+            height: 35px;
+            width: 60px;
+            color: white;
+            border: none;
+            font-family: Pretendard; //안먹혀서
+            background-color: var(--Main_Blue);
+            cursor: pointer;
+          }
+
+          .cancel-btn {
+            height: 35px;
+            border-radius: 5px;
+            width: 60px;
+            color: var(--Gray6_500);
+            border: none;
+            font-family: Pretendard; //안먹혀서
+            background-color: var(--Gray3_200);
+            cursor: pointer;
+          }
         }
       }
     }
