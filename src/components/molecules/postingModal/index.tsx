@@ -14,10 +14,11 @@ export const PostingModal = () => {
   const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setWriteText(e.currentTarget.value);
     setTextLen(e.currentTarget.value.length);
+
     if (e.currentTarget.value == "") {
-      setUploadBtn(false);
-    } else {
       setUploadBtn(true);
+    } else {
+      setUploadBtn(false);
     }
   };
 
