@@ -13,8 +13,9 @@ import { similartopicData } from "@/dummy/similartopicData";
 import { ShowModalState } from "@/recoil/atoms";
 
 const DetailPage = () => {
+  //모달 show 여부
   const Show = useRecoilValue(ShowModalState);
-  //const data = useRecoilValue(modalState);
+
   return (
     <>
       <DetailArticleTitle />

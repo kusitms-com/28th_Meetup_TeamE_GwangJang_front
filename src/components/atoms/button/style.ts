@@ -115,6 +115,7 @@ export const BorderStyleButton = styled.button`
   letter-spacing: -0.18px;
   cursor: pointer;
   align-items: center;
+  background-color: white;
 
   svg {
     fill: var(--Gray6_500);

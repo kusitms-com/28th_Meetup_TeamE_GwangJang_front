@@ -14,19 +14,19 @@ export const PostingModal = () => {
     setTextLen(e.target.value.length);
   };
 
-  const onClick = () => {
+  const onClickButton = () => {
     console.log("글 올리기 ");
   };
 
   return (
-    <PostingModalContainer>
+    <PostingModalContainer onClick={(e) => e.stopPropagation()}>
       <div className="first-box">
         <BigProfile
           nickname="chaemin"
           date="2001.04.05"
           profileImg=""
         />
-        <button onClick={onClick}>글 올리기</button>
+        <button onClick={onClickButton}>글 올리기</button>
       </div>
       <div className="second-box">
         <TopicTag category="환경" />
