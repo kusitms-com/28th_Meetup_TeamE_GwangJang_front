@@ -1,34 +1,79 @@
+import { useState } from "react";
+
 import styled from "styled-components";
 
 import temp from "@/assets/main_logo.svg";
+import editNicknameImg from "@/assets/myPage/edit-pencil-nickname.svg";
+import editImg from "@/assets/myPage/edit-pencil.svg";
 import { TopTopicBox } from "@/components/molecules/longTopicBox";
+import { SideBox } from "@/components/molecules/sideBox";
 import { MySubscribeData } from "@/dummy/MySubscribeData";
 
 export const MySideBox = () => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [newNickname, setNewNickname] = useState("");
+
+  //닉네임 수정 시
+  const startEditing = () => {
+    setIsEditing(true);
+    setNewNickname("");
+  };
+
+  const nicknameUpdate = () => {
+    alert("닉네임이 변경되었습니다");
+    setIsEditing(false);
+  };
+
   //로그아웃
   const LogOut = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
-    window.location.reload();
+    window.location.href = "/";
   };
 
   return (
     <>
       <MySideBoxWrapper>
         <div className="my-profile">
-          <img
-            src={temp}
-            alt="profile"
-          ></img>
-          <p>닉네임</p>
+          <div className="img-box">
+            <img
+              src={temp}
+              alt="profile"
+              className="profile-img"
+            ></img>
+            <div className="edit-box">
+              <img
+                src={editImg}
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="nick-box">
+            {isEditing ? (
+              <div className="change-nick">
+                <input
+                  type="text"
+                  value={newNickname}
+                  onChange={(e) => setNewNickname(e.target.value)}
+                  placeholder="변경할 닉네임을 입력해주세요."
+                />
+                <button onClick={nicknameUpdate}>변경</button>
+              </div>
+            ) : (
+              <>
+                <p>닉네임</p>
+                <img
+                  src={editNicknameImg}
+                  alt=""
+                  onClick={startEditing}
+                />
+              </>
+            )}
+          </div>
         </div>
         <div className="my-line"></div>
 
-        <div className="tab-box">
-          <p>작성한 커뮤니티 글</p>
-          <p>좋아요한 콘텐츠</p>
-          <p>좋아요한 커뮤니티 글</p>
-        </div>
+        <SideBox />
 
         <div className="my-line"></div>
 
@@ -76,21 +121,80 @@ export const MySideBoxWrapper = styled.div`
     box-sizing: border-box;
     margin-bottom: 30px;
 
-    img {
-      margin-top: 25px;
-      width: 89px;
-      height: 89px;
-      border-radius: 100%;
-      border: 1px solid gray;
+    .img-box {
+      display: flex;
+      position: relative;
+
+      .profile-img {
+        margin-top: 25px;
+        width: 89px;
+        height: 89px;
+        border-radius: 100%;
+        border: 1px solid var(--Gray4_300, #d9d9d9);
+      }
+
+      .edit-box {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--Gray9_800);
+      }
     }
 
-    p {
+    .nick-box {
+      display: flex;
       margin-top: 16px;
-      color: var(--Gray9_800, #424242);
-      font-size: var(--text_h5);
-      font-weight: 700;
-      line-height: 34px;
-      letter-spacing: -0.36px;
+      gap: 6px;
+      align-items: center;
+
+      p {
+        color: var(--Gray9_800, #424242);
+        font-size: var(--text_h5);
+        font-weight: 700;
+        line-height: 34px;
+        letter-spacing: -0.36px;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+
+      .change-nick {
+        display: flex;
+        gap: 10px;
+
+        input {
+          padding: 10px;
+          border-radius: 5px;
+          outline: none;
+          border: 1px solid gray;
+          font-family: Pretendard; //안먹혀서
+
+          &::placeholder {
+            color: gray;
+          }
+        }
+
+        button {
+          border-radius: 5px;
+          width: 60px;
+          height: inherit;
+          color: white;
+          border: none;
+          font-family: Pretendard; //안먹혀서
+          background-color: var(--Main_Blue);
+        }
+      }
     }
   }
 

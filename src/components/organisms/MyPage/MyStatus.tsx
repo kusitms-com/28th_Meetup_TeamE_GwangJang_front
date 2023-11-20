@@ -1,24 +1,18 @@
-import { useState } from "react";
-
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
 
 import { MyPageTab } from "@/components/molecules/mypageTab";
+import { selectedTabState } from "@/recoil/atoms";
 
 import { MyContent } from "./MyContent";
 import { MyPost } from "./MyPost";
 
 export const MyStatus = () => {
-  const [selectedTab, setSelectedTab] = useState(0);
-
-  const handleTabChange = (idx: number) => {
-    setSelectedTab(idx);
-  };
-
-  console.log(selectedTab);
+  const selectedTab = useRecoilValue(selectedTabState);
 
   return (
     <MyStatusWrapper>
-      <MyPageTab onSelectTab={handleTabChange} />
+      <MyPageTab />
       {/* mypost는 형식 똑같으니까 data props로 보내주는 방식으로..? */}
       {selectedTab === 0 && <MyPost />}
       {selectedTab === 1 && <MyContent />}

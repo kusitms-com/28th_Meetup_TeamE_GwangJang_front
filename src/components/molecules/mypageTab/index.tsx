@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useRecoilState } from "recoil";
 
-import { CategoryBarProps } from "@/types";
+import { selectedTabState } from "@/recoil/atoms";
 
 import { MyPageTabContainer } from "./style";
 
-export const MyPageTab = ({ onSelectTab }: CategoryBarProps) => {
-  const [currentTab, setCurrentTab] = useState(0);
+export const MyPageTab = () => {
+  const [selectedTab, setSelectedTab] = useRecoilState(selectedTabState);
 
   const tabName = [
     { name: "작성한 커뮤니티 글", content: "tab1" },
@@ -14,8 +14,7 @@ export const MyPageTab = ({ onSelectTab }: CategoryBarProps) => {
   ];
 
   const selectTab = (idx: number) => {
-    setCurrentTab(idx);
-    onSelectTab(idx);
+    setSelectedTab(idx);
   };
 
   return (
@@ -24,13 +23,13 @@ export const MyPageTab = ({ onSelectTab }: CategoryBarProps) => {
         return (
           <div>
             <div
-              className={idx === currentTab ? "tab-focused" : "tab-text"}
+              className={idx === selectedTab ? "tab-focused" : "tab-text"}
               key={idx}
               onClick={() => selectTab(idx)}
             >
               {item.name}
             </div>
-            <div className={idx === currentTab ? "focus-bottom" : "not-focused"}></div>
+            <div className={idx === selectedTab ? "focus-bottom" : "not-focused"}></div>
           </div>
         );
       })}
