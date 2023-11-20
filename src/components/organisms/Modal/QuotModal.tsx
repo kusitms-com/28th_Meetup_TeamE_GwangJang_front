@@ -1,10 +1,18 @@
+import { useSetRecoilState } from "recoil";
 import styled from "styled-components";
 
 import { PostingModal } from "@/components/molecules/postingModal";
+import { ShowModalState } from "@/recoil/atoms";
 
 export const QuotModal = () => {
+  const setShowModal = useSetRecoilState(ShowModalState);
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
-    <ModalBackground>
+    <ModalBackground onClick={closeModal}>
       <PostingModal />
     </ModalBackground>
   );
