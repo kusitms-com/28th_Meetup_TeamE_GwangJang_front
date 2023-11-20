@@ -1,3 +1,5 @@
+import { useState, useRef } from "react";
+
 import styled from "styled-components";
 
 import temp from "@/assets/main_logo.svg";
@@ -5,6 +7,23 @@ import { Comment } from "@/components/molecules/comment";
 import { CommentData } from "@/dummy/commentData";
 
 export const CommentList = () => {
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+  const [text, setText] = useState("");
+  const [registerBtn, setRegisterBtn] = useState(true);
+  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setText(e.currentTarget.value);
+    if (e.currentTarget.value === "") {
+      setRegisterBtn(true);
+    } else {
+      setRegisterBtn(false);
+    }
+    // textarea 높이 조절
+    if (textareaRef && textareaRef.current) {
+      textareaRef.current.style.height = "0px";
+      const scrollHeight = textareaRef.current.scrollHeight;
+      textareaRef.current.style.height = scrollHeight + "px";
+    }
+  };
   return (
     <CommunityListWrapper>
       <div className="comment-count">
@@ -13,12 +32,20 @@ export const CommentList = () => {
       <div className="comment-post">
         <img
           src={temp}
-          alt=""
+          alt="프로필"
         />
-        <div className="input-button-box">
-          <input placeholder="댓글을 입력해주세요." />
-          <button>등록</button>
-        </div>
+        <textarea
+          ref={textareaRef}
+          value={text}
+          onChange={onChange}
+          placeholder="댓글을 입력해주세요."
+        />
+        <button
+          disabled={registerBtn}
+          className={registerBtn ? "" : "abled"}
+        >
+          등록
+        </button>
       </div>
       <div className="line"></div>
       <div className="comment-box">
@@ -32,7 +59,7 @@ export const CommunityListWrapper = styled.div`
   padding: 16px 30px;
   box-sizing: border-box;
   width: 896px;
-  height: 1432px;
+  margin: 400px auto 150px;
   border-radius: 5px;
   background: var(--White, #fff);
   box-shadow: 0px 15px 35px 0px rgba(66, 66, 66, 0.05);
@@ -61,52 +88,73 @@ export const CommunityListWrapper = styled.div`
     width: 100%;
     align-items: center;
     /* border: 1px solid blue; */
-    justify-content: center;
+    //justify-content: center;
+    position: relative;
+  }
+  .comment-post img {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 8px;
+  }
+  .comment-post textarea {
+    height: 56px;
+    line-height: 24px;
+    margin-left: 60px;
+    width: 672px;
+    border-radius: 5px;
+    background: var(--Gray3_200, #eee);
+    outline: none;
+    border: none;
+    padding: 16px;
+    box-sizing: border-box;
+    resize: none;
+    font-size: var(--text_b2);
+    caret-color: var(--Main_Blue);
 
-    img {
-      border-radius: 100%;
-      width: 40px;
-      height: 40px;
-      object-fit: cover;
+    &::placeholder {
+      line-height: 24px;
+
+      font-size: var(--text_b2);
+      color: var(--Gray6_500, #959595);
     }
-
-    .input-button-box {
-      display: flex;
-      gap: 16px;
-      /* border: 1px solid red; */
-
-      input {
-        height: 56px;
-        width: 672px;
-        border-radius: 5px;
-        background: var(--Gray3_200, #eee);
-        outline: none;
-        border: none;
-        padding-left: 16px;
-        box-sizing: border-box;
-
-        &::placeholder {
-          font-size: var(--text_b2);
-          color: var(--Gray6_500, #959595);
-        }
-
-        @media (max-width: 672px) {
-          width: 100%;
-        }
-      }
-
-      button {
-        border-radius: 5px;
-        width: 84px;
-        border: none;
-        background: var(--Gray3_200, #eee);
-        color: var(--Gray6_500, #959595);
-        text-align: center;
-        font-size: var(--text_b1);
-        font-weight: 600;
-        cursor: pointer;
+    &:focus {
+      border: 2px solid var(--Main_Blue);
+      &::placeholder {
+        opacity: 0;
       }
     }
+
+    @media (max-width: 672px) {
+      width: 100%;
+    }
+  }
+
+  .comment-post button {
+    font-family: " Pretendard";
+    height: 56px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    width: 84px;
+    padding: 20px;
+    border: none;
+    background: var(--Gray3_200, #eee);
+    color: var(--Gray6_500, #959595);
+    text-align: center;
+    font-size: var(--text_b1);
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .comment-post button.abled {
+    background: var(--Main_Blue);
+    color: var(--White);
   }
 
   .comment-box {
