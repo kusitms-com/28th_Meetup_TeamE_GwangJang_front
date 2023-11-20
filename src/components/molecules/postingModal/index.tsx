@@ -1,7 +1,11 @@
 import { ChangeEvent, useState } from "react";
 
+import { useRecoilValue } from "recoil";
+
 import { BigProfile } from "@/components/atoms/profile";
 import { KeywordTag, TopicTag } from "@/components/atoms/tag";
+import { modalState } from "@/recoil/atoms";
+import { ArticleItemProps } from "@/types";
 
 import { PostingModalContainer } from "./style";
 
@@ -10,6 +14,10 @@ export const PostingModal = () => {
   const [textLen, setTextLen] = useState(0);
 
   const [uploadBtn, setUploadBtn] = useState(true);
+
+  //데이터 받아오기
+  const modalData = useRecoilValue<ArticleItemProps | null>(modalState);
+  console.log(modalData);
 
   const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setWriteText(e.currentTarget.value);
@@ -59,10 +67,10 @@ export const PostingModal = () => {
       <div className="content-quot">
         <div className="quot-text">
           <p>인용한 콘텐츠</p>
-          <div>ㄴㄴㄴ</div>
+          <div>{modalData?.title}</div>
         </div>
         <img
-          src="https://images.chosun.com/resizer/XKL6ePOdAuAn81yF-ZBOY8VyQWs=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/JMI3RCEB2Y7QSIUWJKT2MT7CC4.jpg"
+          src={modalData?.image}
           alt=""
         />
       </div>
