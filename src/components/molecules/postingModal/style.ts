@@ -34,9 +34,9 @@ export const PostingModalContainer = styled.div`
       height: 56px;
       border-radius: 5px;
       padding: 19px 31px;
-      background: var(--Main_Blue, #0084ff);
+      background: var(--Gray3_200);
       border: none;
-      color: var(--White, #fff);
+      color: var(--Gray6_500, #959595);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -44,6 +44,11 @@ export const PostingModalContainer = styled.div`
       font-weight: 600;
       cursor: pointer;
     }
+  }
+
+  .first-box button.abled {
+    background: var(--Main_Blue);
+    color: var(--White);
   }
 
   .second-box {

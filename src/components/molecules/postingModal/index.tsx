@@ -9,9 +9,16 @@ export const PostingModal = () => {
   const [writeText, setWriteText] = useState("");
   const [textLen, setTextLen] = useState(0);
 
+  const [uploadBtn, setUploadBtn] = useState(true);
+
   const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setWriteText(e.target.value);
-    setTextLen(e.target.value.length);
+    setWriteText(e.currentTarget.value);
+    setTextLen(e.currentTarget.value.length);
+    if (e.currentTarget.value == "") {
+      setUploadBtn(false);
+    } else {
+      setUploadBtn(true);
+    }
   };
 
   const onClickButton = () => {
@@ -26,7 +33,13 @@ export const PostingModal = () => {
           date="2001.04.05"
           profileImg=""
         />
-        <button onClick={onClickButton}>글 올리기</button>
+        <button
+          onClick={onClickButton}
+          disabled={uploadBtn}
+          className={uploadBtn ? "" : "abled"}
+        >
+          글 올리기
+        </button>
       </div>
       <div className="second-box">
         <TopicTag category="환경" />
