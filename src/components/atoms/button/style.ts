@@ -183,3 +183,19 @@ export const BorderStyleButtonTemp = styled.div<{ likeStatus: boolean }>`
     }
   }
 `;
+
+export const CloseButtonStyle = styled.div`
+  width: 55px;
+  height: 55px;
+  background-color: rgba(33, 33, 33, 0.6);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    font-size: 45px;
+    color: var(--Gray4_300);
+  }
+`;

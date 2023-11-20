@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { BiCommentDetail } from "react-icons/bi";
+import { IoCloseOutline } from "react-icons/io5";
 import { PiThumbsUpBold } from "react-icons/pi";
 
 import nextImg from "@/assets/NextArrowImg.svg";
@@ -19,6 +20,7 @@ import {
   PrevArrow,
   TestBtn,
   SubscribeBtn,
+  CloseButtonStyle,
 } from "./style.ts";
 
 export const KakaoButton = ({ children, onClick }: ButtonProps) => {
@@ -159,5 +161,13 @@ export const CommentBorderButton = ({ commentCount }: { commentCount: number }) 
       <BiCommentDetail />
       <p>{commentCount}</p>
     </BorderStyleButton>
+  );
+};
+
+export const ModalCloseButton = () => {
+  return (
+    <CloseButtonStyle>
+      <IoCloseOutline />
+    </CloseButtonStyle>
   );
 };
