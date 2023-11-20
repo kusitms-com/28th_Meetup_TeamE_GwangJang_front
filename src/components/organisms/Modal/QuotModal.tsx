@@ -9,6 +9,7 @@ export const QuotModal = () => {
 
   const closeModal = () => {
     setShowModal(false);
+    document.body.style.overflowY = "auto";
   };
 
   return (
