@@ -109,7 +109,7 @@ export const CommunityListWrapper = styled.div`
     border-radius: 5px;
     background: var(--Gray3_200, #eee);
     outline: none;
-    border: none;
+    border: 2px solid transparent;
     padding: 16px;
     box-sizing: border-box;
     resize: none;
