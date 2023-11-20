@@ -151,6 +151,7 @@ export const CommunityListWrapper = styled.div`
     font-size: var(--text_b1);
     font-weight: 600;
     cursor: pointer;
+    line-height: 20px;
   }
   .comment-post button.abled {
     background: var(--Main_Blue);
