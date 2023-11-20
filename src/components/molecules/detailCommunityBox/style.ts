@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const CommunityPostContainer = styled.div`
+  position: absolute;
+  top: 85px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
   width: 896px;
   height: 517px;
   flex-shrink: 0;
