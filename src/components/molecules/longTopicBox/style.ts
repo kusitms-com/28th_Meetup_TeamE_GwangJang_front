@@ -6,6 +6,10 @@ export const Container = styled.div<{ $string: string }>`
   border-radius: 5px;
   opacity: 0.8;
   background-color: #343434;
+
+  @media (max-width: 396px) {
+    width: fit-content;
+  }
 `;
 export const Top = styled.div`
   display: flex;
