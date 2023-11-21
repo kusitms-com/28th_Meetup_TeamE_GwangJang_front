@@ -1,3 +1,4 @@
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
 
 import { BubbleGraph } from "@/components/organisms/Details/BubbleGraph";
@@ -7,9 +8,14 @@ import { KeywordArticle } from "@/components/organisms/Details/KeywordArticle";
 import { LineGraph } from "@/components/organisms/Details/LineGraph";
 import SimilarTopic from "@/components/organisms/Details/SimilarTopic";
 import { KeywordVideo } from "@/components/organisms/Details/keywordVideo";
+import { QuotModal } from "@/components/organisms/Modal/QuotModal";
 import { similartopicData } from "@/dummy/similartopicData";
+import { ShowModalState } from "@/recoil/atoms";
 
 const DetailPage = () => {
+  //모달 show 여부
+  const Show = useRecoilValue(ShowModalState);
+
   return (
     <>
       <DetailArticleTitle />
@@ -21,6 +27,7 @@ const DetailPage = () => {
         <CommunityPreview />
         <SimilarTopic data={similartopicData} />
       </Bottom>
+      {Show ? <QuotModal /> : ""}
     </>
   );
 };

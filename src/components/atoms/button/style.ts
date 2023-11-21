@@ -103,7 +103,8 @@ export const NextArrow = styled.div`
   }
 `;
 
-export const BorderStyleButton = styled.div`
+export const BorderStyleButton = styled.button`
+  border: none;
   display: flex;
   gap: 5px;
   flex-direction: row;
@@ -114,6 +115,7 @@ export const BorderStyleButton = styled.div`
   letter-spacing: -0.18px;
   cursor: pointer;
   align-items: center;
+  background-color: white;
 
   svg {
     fill: var(--Gray6_500);
@@ -179,5 +181,21 @@ export const BorderStyleButtonTemp = styled.div<{ likeStatus: boolean }>`
     p {
       color: white;
     }
+  }
+`;
+
+export const CloseButtonStyle = styled.div`
+  width: 55px;
+  height: 55px;
+  background-color: rgba(33, 33, 33, 0.6);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    font-size: 45px;
+    color: var(--Gray4_300);
   }
 `;

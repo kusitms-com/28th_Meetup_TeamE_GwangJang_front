@@ -1,9 +1,20 @@
+import { useSetRecoilState } from "recoil";
+
 import { LikeBorderButton, QuotBorderButton } from "@/components/atoms/button";
+import { ShowModalState, modalState } from "@/recoil/atoms";
 import { ArticleItemProps } from "@/types";
 
 import { SlideWrapper } from "./style";
 
 export const SlideItem = ({ data }: { data: ArticleItemProps }) => {
+  const setModal = useSetRecoilState(modalState);
+  const ShowModal = useSetRecoilState(ShowModalState);
+  const Modal = () => {
+    setModal(data);
+    ShowModal(true);
+    document.body.style.overflowY = "hidden";
+  };
+
   return (
     <SlideWrapper>
       <div className="slide-container">
@@ -28,7 +39,12 @@ export const SlideItem = ({ data }: { data: ArticleItemProps }) => {
                     initialLikeStatus="true"
                   />
                 )}
-                {data.quotCount !== undefined && <QuotBorderButton quotCount={data.quotCount} />}
+                {data.quotCount !== undefined && (
+                  <QuotBorderButton
+                    onClick={Modal}
+                    quotCount={data.quotCount}
+                  />
+                )}
               </div>
             ) : null}
           </div>
