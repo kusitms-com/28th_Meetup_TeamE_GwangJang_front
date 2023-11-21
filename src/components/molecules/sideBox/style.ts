@@ -23,5 +23,5 @@ export const SideText = styled.p<{ isSelected: boolean }>`
 
   color: ${({ isSelected }) => (isSelected ? "var(--Gray10_900)" : "var(--Gray7_600)")};
   font-weight: ${({ isSelected }) => (isSelected ? "600" : "500")};
-  background-color: ${({ isSelected }) => (isSelected ? "var(--Gray3_200)" : "#FFF")};
+  background-color: ${({ isSelected }) => (isSelected ? "var(--Gray3_200)" : "")};
 `;
