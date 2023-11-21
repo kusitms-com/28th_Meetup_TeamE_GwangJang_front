@@ -27,7 +27,6 @@ export const filteredDataSelector = selector({
   },
 });
 
-
 export const modalState = atom<ArticleItemProps | null>({
   key: "src/atoms/auth.tsx-modalState",
   default: null,
