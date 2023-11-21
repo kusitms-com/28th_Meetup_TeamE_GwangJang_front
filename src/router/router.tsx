@@ -57,6 +57,7 @@ const router = () => {
           <Route
             path="/search"
             element={<SearchPage />}
+          />
           <Route
             path="/mypage"
             element={<RealMyPage />}
