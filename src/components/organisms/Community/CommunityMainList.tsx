@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 import styled from "styled-components";
 
@@ -6,48 +6,47 @@ import styled from "styled-components";
 import { BigProfile } from "@/components/atoms/profile";
 import { MainCommunityBox } from "@/components/molecules/mainCommunityBox";
 // import { CommunityMain } from "@/components/molecules/communityMain";
-import { EduData, envirData } from "@/dummy/AreaData";
 import { CommunityItemProps } from "@/types";
 
-export const CommunityMainList = ({ selectedTab }: { selectedTab: number }) => {
-  const [tabData, setTabData] = useState<CommunityItemProps[]>([]);
+export const CommunityMainList = ({ data }: { data: CommunityItemProps[] }) => {
+  // const [tabData, setTabData] = useState<CommunityItemProps[]>([]);
 
-  useEffect(() => {
-    let dataFetch: CommunityItemProps[] = [];
+  // useEffect(() => {
+  //   let dataFetch: CommunityItemProps[] = [];
 
-    switch (selectedTab) {
-      case 0: // 전체 api 갖고와서 데이터 넣어주기
-        // getCommunityAllData()
-        //   .then((res) => {
-        //     console.log(res.data);
-        //     dataFetch = res.data;
-        //   })
-        //   .catch((err) => console.log(err));
-        dataFetch = envirData;
+  //   switch (selectedTab) {
+  //     case 0: // 전체 api 갖고와서 데이터 넣어주기
+  //       // getCommunityAllData()
+  //       //   .then((res) => {
+  //       //     console.log(res.data);
+  //       //     dataFetch = res.data;
+  //       //   })
+  //       //   .catch((err) => console.log(err));
+  //       dataFetch = envirData;
 
-        break;
-      case 1: // 일자리 · 노동
-        dataFetch = envirData; //일단 환경 더미 데이터만 넣어놨음
-        break;
-      case 2: // 주거 · 사회 안전망
-        dataFetch = envirData;
-        break;
-      case 3: // 환경
-        dataFetch = envirData;
-        break;
-      case 4: // 교육
-        dataFetch = EduData;
-        break;
-      default:
-        break;
-    }
+  //       break;
+  //     case 1: // 일자리 · 노동
+  //       dataFetch = envirData; //일단 환경 더미 데이터만 넣어놨음
+  //       break;
+  //     case 2: // 주거 · 사회 안전망
+  //       dataFetch = envirData;
+  //       break;
+  //     case 3: // 환경
+  //       dataFetch = envirData;
+  //       break;
+  //     case 4: // 교육
+  //       dataFetch = EduData;
+  //       break;
+  //     default:
+  //       break;
+  //   }
 
-    setTabData(dataFetch);
-  }, [selectedTab]);
+  //   setTabData(dataFetch);
+  // }, [selectedTab]);
 
   return (
     <FirstWrapper>
-      {tabData.map((item, idx) => {
+      {data.map((item, idx) => {
         return (
           <CommunityMainListContainer key={idx}>
             <BigProfile
