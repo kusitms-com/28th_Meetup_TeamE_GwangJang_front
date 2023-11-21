@@ -46,7 +46,7 @@ export const SubscribeBtn = styled.button<{ $onOff: boolean }>`
   border-radius: 85px;
   border: ${({ $onOff }) => (!$onOff ? "1px solid var(--Main_Blue)" : "none")};
   display: flex;
-  padding: ${({ $onOff }) => (!$onOff ? "15px 17px 15px 20px" : "16px 53px 16px 55px")};
+  padding: ${({ $onOff }) => (!$onOff ? "15px 17px 15px 20px" : "16px 52px 16px 52px")};
   justify-content: center;
   align-items: center;
   color: ${({ $onOff }) => (!$onOff ? "var(--Main_Blue, #0084ff)" : "var(--Gray6_500)")};
@@ -103,7 +103,8 @@ export const NextArrow = styled.div`
   }
 `;
 
-export const BorderStyleButton = styled.div`
+export const BorderStyleButton = styled.button`
+  border: none;
   display: flex;
   gap: 5px;
   flex-direction: row;
@@ -114,6 +115,7 @@ export const BorderStyleButton = styled.div`
   letter-spacing: -0.18px;
   cursor: pointer;
   align-items: center;
+  background-color: white;
 
   svg {
     fill: var(--Gray6_500);
@@ -179,5 +181,21 @@ export const BorderStyleButtonTemp = styled.div<{ likeStatus: boolean }>`
     p {
       color: white;
     }
+  }
+`;
+
+export const CloseButtonStyle = styled.div`
+  width: 55px;
+  height: 55px;
+  background-color: rgba(33, 33, 33, 0.6);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    font-size: 45px;
+    color: var(--Gray4_300);
   }
 `;

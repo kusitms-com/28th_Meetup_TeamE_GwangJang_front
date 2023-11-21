@@ -1,4 +1,4 @@
-import bg from "@/assets/discussedTopic/topic1_bg.svg";
+import bg from "@/assets/discussedTopic/topic1.png";
 import { TopicTag } from "@/components/atoms/tag";
 import { ToptopicProps, SimilarTopicProps } from "@/types";
 

@@ -1,0 +1,43 @@
+.highcharts-grid-line {
+  stroke-width: 1;
+}
+
+.highcharts-axis-labels,
+.highcharts-axis {
+  display: none;
+}
+
+/* .highcharts-line-series .highcharts-point-hover {
+  fill: var(--highcharts-color-2) !important;
+  stroke: var(--highcharts-color-2) !important;
+} */
+/* .tooltip-dot-custom {
+  color: var(--highcharts-color-2) !important;
+} */
+
+.highcharts-tooltip-box[stroke="#2caffe"] {
+  fill: #212121 !important;
+  fill-opacity: 0.4;
+  stroke-width: 0;
+}
+/* .highcharts-line-series .highcharts-halo {
+  fill: var(--highcharts-color-2) !important;
+} */
+
+.highcharts-tracker-line {
+  stroke-linejoin: round;
+  stroke: var(--highcharts-color-2) !important;
+  stroke-width: 2px !important;
+  opacity: 0.3;
+  fill: none;
+}
+.highcharts-line-series .highcharts-point {
+  fill-opacity: 0.8 !important;
+  fill: var(--highcharts-color-2) !important;
+  stroke: var(--highcharts-color-2) !important;
+}
+
+.highcharts-graph {
+  fill: none;
+  stroke-width: 0px !important;
+}

@@ -1,22 +1,25 @@
 import { useState } from "react";
+import React from "react";
 
 import styled from "styled-components";
 
 import arrow from "@/assets/bottom_arrow.svg";
+import Line from "@/components/molecules/line";
 export const LineGraph = () => {
+  const Month = [5, 6, 7, 8, 9, 10, 11];
   const [showGraph, setShowGraph] = useState<boolean>(false);
   return (
     <Container>
       <ToggleBox>
         <div className="title">
           <div className="first">후쿠시마 오염수</div>는{" "}
-          <div className="second">2022년 7월 1일</div> 가장 많이 검색됐어요.
+          <div className="second">2022년 7월 1주차</div> 가장 많이 검색됐어요.
         </div>
         <button
           className="toggleBtn"
           onClick={() => setShowGraph(!showGraph)}
         >
-          <p>그래프로 자세히 보기</p>
+          <p>{showGraph ? "그래프 접기" : "그래프로 자세히 보기"}</p>
           <img
             className={showGraph ? "up" : ""}
             src={arrow}
@@ -25,7 +28,16 @@ export const LineGraph = () => {
         </button>
       </ToggleBox>
       {/* {showGraph ? <ShowLineGraph></ShowLineGraph> : ""} */}
-      <ShowLineGraph $showGraph={showGraph}></ShowLineGraph>
+      <ShowLineGraph $showGraph={showGraph}>
+        <Line showGraph={showGraph} />
+        <LineBottom>
+          {Month.map((item, idx) => (
+            <React.Fragment key={idx}>
+              <div>{item}월</div>
+            </React.Fragment>
+          ))}
+        </LineBottom>
+      </ShowLineGraph>
     </Container>
   );
 };
@@ -86,9 +98,29 @@ const ToggleBox = styled.div`
 `;
 
 const ShowLineGraph = styled.div<{ $showGraph: boolean }>`
-  transition: height 0.1s;
+  position: relative;
   width: 1080px;
-  height: ${(props) => (!props.$showGraph ? "0" : "400px")};
-  background-color: red;
-  transition: 2s;
+  visibility: ${(props) => (!props.$showGraph ? "hidden" : "visible")};
+  height: ${(props) => (!props.$showGraph ? "0" : "270px")};
+  transition: height 1s;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: var(--Gray1_50, #fafafa);
+`;
+
+const LineBottom = styled.div`
+  width: 1080px;
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  color: var(--Gray8_700, #616161);
+  line-height: 24px;
+  justify-content: space-around;
+  padding: 0 55px;
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+  gap: 50px;
 `;

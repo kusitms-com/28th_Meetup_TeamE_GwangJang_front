@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { BiCommentDetail } from "react-icons/bi";
+import { IoCloseOutline } from "react-icons/io5";
 import { PiThumbsUpBold } from "react-icons/pi";
 
 import nextImg from "@/assets/NextArrowImg.svg";
@@ -19,6 +20,7 @@ import {
   PrevArrow,
   TestBtn,
   SubscribeBtn,
+  CloseButtonStyle,
 } from "./style.ts";
 
 export const KakaoButton = ({ children, onClick }: ButtonProps) => {
@@ -134,12 +136,22 @@ export const LikeBorderButton = ({
   );
 };
 
-export const QuotBorderButton = ({ quotCount }: { quotCount: number }) => {
+export const QuotBorderButton = ({
+  onClick,
+  quotCount,
+}: {
+  onClick?: () => void;
+  quotCount: number;
+}) => {
+  //인용 버튼 클릭 시 모달창 오픈
+
   return (
-    <BorderStyleButton>
-      <div>인용</div>
-      <p>{quotCount}</p>
-    </BorderStyleButton>
+    <>
+      <BorderStyleButton onClick={onClick}>
+        <div>인용</div>
+        <p>{quotCount}</p>
+      </BorderStyleButton>
+    </>
   );
 };
 
@@ -149,5 +161,13 @@ export const CommentBorderButton = ({ commentCount }: { commentCount: number }) 
       <BiCommentDetail />
       <p>{commentCount}</p>
     </BorderStyleButton>
+  );
+};
+
+export const ModalCloseButton = () => {
+  return (
+    <CloseButtonStyle>
+      <IoCloseOutline />
+    </CloseButtonStyle>
   );
 };
