@@ -100,10 +100,13 @@ export const MySideBox = () => {
           <div className="subscribe-topic">
             {MySubscribeData.map((item, idx) => {
               return (
-                <TopTopicBox
-                  key={idx}
-                  data={item}
-                />
+                <div className="topic-wrapper">
+                  <TopTopicBox
+                    key={idx}
+                    data={item}
+                  />
+                  <button className="subscribe-cancel">구독취소</button>
+                </div>
               );
             })}
           </div>
@@ -289,6 +292,40 @@ export const MySideBoxWrapper = styled.div`
       flex-direction: column;
       cursor: pointer;
       gap: 10px;
+
+      .topic-wrapper {
+        position: relative;
+
+        &:hover .subscribe-cancel {
+          visibility: visible;
+        }
+
+        .subscribe-cancel {
+          cursor: pointer;
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          border: none;
+          border-radius: 55px;
+          background: var(--Gray10_900, #212121);
+
+          color: var(--Gray1_50, #fafafa);
+          text-align: center;
+          padding: 3px 10px;
+
+          font-family: Pretendard;
+          font-size: var(--text_cap1);
+          font-weight: 600;
+          line-height: 18px;
+          letter-spacing: -0.18px;
+          visibility: hidden;
+
+          &:hover {
+            color: var(--Error_50, #dc362e);
+            background: var(--Gray2_100, #f5f5f5);
+          }
+        }
+      }
     }
   }
 
