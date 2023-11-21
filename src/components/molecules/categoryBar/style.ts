@@ -82,4 +82,14 @@ export const CategoryBarContainer = styled.div`
   @media (max-width: 600px) {
     width: 100%;
   }
+
+  @media (max-width: 450px) {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: fit-content;
+  }
 `;
