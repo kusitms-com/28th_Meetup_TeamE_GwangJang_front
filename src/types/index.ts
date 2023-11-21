@@ -215,3 +215,12 @@ export interface PopularCommunityProps {
   contentsId: number;
   contents: null;
 }
+
+export interface SearchTopicProps {
+  id: number;
+  category: string;
+  title: string;
+  count: number;
+  oneline: string;
+  img: string;
+}

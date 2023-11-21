@@ -1,24 +1,35 @@
-import { ChangeEvent, KeyboardEvent, useEffect, useState } from "react";
+import { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 
 import { IoSearch } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import styled from "styled-components";
 
 import background from "@/assets/BubbleChart/header_bg.png";
 import logo from "@/assets/main_logo.svg";
+import { searchResultState, searchTextState } from "@/recoil/atoms";
 import { Inner } from "@/style/global";
 const Header = () => {
   const navigate = useNavigate();
-  const [searchText, setSearchText] = useState<string>("");
+  const [searchText, setSearchText] = useRecoilState<string>(searchTextState);
   const [link, setLink] = useState<string>("");
+  const inputRef = useRef<HTMLInputElement>(null); //ts
+  const setSearchResult = useSetRecoilState(searchResultState);
   const Search = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchText(value);
   };
   const handleOnKeyPress = (e: KeyboardEvent) => {
     if (e.key === "Enter") {
-      console.log(searchText); // Enter 입력이 되면 api 쏘기
-      setSearchText("");
+      if (inputRef.current !== null && e.nativeEvent.isComposing === false) {
+        //한글 중복 입력 해결
+        inputRef.current.disabled = false; //input 비활성화 해제
+        inputRef.current.blur(); //input에 focus 해제
+      }
+      setSearchResult(searchText);
+      // console.log(searchText); // Enter 입력이 되면 api 쏘기
+      navigate(`search/?q=${searchText}`);
+
       //SpaceTo() 이거 이용해서 라우팅
     }
   };
@@ -36,6 +47,9 @@ const Header = () => {
   useEffect(() => {
     const urlSplit = document.location.href.split("/");
     setLink(urlSplit[urlSplit.length - 1]);
+    if (document.location.href.split("/")[3] !== "search") {
+      setSearchText("");
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [link, document.location.href]);
   return (
@@ -58,6 +72,7 @@ const Header = () => {
         <RighttHeader>
           <div className="input">
             <HeaderInput
+              ref={inputRef}
               placeholder="궁금한 사회 이슈를 검색하세요."
               value={searchText}
               onChange={Search}

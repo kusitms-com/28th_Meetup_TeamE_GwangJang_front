@@ -30,7 +30,7 @@ const Line = ({ showGraph }: { showGraph: boolean }) => {
     },
     tooltip: {
       pointFormat:
-        "<span class='tooltip-point-custom'><span class='tooltip-dot-custom'>\u25CF</span> {series.name}: <b>{point.y}</b></span><br/>",
+        "<span class='tooltip-point-custom'><span class='tooltip-dot-custom'>\u25CF</span> 검색횟수: <b>{point.y}</b></span><br/>",
       useHTML: true,
       style: {
         fontSize: "1em",

@@ -11,6 +11,7 @@ import LocalRegisterPage from "@/pages/LocalRegisterPage";
 import { LoginPage } from "@/pages/LoginPage";
 import { RealMyPage } from "@/pages/RealMyPage";
 import RegisterPage from "@/pages/RegisterPage";
+import SearchPage from "@/pages/SearchPage";
 
 const router = () => {
   return (
@@ -53,7 +54,10 @@ const router = () => {
             path="/detailcommunity/:topicid/:comunnityid"
             element={<DetailCommunityPage />}
           />
-
+          <Route
+            path="/search"
+            element={<SearchPage />}
+          />
           <Route
             path="/mypage"
             element={<RealMyPage />}

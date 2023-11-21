@@ -3,6 +3,8 @@ import { atom, selector } from "recoil";
 import { mySubjectData } from "@/dummy/mySubjectData";
 import { ArticleItemProps } from "@/types";
 
+import persistAtom from "./persistAtom";
+
 export const accessTokenState = atom({
   // accessToken 임시 저장 카카오로그인 후, 추가 정보 기입할 때 가져가는 accesstoken 로컬스토리지에 저장하면 안됨.
   key: "src/atoms/auth.tsx-accessTokenState",
@@ -47,4 +49,18 @@ export const areaState = atom({
   // 주제뱔 상세페이지 접속시, 쿼리스트링의 영역값을 저장
   key: "src/atoms/auth.tsx-areaState",
   default: "",
+});
+
+export const searchTextState = atom({
+  // 주제뱔 상세페이지 접속시, 쿼리스트링의 영역값을 저장
+  key: "src/atoms/auth.tsx-searchTextState",
+  default: "",
+  effects: [persistAtom],
+});
+
+export const searchResultState = atom({
+  // 주제뱔 상세페이지 접속시, 쿼리스트링의 영역값을 저장
+  key: "src/atoms/auth.tsx-searchResultState",
+  default: "",
+  effects: [persistAtom],
 });
