@@ -16,6 +16,20 @@ export const CommunityPage = () => {
   const [selectedTab, setSelectedTab] = useState(0);
   const [communityData, setCommunityData] = useState<CommunityItemProps[]>([]);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     switch (selectedTab) {
       case 0: // 전체 api 갖고와서 데이터 넣어주기
@@ -51,11 +65,25 @@ export const CommunityPage = () => {
       <CategoryBar onSelectTab={setSelectedTab} />
       <Bottom>
         <div className="inner">
-          <CommunityMainList data={communityData} />
-          <div className="sideCommunity">
-            <CommunityPopular data={PopularCommunityData} />
-            <CommunityTopTopic data={ToptopicData} />
-          </div>
+          {windowWidth > 1150 ? (
+            <>
+              <CommunityMainList data={communityData} />
+              <div className="sideCommunity">
+                <CommunityPopular data={PopularCommunityData} />
+                <CommunityTopTopic data={ToptopicData} />
+              </div>
+            </>
+          ) : (
+            <div className="responsive-box">
+              <div className="sideCommunity">
+                <CommunityPopular data={PopularCommunityData.slice(0, 2)} />
+                <div className="topic-data-box">
+                  <CommunityTopTopic data={ToptopicData.slice(0, 2)} />
+                </div>
+              </div>
+              <CommunityMainList data={communityData} />
+            </div>
+          )}
         </div>
       </Bottom>
     </>
@@ -65,11 +93,54 @@ export const CommunityPage = () => {
 export const Bottom = styled.div`
   width: 100%;
   background-color: var(--Gray3_200, #eee);
+
   .inner {
     width: 1080px;
     margin: 0 auto;
     display: flex;
     padding-bottom: 152px;
     justify-content: space-between;
+
+    @media (max-width: 1150px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .responsive-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sideCommunity {
+      margin: 0 auto;
+
+      .topic-data-box {
+        @media (max-width: 1150px) {
+          margin-top: 28px;
+        }
+      }
+
+      @media (max-width: 1150px) {
+        width: fit-content;
+        justify-content: center;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      @media (max-width: 800px) {
+        display: flex;
+        gap: 0px;
+        margin: 0 auto;
+        flex-direction: column;
+      }
+    }
+  }
+
+  @media (max-width: 1150px) {
+    display: flex;
+    align-items: center;
   }
 `;

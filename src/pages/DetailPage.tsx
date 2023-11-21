@@ -35,8 +35,6 @@ const DetailPage = () => {
             <CommunityPreview />
           </>
         )}
-        {/* <CommunityPreview />
-        <SimilarTopic data={similartopicData} /> */}
       </Bottom>
       {Show ? <QuotModal /> : ""}
     </>
