@@ -25,7 +25,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video, ::placeholder {
+time, mark, audio, video, ::placeholder, textarea, button {
 	margin: 0;
 	padding: 0;
 	border: 0;
