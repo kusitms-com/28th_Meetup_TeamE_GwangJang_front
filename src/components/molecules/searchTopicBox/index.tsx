@@ -12,7 +12,7 @@ const SearchTopicBox = ({ data }: { data: SearchTopicProps }) => {
         <div className="oneLine">{data.oneline}</div>
       </div>
       <img
-        height={154}
+        height={156}
         src={data.img}
         alt="이미지"
       />
