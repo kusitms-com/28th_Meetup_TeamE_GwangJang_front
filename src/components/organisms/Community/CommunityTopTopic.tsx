@@ -1,11 +1,19 @@
+import { useEffect, useState } from "react";
+
 import styled from "styled-components";
 
 import { TopTopicBox } from "@/components/molecules/longTopicBox";
 import { ToptopicProps } from "@/types";
 
 const CommunityTopTopic = ({ data }: { data: ToptopicProps[] }) => {
+  const [link, setLink] = useState<string>("");
+  useEffect(() => {
+    if (document.location.href.split("/")[3] === "search") {
+      setLink("search");
+    }
+  }, []);
   return (
-    <TopicWraaper>
+    <TopicWraaper $link={link}>
       <div className="title">
         <p className="first">주간 인기 주제 top5</p>
         <p className="second">이번 주 커뮤니티에서 활발하게 논의된 주제예요</p>
@@ -26,7 +34,7 @@ const CommunityTopTopic = ({ data }: { data: ToptopicProps[] }) => {
 
 export default CommunityTopTopic;
 
-const TopicWraaper = styled.div`
+const TopicWraaper = styled.div<{ $link: string }>`
   height: fit-content;
   flex-shrink: 0;
   border-radius: 5px;
@@ -36,6 +44,7 @@ const TopicWraaper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px 20px 30px;
+  margin-top: ${(props) => (props.$link === "search" ? "50px" : "")};
 
   border-radius: 5px;
 
