@@ -11,7 +11,7 @@ import { MySubscribeData } from "@/dummy/MySubscribeData";
 
 export const MySideBox = () => {
   const [isEditing, setIsEditing] = useState(false);
-  const [newNickname, setNewNickname] = useState("");
+  const [newNickname, setNewNickname] = useState("기본값");
 
   //닉네임 수정 시
   const startEditing = () => {
@@ -78,7 +78,7 @@ export const MySideBox = () => {
               </div>
             ) : (
               <>
-                <p>닉네임</p>
+                <p>{newNickname}</p>
                 <img
                   src={editNicknameImg}
                   alt=""
@@ -194,6 +194,7 @@ export const MySideBoxWrapper = styled.div`
 
         input {
           padding: 10px;
+          width: 190px;
           border-radius: 5px;
           outline: none;
           border: 1px solid gray;
@@ -272,12 +273,14 @@ export const MySideBoxWrapper = styled.div`
       color: var(--Gray9_800, #424242);
       font-size: var(--text_b2);
       font-weight: 600;
+      line-height: 24px;
     }
 
     p {
       color: var(--Gray6_500, #959595);
       font-size: var(--text_cap1);
       margin-top: 5px;
+      line-height: 18px;
     }
 
     .subscribe-topic {
