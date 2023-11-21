@@ -9,6 +9,7 @@ import DetailPage from "@/pages/DetailPage";
 import Home from "@/pages/Home";
 import LocalRegisterPage from "@/pages/LocalRegisterPage";
 import { LoginPage } from "@/pages/LoginPage";
+import { RealMyPage } from "@/pages/RealMyPage";
 import RegisterPage from "@/pages/RegisterPage";
 import SearchPage from "@/pages/SearchPage";
 
@@ -56,6 +57,9 @@ const router = () => {
           <Route
             path="/search"
             element={<SearchPage />}
+          <Route
+            path="/mypage"
+            element={<RealMyPage />}
           />
         </Route>
       </Routes>

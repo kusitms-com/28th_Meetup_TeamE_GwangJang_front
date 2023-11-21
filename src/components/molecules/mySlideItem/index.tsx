@@ -1,20 +1,10 @@
-import { useSetRecoilState } from "recoil";
-
 import { LikeBorderButton, QuotBorderButton } from "@/components/atoms/button";
-import { ShowModalState, modalState } from "@/recoil/atoms";
+import { TopicTag } from "@/components/atoms/tag";
 import { ArticleItemProps } from "@/types";
 
 import { SlideWrapper } from "./style";
 
-export const SlideItem = ({ data }: { data: ArticleItemProps }) => {
-  const setModal = useSetRecoilState(modalState);
-  const ShowModal = useSetRecoilState(ShowModalState);
-  const Modal = () => {
-    setModal(data);
-    ShowModal(true);
-    document.body.style.overflowY = "hidden";
-  };
-
+export const MySlideItem = ({ data }: { data: ArticleItemProps }) => {
   return (
     <SlideWrapper>
       <div className="slide-container">
@@ -23,6 +13,9 @@ export const SlideItem = ({ data }: { data: ArticleItemProps }) => {
             src={data.image}
             alt="썸네일"
           />
+          <div className="topic-tag">
+            <TopicTag category="환경" />
+          </div>
         </div>
         <div className="slide-text">
           <div className="top-text">
@@ -39,12 +32,7 @@ export const SlideItem = ({ data }: { data: ArticleItemProps }) => {
                     initialLikeStatus="true"
                   />
                 )}
-                {data.quotCount !== undefined && (
-                  <QuotBorderButton
-                    onClick={Modal}
-                    quotCount={data.quotCount}
-                  />
-                )}
+                {data.quotCount !== undefined && <QuotBorderButton quotCount={data.quotCount} />}
               </div>
             ) : null}
           </div>

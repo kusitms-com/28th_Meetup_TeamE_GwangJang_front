@@ -1,6 +1,7 @@
 import { atom, selector } from "recoil";
 
 import { mySubjectData } from "@/dummy/mySubjectData";
+import { ArticleItemProps } from "@/types";
 
 import persistAtom from "./persistAtom";
 
@@ -26,6 +27,22 @@ export const filteredDataSelector = selector({
         ?.semiData || []
     );
   },
+});
+
+//마이페이지 탭
+export const selectedTabState = atom({
+  key: "selectedTabState",
+  default: 0,
+});
+
+export const modalState = atom<ArticleItemProps | null>({
+  key: "src/atoms/auth.tsx-modalState",
+  default: null,
+});
+
+export const ShowModalState = atom({
+  key: "src/atoms/auth.tsx-ShowModalState",
+  default: false,
 });
 
 export const areaState = atom({
