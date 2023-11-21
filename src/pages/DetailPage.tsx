@@ -24,8 +24,19 @@ const DetailPage = () => {
       <KeywordArticle />
       <KeywordVideo />
       <Bottom>
-        <CommunityPreview />
-        <SimilarTopic data={similartopicData} />
+        {window.innerWidth > 800 ? (
+          <>
+            <CommunityPreview />
+            <SimilarTopic data={similartopicData} />
+          </>
+        ) : (
+          <>
+            <SimilarTopic data={similartopicData} />
+            <CommunityPreview />
+          </>
+        )}
+        {/* <CommunityPreview />
+        <SimilarTopic data={similartopicData} /> */}
       </Bottom>
       {Show ? <QuotModal /> : ""}
     </>
