@@ -47,12 +47,11 @@ const Container = styled.div`
 `;
 
 const BubbleCover = styled.div`
-  width: 1080px; // 여기 반응형 작업 잘하기
+  max-width: 1080px;
+  width: 94.12%; // 여기 반응형 작업 잘하기
   height: 474px;
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
   margin: 0 auto;
 `;
 
@@ -65,6 +64,28 @@ const Date = styled.div`
   img {
     margin-top: 8px;
     width: 60px;
+  }
+  @media (max-width: 850px) {
+    font-size: 1.2rem;
+    line-height: 28px;
+    img {
+      width: 50px;
+    }
+  }
+  @media (max-width: 590px) {
+    left: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+    .firstLine,
+    .secondLine {
+      margin-right: 10px;
+    }
+    img {
+      width: 60px;
+      margin-top: 5px;
+    }
   }
   @media (max-width: 400px) {
     top: 30px;
@@ -80,6 +101,7 @@ const Date = styled.div`
     }
     img {
       width: 60px;
+      margin-top: 5px;
     }
   }
 `;
@@ -99,6 +121,19 @@ const Title = styled.div`
 
   position: absolute;
   bottom: 0;
+  @media (max-width: 850px) {
+    font-size: 1.6rem;
+    line-height: 28px;
+  }
+  @media (max-width: 590px) {
+    left: 0;
+    right: 0;
+    bottom: -50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+  }
 
   @media (max-width: 400px) {
     left: 0;

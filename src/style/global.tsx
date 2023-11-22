@@ -73,10 +73,18 @@ a{
 `;
 
 export const Inner = styled.div`
-  min-width: 1000px;
+  //min-width: 1000px;
   width: 1080px;
   margin: 0 auto;
   /* background-color: white; */
   justify-content: space-between;
   display: flex;
+  position: relative;
+`;
+
+export const DragContainer = styled.div`
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
 `;

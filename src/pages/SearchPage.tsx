@@ -19,7 +19,7 @@ import { searchResultState } from "@/recoil/atoms";
 
 const SearchPage = () => {
   const [query] = useSearchParams();
-  const [searchCategoryBtn, setSearchCategoryBtn] = useState<string>("커뮤니티");
+  const [searchCategoryBtn, setSearchCategoryBtn] = useState<string>("사회 이슈 주제");
   const [notfound, setNotfound] = useState<boolean>(false);
 
   const search = useRecoilValue(searchResultState);

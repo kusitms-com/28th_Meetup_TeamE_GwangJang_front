@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import ScrollToTop from "@/components/atoms/scrollTop";
 import { KakaoCallBack } from "@/components/molecules/login/KakaoCallBack";
 import Layout from "@/layout/Layout";
 import AddInfoPage from "@/pages/AddInfoPage";
@@ -16,6 +17,7 @@ import SearchPage from "@/pages/SearchPage";
 const router = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route
           path="/login"

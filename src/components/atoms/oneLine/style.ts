@@ -27,4 +27,8 @@ export const Container = styled.div`
   .text {
     color: var(--Gray9_800, #424242);
   }
+
+  @media (max-width: 650px) {
+    height: 100%;
+  }
 `;

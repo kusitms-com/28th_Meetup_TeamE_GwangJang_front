@@ -69,6 +69,10 @@ export const FirstWrapper = styled.div`
   /* width: 690px; */
   //width: 63.8%; // 690/1080 비율
   padding-top: 30px;
+
+  @media (max-width: 750px) {
+    width: 90%;
+  }
 `;
 
 export const CommunityMainListContainer = styled.div`

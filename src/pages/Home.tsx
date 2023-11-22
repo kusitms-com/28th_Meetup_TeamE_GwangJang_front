@@ -4,17 +4,18 @@ import { LoginTopic } from "@/components/organisms/Home/LoginTopic";
 import { MainCommunity } from "@/components/organisms/Home/MainCommunity";
 import { MainContent } from "@/components/organisms/Home/MainContent";
 import { MainTopic } from "@/components/organisms/Home/MainTopic";
+import { DragContainer } from "@/style/global";
 
 const Home = () => {
   return (
-    <>
+    <DragContainer>
       <BubbleChart />
       {/* 여러가지 메인에 들어갈 organism들 */}
       {!localStorage.getItem("accessToken") ? <MainTopic /> : <LoginTopic />}
       <MainContent />
       <MainCommunity />
       <DiscussedTopics />
-    </>
+    </DragContainer>
   );
 };
 

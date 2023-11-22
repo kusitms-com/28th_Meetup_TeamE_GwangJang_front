@@ -35,6 +35,15 @@ const Container = styled.div`
   margin: 0 auto;
   padding-top: 60px;
   background-color: var(--Gray3_200);
+
+  //위에 한줄소개 height 늘어나게 했을 때 대비해서 일단 작성해놓은 반응형
+  @media (max-width: 650px) {
+    padding-top: 150px;
+  }
+
+  @media (max-width: 500px) {
+    padding-top: 200px;
+  }
 `;
 
 const BubbleTop = styled.div`
@@ -68,6 +77,14 @@ const BubbleTop = styled.div`
     font-weight: 600;
     margin-left: 5px;
   }
+
+  /* @media (max-width: 650px) {
+    padding-top: 150px;
+  }
+
+  @media (max-width: 500px) {
+    padding-top: 200px;
+  } */
 `;
 
 const BubbleBottom = styled.div`
