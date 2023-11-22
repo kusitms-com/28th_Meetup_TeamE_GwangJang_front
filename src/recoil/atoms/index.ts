@@ -64,3 +64,13 @@ export const searchResultState = atom({
   default: "",
   effects: [persistAtom],
 });
+
+// export const topicIdState = atom({
+//   key: "selectedTopicId",
+//   default: 0,
+// });
+
+// export const communityIdState = atom({
+//   key: "selectedCommunityId",
+//   default: 0,
+// });
