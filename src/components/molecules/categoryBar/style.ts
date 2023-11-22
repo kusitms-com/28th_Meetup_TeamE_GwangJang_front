@@ -90,10 +90,11 @@ export const CategoryBarContainer = styled.div<{ isShow: boolean }>`
     width: 100%;
   }
 
-  @media (max-width: 450px) {
-    padding: 20px;
+  @media (max-width: 565px) {
+    padding-top: 20px;
+    padding-left: 50px;
     align-items: flex-start;
-    width: 100%;
+    width: 50%;
     box-sizing: border-box;
     height: fit-content;
     display: ${(props) => (props.isShow ? "flex" : "none")};
@@ -106,8 +107,9 @@ export const SideBarContainer = styled.div`
   padding: 10px;
   box-sizing: border-box;
 
-  @media (max-width: 450px) {
-    display: inline-flex;
+  @media (max-width: 565px) {
+    display: flex;
+    justify-content: flex-end;
   }
   svg {
     width: 40px;
@@ -116,7 +118,7 @@ export const SideBarContainer = styled.div`
   }
 
   .close-btn {
-    /* position: absolute;
-    top: 0; */
+    position: absolute;
+    top: 10px;
   }
 `;

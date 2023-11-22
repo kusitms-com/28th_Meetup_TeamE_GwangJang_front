@@ -5,6 +5,10 @@ export const SideBoxContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6px;
+
+  @media (max-width: 1150px) {
+    gap: 20px;
+  }
 `;
 
 export const SideText = styled.p<{ isSelected: boolean }>`
@@ -20,6 +24,10 @@ export const SideText = styled.p<{ isSelected: boolean }>`
     color: var(--Gray10_900, #212121);
     font-weight: 600;
   } */
+
+  @media (max-width: 1150px) {
+    font-size: var(--text_h6);
+  }
 
   color: ${({ isSelected }) => (isSelected ? "var(--Gray10_900)" : "var(--Gray7_600)")};
   font-weight: ${({ isSelected }) => (isSelected ? "600" : "500")};
