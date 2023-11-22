@@ -90,7 +90,7 @@ const TopicWrapper = styled.div`
   @media (max-width: 880px) {
     display: flex;
     flex-wrap: wrap;
-    width: 400px;
+    width: 560px;
     justify-content: center;
     margin: 0 auto;
     & > div {
@@ -102,7 +102,7 @@ const TopicWrapper = styled.div`
 
   @media (max-width: 564px) {
     flex-wrap: wrap;
-    width: 200px;
+    width: 340px;
     justify-content: center;
     margin: 0 auto;
     & > div {

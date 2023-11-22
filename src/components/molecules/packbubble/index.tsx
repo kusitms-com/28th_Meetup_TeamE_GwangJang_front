@@ -6,6 +6,7 @@ import HighchartsAccessibility from "highcharts/modules/accessibility";
 import HighchartsExporting from "highcharts/modules/exporting";
 import HighchartsReact from "highcharts-react-official";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 import { packbubbleDummydata } from "@/dummy/packBubbleData";
 
@@ -30,7 +31,7 @@ const PackBubble = () => {
     chart: {
       type: "packedbubble",
       width: width,
-      height: 524,
+      height: 524, //524
       backgroundColor: "transparent",
       zIndex: 9,
     },
@@ -120,11 +121,29 @@ const PackBubble = () => {
     series: packbubbleDummydata, // 데이터 값
   };
   return (
-    <HighchartsReact
-      highcharts={Highcharts}
-      options={options}
-    />
+    <Container>
+      <HighchartsReact
+        highcharts={Highcharts}
+        options={options}
+      />
+    </Container>
   );
 };
 
 export default PackBubble;
+
+export const Container = styled.div`
+  @media (max-width: 590px) {
+    .highcharts-legend-item {
+      display: none !important;
+    }
+    .highcharts-root {
+      padding-top: 30px;
+    }
+  }
+  @media (max-width: 400px) {
+    .highcharts-root {
+      padding-top: 80px;
+    }
+  }
+`;
