@@ -1,8 +1,11 @@
 import { useState } from "react";
 
+import { IoCloseOutline } from "react-icons/io5";
+import { MdMenu } from "react-icons/md";
+
 import { CategoryBarProps } from "@/types";
 
-import { CategoryBarContainer, Container } from "./style";
+import { CategoryBarContainer, Container, SideBarContainer } from "./style";
 
 export const CategoryBar = ({ onSelectTab }: CategoryBarProps) => {
   const [currentTab, setCurrentTab] = useState(0);
@@ -20,9 +23,15 @@ export const CategoryBar = ({ onSelectTab }: CategoryBarProps) => {
     onSelectTab(idx);
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSide = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <Container>
-      <CategoryBarContainer>
+      <CategoryBarContainer isShow={isOpen}>
         {areaList.map((el, idx) => {
           return (
             <div className="area-wrapper">
@@ -44,6 +53,15 @@ export const CategoryBar = ({ onSelectTab }: CategoryBarProps) => {
           );
         })}
       </CategoryBarContainer>
+      <SideBarContainer>
+        {!isOpen ? (
+          <MdMenu onClick={toggleSide} />
+        ) : (
+          <div className="close-btn">
+            <IoCloseOutline onClick={toggleSide} />
+          </div>
+        )}
+      </SideBarContainer>
     </Container>
   );
 };

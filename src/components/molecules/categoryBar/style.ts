@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
+  position: relative;
   background-color: var(--Gray1_50, #fafafa);
 `;
 
-export const CategoryBarContainer = styled.div`
+export const CategoryBarContainer = styled.div<{ isShow: boolean }>`
   display: flex;
   background: var(--Gray1_50, #fafafa);
   gap: 30px;
@@ -17,6 +18,7 @@ export const CategoryBarContainer = styled.div`
   padding: 0px 10px;
   box-sizing: border-box;
   margin-top: -3px;
+
   .area-wrapper {
     .tab {
       height: inherit;
@@ -28,6 +30,11 @@ export const CategoryBarContainer = styled.div`
       font-size: var(--text_b1);
       line-height: 28px;
       letter-spacing: -0.27px;
+
+      @media (max-width: 450px) {
+        /* line-height: 24px; */
+        width: fit-content;
+      }
 
       .circle {
         background-color: ${(props) => props.color};
@@ -84,12 +91,32 @@ export const CategoryBarContainer = styled.div`
   }
 
   @media (max-width: 450px) {
-    width: 100%;
     padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
     height: fit-content;
+    display: ${(props) => (props.isShow ? "flex" : "none")};
+    flex-direction: ${(props) => (props.isShow ? "column" : "")};
+  }
+`;
+
+export const SideBarContainer = styled.div`
+  display: none;
+  padding: 10px;
+  box-sizing: border-box;
+
+  @media (max-width: 450px) {
+    display: inline-flex;
+  }
+  svg {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .close-btn {
+    /* position: absolute;
+    top: 0; */
   }
 `;

@@ -7,8 +7,8 @@ export const Container = styled.div<{ $string: string }>`
   opacity: 0.8;
   background-color: #343434;
 
-  @media (max-width: 396px) {
-    width: fit-content;
+  @media (max-width: 1150px) {
+    height: 120px;
   }
 `;
 export const Top = styled.div`
@@ -38,6 +38,8 @@ export const Bottom = styled.div`
 
 export const Middle = styled.div`
   padding: 15px 15px 15px;
+  height: fit-content;
+
   .title {
     color: #fff;
     font-size: var(--text_b2);
@@ -45,5 +47,9 @@ export const Middle = styled.div`
     line-height: 24px;
     letter-spacing: -0.24px;
     margin-bottom: 8px;
+
+    @media (max-width: 1150px) {
+      margin-bottom: 37px;
+    }
   }
 `;
