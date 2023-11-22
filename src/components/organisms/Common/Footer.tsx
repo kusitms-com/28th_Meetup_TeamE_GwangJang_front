@@ -12,6 +12,8 @@ const Footer = () => {
           <img
             src={logo}
             alt="광장"
+            width={80}
+            height={80}
           />
           <div className="text-box">
             <p
@@ -22,7 +24,7 @@ const Footer = () => {
             >
               CS페이지
             </p>
-            <p>|</p>
+            <p className="text-subline">|</p>
             <p
               className="text"
               onClick={() =>
@@ -31,7 +33,7 @@ const Footer = () => {
             >
               행동강령 및 운영정책
             </p>
-            <p>|</p>
+            <p className="text-subline">|</p>
             <p
               className="text"
               onClick={() =>
@@ -42,7 +44,7 @@ const Footer = () => {
             >
               사회 이슈 제안하기
             </p>
-            <p>|</p>
+            <p className="text-subline">|</p>
             <p
               className="text"
               onClick={() =>
@@ -62,12 +64,11 @@ const Footer = () => {
             <p>ⓒ 2023 수영의 세포들 All rights reserved.</p>
           </div>
           <div className="sns-box">
-            <a href="https://www.instagram.com/our.gwangjang/">
-              <img
-                src={instaImg}
-                alt="광장 인스타"
-              />
-            </a>
+            <img
+              src={instaImg}
+              alt="광장 인스타"
+              onClick={() => window.open("https://www.instagram.com/our.gwangjang/")}
+            />
             <img
               src={twitImg}
               alt="광장 트위터"
@@ -83,8 +84,13 @@ export default Footer;
 
 const Container = styled.div`
   background-color: var(--Gray9_800);
-  height: 211px;
   width: 100%;
+
+  @media (max-width: 560px) {
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -95,6 +101,9 @@ export const Wrapper = styled.div`
     display: flex;
     padding-top: 45px;
     justify-content: space-between;
+
+    img {
+    }
 
     .text-box {
       display: flex;
@@ -110,6 +119,22 @@ export const Wrapper = styled.div`
       .text {
         cursor: pointer;
       }
+
+      .text-subline {
+        @media (max-width: 560px) {
+          display: none;
+        }
+      }
+
+      @media (max-width: 560px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 400px) {
+      align-items: center;
+      justify-content: space-evenly;
     }
   }
 
@@ -123,6 +148,8 @@ export const Wrapper = styled.div`
   .bottom-box {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 30px;
+
     .bottom-text-box {
       color: var(--Gray6_500, #959595);
       font-size: var(--text_cap1);
@@ -137,6 +164,12 @@ export const Wrapper = styled.div`
     .sns-box {
       display: flex;
       gap: 10px;
+    }
+
+    @media (max-width: 400px) {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
     }
   }
 
