@@ -29,6 +29,10 @@ export const Container = styled.div`
   .subscribeText p {
     color: var(--Main_Blue, #0084ff);
   }
+
+  @media (max-width: 1080px) {
+    width: 90%;
+  }
 `;
 
 export const Top = styled.div`

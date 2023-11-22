@@ -80,6 +80,11 @@ export const Container = styled.div`
     border-radius: 150px;
     background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, #d9d9d9 100%);
   }
+
+  @media (max-width: 800px) {
+    width: 90%;
+    margin: 0 auto;
+  }
 `;
 
 export const CommunityDetailWrapper = styled.div`

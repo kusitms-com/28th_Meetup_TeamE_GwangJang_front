@@ -81,3 +81,10 @@ export const Inner = styled.div`
   display: flex;
   position: relative;
 `;
+
+export const DragContainer = styled.div`
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
+`;

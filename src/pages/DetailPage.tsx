@@ -24,8 +24,17 @@ const DetailPage = () => {
       <KeywordArticle />
       <KeywordVideo />
       <Bottom>
-        <CommunityPreview />
-        <SimilarTopic data={similartopicData} />
+        {window.innerWidth > 800 ? (
+          <>
+            <CommunityPreview />
+            <SimilarTopic data={similartopicData} />
+          </>
+        ) : (
+          <>
+            <SimilarTopic data={similartopicData} />
+            <CommunityPreview />
+          </>
+        )}
       </Bottom>
       {Show ? <QuotModal /> : ""}
     </>
@@ -42,4 +51,11 @@ const Bottom = styled.div`
   justify-content: center;
   gap: 24px;
   padding-bottom: 66px;
+
+  @media (max-width: 800px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+  }
 `;

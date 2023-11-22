@@ -1,4 +1,4 @@
-import { LikeBorderButton, QuotBorderButton } from "@/components/atoms/button";
+import { CommentBorderButton, LikeBorderButton } from "@/components/atoms/button";
 import { KeywordTag, TopicTag } from "@/components/atoms/tag";
 import { CommunityItemProps } from "@/types";
 
@@ -30,7 +30,7 @@ export const MainCommunityBox = ({ data }: { data: CommunityItemProps }) => {
           likeCount={data.likeCount}
           initialLikeStatus={data.likeStatus}
         />
-        <QuotBorderButton quotCount={data.commentCount} />
+        <CommentBorderButton commentCount={data.commentCount} />
       </div>
     </CommunityMainContainer>
   );

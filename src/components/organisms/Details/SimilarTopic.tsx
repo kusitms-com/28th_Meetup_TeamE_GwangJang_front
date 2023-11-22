@@ -45,8 +45,13 @@ const Container = styled.div`
     font-size: var(--text_h5);
     font-weight: 600;
     line-height: 34px;
+
     .title-top {
       display: flex;
+
+      @media (max-width: 800px) {
+        justify-content: center;
+      }
     }
 
     p {
@@ -57,6 +62,16 @@ const Container = styled.div`
       box-shadow: inset 0 -9px 0 #1ae276;
       margin-right: 5px;
     }
+
+    @media (max-width: 800px) {
+      display: flex;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 800px) {
+    width: 90%;
+    margin: 0 auto;
   }
 `;
 const TopicWraaper = styled.div`
@@ -72,6 +87,12 @@ const TopicWraaper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 12px;
+  }
+
+  @media (max-width: 800px) {
+    width: fit-content;
+    padding: 24px;
+    margin: 0 auto;
   }
 `;
 

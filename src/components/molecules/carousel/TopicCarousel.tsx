@@ -98,9 +98,16 @@ const StyledSlider = styled(Slider)`
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  gap: 24px;
 
-  @media (max-width: 1360px) {
+  @media (max-width: 1400px) {
+    width: 804px;
+  }
+
+  @media (max-width: 1030px) {
+    width: 540px;
+  }
+
+  @media (max-width: 700px) {
     width: 100%;
   }
 `;

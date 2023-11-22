@@ -21,4 +21,11 @@ export const MyContentWrapper = styled.div`
   grid-template-columns: repeat(2, 2fr);
   gap: 24px;
   width: 712px;
+
+  @media (max-width: 820px) {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 100%;
+  }
 `;

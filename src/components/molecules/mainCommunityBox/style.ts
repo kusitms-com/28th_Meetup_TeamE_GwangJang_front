@@ -83,4 +83,8 @@ export const CommunityMainContainer = styled.div`
     margin-top: 12px;
     gap: 8px;
   }
+
+  @media (max-width: 690px) {
+    width: 100%;
+  }
 `;

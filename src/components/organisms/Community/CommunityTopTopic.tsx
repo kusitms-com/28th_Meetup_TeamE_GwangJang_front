@@ -48,9 +48,19 @@ const TopicWraaper = styled.div<{ $link: string }>`
 
   border-radius: 5px;
 
+  @media (max-width: 1150px) {
+    height: 378px;
+    margin-top: 30px;
+  }
+
+  @media (max-width: 800px) {
+    margin: 20px 0px 30px 0px;
+  }
+
   .title {
     margin-bottom: 22px;
   }
+
   .title .first {
     color: var(--Gray10_900, #212121);
     font-size: var(--text_h6);
