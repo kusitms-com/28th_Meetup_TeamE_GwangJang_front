@@ -7,70 +7,72 @@ import twitImg from "@/assets/Footer/footer-twitter.svg";
 const Footer = () => {
   return (
     <Container>
-      <div className="top-box">
-        <img
-          src={logo}
-          alt="광장"
-        />
-        <div className="text-box">
-          <p
-            className="text"
-            onClick={() =>
-              window.open("https://tivegirl.notion.site/ca9e2ce6818142009bd023144ea540bd")
-            }
-          >
-            CS페이지
-          </p>
-          <p>|</p>
-          <p
-            className="text"
-            onClick={() =>
-              window.open("https://tivegirl.notion.site/89c4c82614f54363b3b1870544da7e3f")
-            }
-          >
-            행동강령 및 운영정책
-          </p>
-          <p>|</p>
-          <p
-            className="text"
-            onClick={() =>
-              window.open(
-                "https://docs.google.com/forms/d/e/1FAIpQLSfaG6BKFpiQfP8VOkjeAKfhgcobB4_A3uYp1gvG8J9R7vvD5w/viewform"
-              )
-            }
-          >
-            사회 이슈 제안하기
-          </p>
-          <p>|</p>
-          <p
-            className="text"
-            onClick={() =>
-              window.open(
-                "https://docs.google.com/forms/d/e/1FAIpQLSfszGqCom3P0hfdQu9PMZ0SDTTYTeBGeABvF9tgxqtKiQnz-g/viewform"
-              )
-            }
-          >
-            신고하기
-          </p>
-        </div>
-      </div>
-      <div className="line"></div>
-      <div className="bottom-box">
-        <div className="bottom-text-box">
-          <p>E-mail : our-gwangjang@gmail.com</p>
-          <p>ⓒ 2023 수영의 세포들 All rights reserved.</p>
-        </div>
-        <div>
+      <Wrapper>
+        <div className="top-box">
           <img
-            src={instaImg}
-            alt="광장"
-          />{" "}
-          <img
-            src={twitImg}
+            src={logo}
             alt="광장"
           />
+          <div className="text-box">
+            <p
+              className="text"
+              onClick={() =>
+                window.open("https://tivegirl.notion.site/ca9e2ce6818142009bd023144ea540bd")
+              }
+            >
+              CS페이지
+            </p>
+            <p>|</p>
+            <p
+              className="text"
+              onClick={() =>
+                window.open("https://tivegirl.notion.site/89c4c82614f54363b3b1870544da7e3f")
+              }
+            >
+              행동강령 및 운영정책
+            </p>
+            <p>|</p>
+            <p
+              className="text"
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/forms/d/e/1FAIpQLSfaG6BKFpiQfP8VOkjeAKfhgcobB4_A3uYp1gvG8J9R7vvD5w/viewform"
+                )
+              }
+            >
+              사회 이슈 제안하기
+            </p>
+            <p>|</p>
+            <p
+              className="text"
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/forms/d/e/1FAIpQLSfszGqCom3P0hfdQu9PMZ0SDTTYTeBGeABvF9tgxqtKiQnz-g/viewform"
+                )
+              }
+            >
+              신고하기
+            </p>
+          </div>
         </div>
-      </div>
+        <div className="line"></div>
+        <div className="bottom-box">
+          <div className="bottom-text-box">
+            <p>E-mail : our-gwangjang@gmail.com</p>
+            <p>ⓒ 2023 수영의 세포들 All rights reserved.</p>
+          </div>
+          <div>
+            <img
+              src={instaImg}
+              alt="광장"
+            />{" "}
+            <img
+              src={twitImg}
+              alt="광장"
+            />
+          </div>
+        </div>
+      </Wrapper>
     </Container>
   );
 };
@@ -81,8 +83,11 @@ const Container = styled.div`
   background-color: var(--Gray9_800);
   height: 211px;
   width: 100%;
-  padding: 0px 180px;
-  box-sizing: border-box;
+`;
+
+export const Wrapper = styled.div`
+  width: 1080px;
+  margin: 0 auto;
 
   .top-box {
     display: flex;
@@ -128,7 +133,8 @@ const Container = styled.div`
     }
   }
 
-  @media (max-width: 564px) {
-    height: 122px;
+  @media (max-width: 1080px) {
+    width: 90%;
+    margin: 0 auto;
   }
 `;
