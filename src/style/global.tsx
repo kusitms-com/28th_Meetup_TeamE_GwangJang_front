@@ -80,3 +80,10 @@ export const Inner = styled.div`
   justify-content: space-between;
   display: flex;
 `;
+
+export const DragContainer = styled.div`
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
+`;
