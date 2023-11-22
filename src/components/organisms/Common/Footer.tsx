@@ -61,14 +61,16 @@ const Footer = () => {
             <p>E-mail : our-gwangjang@gmail.com</p>
             <p>ⓒ 2023 수영의 세포들 All rights reserved.</p>
           </div>
-          <div>
-            <img
-              src={instaImg}
-              alt="광장"
-            />{" "}
+          <div className="sns-box">
+            <a href="https://www.instagram.com/our.gwangjang/">
+              <img
+                src={instaImg}
+                alt="광장 인스타"
+              />
+            </a>
             <img
               src={twitImg}
-              alt="광장"
+              alt="광장 트위터"
             />
           </div>
         </div>
@@ -130,6 +132,11 @@ export const Wrapper = styled.div`
 
     img {
       cursor: pointer;
+    }
+
+    .sns-box {
+      display: flex;
+      gap: 10px;
     }
   }
 
