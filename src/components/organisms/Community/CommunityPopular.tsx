@@ -39,6 +39,14 @@ const PopularWraaper = styled.div`
   border-radius: 5px;
   margin: 89px 0 30px;
 
+  @media (max-width: 1150px) {
+    height: 380px;
+  }
+
+  @media (max-width: 800px) {
+    margin: 50px 0px 0px 0px;
+  }
+
   .title {
     margin-bottom: 22px;
   }
