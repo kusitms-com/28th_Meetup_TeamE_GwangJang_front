@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import * as Highcharts from "highcharts";
 import HighchartsMore from "highcharts/highcharts-more";
 import HighchartsAccessibility from "highcharts/modules/accessibility";
@@ -7,14 +9,37 @@ HighchartsExporting(Highcharts);
 HighchartsAccessibility(Highcharts);
 HighchartsMore(Highcharts);
 import "./theme3.css";
+import { useParams } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import styled from "styled-components";
 
-import { lineDummydata } from "@/dummy/lineData";
+import { getDetailLineGraph } from "@/apis";
 import { areaState } from "@/recoil/atoms";
 
 const Line = ({ showGraph }: { showGraph: boolean }) => {
   const area = useRecoilValue(areaState);
+  //const LineGraph = useRecoilValue(LineGraphState);
+  const [data, setData] = useState([]);
+  const { id } = useParams();
+
+  useEffect(() => {
+    const name = decodeURI(decodeURIComponent(id || ""));
+
+    getDetailLineGraph(name)
+      .then((res) => {
+        const obj = Object.freeze(res.data.data);
+        console.log(res);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const RealObj = obj.map((item: any) => {
+          return Object.freeze(item);
+        });
+        setData(RealObj);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const options = {
     chart: {
       type: "line",
@@ -44,7 +69,7 @@ const Line = ({ showGraph }: { showGraph: boolean }) => {
     series: [
       {
         name: "검색횟수",
-        data: lineDummydata,
+        data: data,
       },
     ],
     credits: {
@@ -84,9 +109,9 @@ const Container = styled.div<{ $showGraph: boolean; $area: string }>`
       props.$area === "환경"
         ? " rgba(26, 226, 118, 1) !important;"
         : props.$area === "교육"
-        ? "rgba(0, 132, 255, 1) !important;"
+        ? "rgba(255, 153, 0, 1) !important;"
         : props.$area === "일자리·노동"
-        ? " rgba(255, 153, 0, 1) !important;"
+        ? " rgba(0, 132, 255, 1) !important;"
         : props.$area === "주거·사회 안전망"
         ? " rgba(119, 85, 255, 1) !important;"
         : ""};
@@ -96,9 +121,9 @@ const Container = styled.div<{ $showGraph: boolean; $area: string }>`
       props.$area === "환경"
         ? " rgba(26, 226, 118, 1) !important;"
         : props.$area === "교육"
-        ? "rgba(0, 132, 255, 1) !important;"
+        ? "rgba(255, 153, 0, 1) !important;"
         : props.$area === "일자리·노동"
-        ? " rgba(255, 153, 0, 1) !important;"
+        ? " rgba(0, 132, 255, 1) !important;"
         : props.$area === "주거·사회 안전망"
         ? " rgba(119, 85, 255, 1) !important;"
         : ""};
@@ -108,9 +133,9 @@ const Container = styled.div<{ $showGraph: boolean; $area: string }>`
       props.$area === "환경"
         ? " rgba(26, 226, 118, 1) !important;"
         : props.$area === "교육"
-        ? "rgba(0, 132, 255, 1) !important;"
+        ? "rgba(255, 153, 0, 1) !important;"
         : props.$area === "일자리·노동"
-        ? " rgba(255, 153, 0, 1) !important;"
+        ? " rgba(0, 132, 255, 1) !important;"
         : props.$area === "주거·사회 안전망"
         ? " rgba(119, 85, 255, 1) !important;"
         : ""};
@@ -120,9 +145,9 @@ const Container = styled.div<{ $showGraph: boolean; $area: string }>`
       props.$area === "환경"
         ? " rgba(26, 226, 118, 1) !important;"
         : props.$area === "교육"
-        ? "rgba(0, 132, 255, 1) !important;"
+        ? "rgba(255, 153, 0, 1) !important;"
         : props.$area === "일자리·노동"
-        ? " rgba(255, 153, 0, 1) !important;"
+        ? " rgba(0, 132, 255, 1) !important;"
         : props.$area === "주거·사회 안전망"
         ? " rgba(119, 85, 255, 1) !important;"
         : ""};
@@ -130,9 +155,9 @@ const Container = styled.div<{ $showGraph: boolean; $area: string }>`
       props.$area === "환경"
         ? " rgba(26, 226, 118, 1) !important;"
         : props.$area === "교육"
-        ? "rgba(0, 132, 255, 1) !important;"
+        ? "rgba(255, 153, 0, 1) !important;"
         : props.$area === "일자리·노동"
-        ? " rgba(255, 153, 0, 1) !important;"
+        ? " rgba(0, 132, 255, 1) !important;"
         : props.$area === "주거·사회 안전망"
         ? " rgba(119, 85, 255, 1) !important;"
         : ""};
