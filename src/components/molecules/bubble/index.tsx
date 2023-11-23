@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from "react";
 
 import * as Highcharts from "highcharts";
@@ -6,7 +7,7 @@ import HighchartsAccessibility from "highcharts/modules/accessibility";
 import HighchartsExporting from "highcharts/modules/exporting";
 import HighchartsReact from "highcharts-react-official";
 import { useParams } from "react-router-dom";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
 
 import backgroundImg from "@/assets/Bubble/detail-bubbleBackground.svg";
@@ -14,12 +15,12 @@ HighchartsExporting(Highcharts);
 HighchartsAccessibility(Highcharts);
 HighchartsMore(Highcharts);
 import "./theme2.css";
-import { bubbleDummydata } from "@/dummy/bubbleData";
-import { areaState } from "@/recoil/atoms";
+//import { bubbleDummydata } from "@/dummy/bubbleData";
+import { areaState, bubbleGraphState } from "@/recoil/atoms";
 
 const Bubble = () => {
   const [area, setArea] = useRecoilState<string>(areaState);
-
+  const bubbleGraphData = useRecoilValue(bubbleGraphState);
   const options = {
     chart: {
       type: "bubble",
@@ -75,7 +76,7 @@ const Bubble = () => {
 
     series: [
       {
-        data: bubbleDummydata,
+        data: bubbleGraphData,
         colorByPoint: true,
       },
     ],
@@ -84,24 +85,48 @@ const Bubble = () => {
     },
   };
   const { id } = useParams();
+
   useEffect(() => {
-    if (id === "1" || id === "2" || id === "3") {
-      setArea("일자리·노동");
-    } else if (id === "4" || id === "5") {
-      setArea("주거·사회 안전망");
-    } else if (id === "6" || id === "7" || id === "8") {
+    const name = decodeURI(decodeURIComponent(id || ""));
+    if (name === "후쿠시마 오염수" || name === "일회용품  사용 규제 시행") {
       setArea("환경");
-    } else if (id === "9" || id === "10") {
+    } else if (
+      name === "주 69시간 근로시간 제도 개편" ||
+      name === "쿠팡 노동자 사망" ||
+      name === "SPC 불매 운동"
+    ) {
+      setArea("일자리·노동");
+    } else if (name === "국민연금 개혁" || name === "이태원 참사") {
+      setArea("주거·사회 안전망");
+    } else if (name === "의대 정원 확대" || name === "서이초 교사 사건") {
       setArea("교육");
     }
+
+    // getDetailBubbleGraph(name)
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     const obj = [...res.data.data];
+    //     const RealObj = obj.map((item: any) => {
+    //       return Object.freeze(item);
+    //     });
+    //     console.log(RealObj);
+    //     setBubbleGraphData(RealObj);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   }, [area, id, setArea]);
 
   return (
     <Container $area={area}>
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={options}
-      />
+      {bubbleGraphData.length !== 0 ? (
+        <HighchartsReact
+          highcharts={Highcharts}
+          options={options}
+        />
+      ) : (
+        ""
+      )}
     </Container>
   );
 };
@@ -115,9 +140,9 @@ const Container = styled.div<{ $area: string }>`
     filter: ${(props) =>
       props.$area === "환경"
         ? "drop-shadow(0px 6px 30px rgba(26, 226, 118, 0.4)) !important;"
-        : props.$area === "교육"
-        ? "drop-shadow(0px 6px 30px rgba(0, 132, 255, 0.4)) !important;"
         : props.$area === "일자리·노동"
+        ? "drop-shadow(0px 6px 30px rgba(0, 132, 255, 0.4)) !important;"
+        : props.$area === "교육"
         ? "drop-shadow(0px 6px 30px rgba(255, 153, 0, 0.4)) !important;"
         : props.$area === "주거·사회 안전망"
         ? "drop-shadow(0px 6px 30px rgba(119, 85, 255, 0.4)) !important;"
@@ -136,9 +161,9 @@ const Container = styled.div<{ $area: string }>`
     fill: ${(props) =>
       props.$area === "환경"
         ? " rgba(26, 226, 118, 0.8) !important;"
-        : props.$area === "교육"
-        ? "rgba(0, 132, 255, 0.8) !important;"
         : props.$area === "일자리·노동"
+        ? "rgba(0, 132, 255, 0.8) !important;"
+        : props.$area === "교육"
         ? " rgba(255, 153, 0, 0.8) !important;"
         : props.$area === "주거·사회 안전망"
         ? " rgba(119, 85, 255, 0.8) !important;"
