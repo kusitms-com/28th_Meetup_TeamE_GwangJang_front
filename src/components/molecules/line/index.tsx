@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import * as Highcharts from "highcharts";
 import HighchartsMore from "highcharts/highcharts-more";
@@ -10,16 +10,17 @@ HighchartsAccessibility(Highcharts);
 HighchartsMore(Highcharts);
 import "./theme3.css";
 import { useParams } from "react-router-dom";
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import styled from "styled-components";
 
 import { getDetailLineGraph } from "@/apis";
-import { areaState } from "@/recoil/atoms";
+import { areaState, topDateState } from "@/recoil/atoms";
+import { lineGraphProps } from "@/types";
 
 const Line = ({ showGraph }: { showGraph: boolean }) => {
   const area = useRecoilValue(areaState);
-  //const LineGraph = useRecoilValue(LineGraphState);
-  const [data, setData] = useState([]);
+  const setTopDate = useSetRecoilState(topDateState);
+  const [data, setData] = useState<lineGraphProps[]>([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -27,8 +28,10 @@ const Line = ({ showGraph }: { showGraph: boolean }) => {
 
     getDetailLineGraph(name)
       .then((res) => {
-        const obj = Object.freeze(res.data.data);
+        const obj = Object.freeze(res.data.data.data);
         console.log(res);
+        setTopDate(res.data.data.date);
+
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const RealObj = obj.map((item: any) => {
           return Object.freeze(item);
@@ -38,53 +41,56 @@ const Line = ({ showGraph }: { showGraph: boolean }) => {
       .catch((err) => {
         console.log(err);
       });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  const options = {
-    chart: {
-      type: "line",
-      plotBorderWidth: 0,
-      height: 246,
-      width: 887,
-      marginLeft: 0,
-      marginRight: 0,
-    },
-
-    legend: {
-      enabled: false,
-    },
-    tooltip: {
-      pointFormat:
-        "<span class='tooltip-point-custom'><span class='tooltip-dot-custom'>\u25CF</span> 검색횟수: <b>{point.y}</b></span><br/>",
-      useHTML: true,
-      style: {
-        fontSize: "1em",
-        color: "#fff",
+  }, [id]);
+  const options = useMemo(() => {
+    return {
+      chart: {
+        type: "line",
+        plotBorderWidth: 0,
+        height: 246,
+        width: 887,
+        marginLeft: 0,
+        marginRight: 0,
       },
-    },
-    exporting: {
-      enabled: false,
-    },
 
-    series: [
-      {
-        name: "검색횟수",
-        data: data,
+      legend: {
+        enabled: false,
       },
-    ],
-    credits: {
-      enabled: false,
-    },
-  };
+      tooltip: {
+        pointFormat:
+          "<span class='tooltip-point-custom'><span class='tooltip-dot-custom'>\u25CF</span> 검색횟수: <b>{point.y}</b></span><br/>",
+        useHTML: true,
+        style: {
+          fontSize: "1em",
+          color: "#fff",
+        },
+      },
+      exporting: {
+        enabled: false,
+      },
+
+      series: [
+        {
+          name: "검색횟수",
+          data: data,
+        },
+      ],
+      credits: {
+        enabled: false,
+      },
+    };
+  }, [data]);
   return (
     <Container
       $showGraph={showGraph}
       $area={area}
     >
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={options}
-      />
+      {data.length && (
+        <HighchartsReact
+          highcharts={Highcharts}
+          options={options}
+        />
+      )}
     </Container>
   );
 };

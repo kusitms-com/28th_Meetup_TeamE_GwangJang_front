@@ -6,17 +6,18 @@ import styled from "styled-components";
 
 import arrow from "@/assets/bottom_arrow.svg";
 import Line from "@/components/molecules/line";
-import { detailTitleState } from "@/recoil/atoms";
+import { detailTitleState, topDateState } from "@/recoil/atoms";
 export const LineGraph = () => {
   const Month = [5, 6, 7, 8, 9, 10, 11];
   const [showGraph, setShowGraph] = useState<boolean>(false);
+  const topDate = useRecoilValue(topDateState);
   const detailTitleData = useRecoilValue(detailTitleState);
   return (
     <Container>
       <ToggleBox>
         <div className="title">
           <div className="first">{detailTitleData.title}</div>는{" "}
-          <div className="second">2023년 7월 1주차</div> 가장 많이 검색됐어요.
+          <div className="second">2023년 {topDate}</div> 가장 많이 검색됐어요.
         </div>
         <button
           className="toggleBtn"
