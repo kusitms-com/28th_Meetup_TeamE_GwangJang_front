@@ -41,9 +41,20 @@ export const selectedTabState = atom({
   default: 0,
 });
 
-export const modalState = atom<ArticleDataProps | null>({
+export const modalState = atom<ArticleDataProps>({
   key: "src/atoms/auth.tsx-modalState",
-  default: null,
+  default: {
+    contents_id: 0,
+    description: "",
+    imgUrl: "",
+    issueTitle: "",
+    keyword: "",
+    pubDate: "",
+    title: "",
+    topic: "",
+    type: "",
+    url: "",
+  },
 });
 
 export const ShowModalState = atom({

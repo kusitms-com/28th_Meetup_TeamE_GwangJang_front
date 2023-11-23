@@ -111,7 +111,7 @@ export interface semiDataProps {
 }
 
 export interface ArticleDataProps {
-  contents_id?: string;
+  contents_id?: number;
   description?: string;
   imgUrl: string;
   issueTitle?: string;

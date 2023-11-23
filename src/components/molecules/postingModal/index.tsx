@@ -6,7 +6,7 @@ import { postCommunityItem } from "@/apis";
 import { BigProfile } from "@/components/atoms/profile";
 import { KeywordTag, TopicTag } from "@/components/atoms/tag";
 import { modalState } from "@/recoil/atoms";
-import { ArticleItemProps } from "@/types";
+import { ArticleDataProps } from "@/types";
 
 import { NoticeModal } from "../noticeModal";
 
@@ -22,7 +22,7 @@ export const PostingModal = () => {
 
   const [isComplete, setIsComplete] = useState(false);
   //데이터 받아오기
-  const modalData = useRecoilValue<ArticleItemProps | null>(modalState);
+  const modalData = useRecoilValue<ArticleDataProps>(modalState);
   console.log("data:", modalData);
 
   console.log(modalData?.contents_id);
@@ -79,8 +79,8 @@ export const PostingModal = () => {
       </div>
       <div className="second-box">
         <TopicTag category="환경" />
-        <KeywordTag category="ㅇㄹㅇㄹ" />
-        <KeywordTag category="ㅇㄹㅇㄹ" />
+        <KeywordTag category="환경">아아</KeywordTag>
+        <KeywordTag category="환경">아아</KeywordTag>
       </div>
       <div className="input-box">
         <textarea
@@ -97,7 +97,7 @@ export const PostingModal = () => {
           <div>{modalData?.title}</div>
         </div>
         <img
-          src={modalData?.image}
+          src={modalData?.imgUrl}
           alt=""
         />
       </div>
