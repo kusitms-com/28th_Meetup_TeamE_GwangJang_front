@@ -124,11 +124,26 @@ export const getTopicYoutube = async (issue: string) => {
 
 // 커뮤니티 페이지
 export const getCommunityAllData = async () => {
-  const res = await GwangjangAxios.get("/community");
+  const res = await GwangjangAxios.get("/community/");
   return res;
 };
 
-export const getCommunityAreaData = async (topicId: number) => {
+export const getCommunityAreaData = async (topicId: string) => {
   const res = await GwangjangAxios.get(`/community/topic/${topicId}`);
+  return res;
+};
+
+export const getSubscribeTop5 = async () => {
+  const res = await GwangjangAxios.get("/member/subscribe/issue");
+  return res;
+};
+
+export const getCommunityDetailData = async (topicId: number, communityId: number) => {
+  const res = await GwangjangAxios.get(`/community/topic/${topicId}/community/${communityId}`);
+  return res;
+};
+
+export const getCommunityTop5 = async () => {
+  const res = await GwangjangAxios.get("/community/?sortBy=ALL/");
   return res;
 };

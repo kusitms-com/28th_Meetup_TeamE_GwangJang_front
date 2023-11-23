@@ -150,6 +150,8 @@ export interface CommunityItemProps {
   commentCount: number;
   contentsId: number;
   contents: null;
+  contentsTitle: string;
+  contentsUrl: string;
   likeStatus: string;
   quotText: string;
 }
@@ -170,7 +172,7 @@ export interface SimilarTopicesProps {
 }
 
 export interface SimilarTopicProps {
-  subscibeCount: number;
+  subscribeCount: number;
   topic: string;
   area: string;
 }
@@ -178,6 +180,11 @@ export interface ToptopicProps {
   id: number;
   area: string;
   subject: string;
+
+  //
+  category: string;
+  imgUrl: string;
+  title: string;
 }
 
 export interface PopularCommunityProps {
