@@ -19,7 +19,7 @@ const SimilarTopic = ({ data }: { data: SimilarTopicProps[] }) => {
         <div className="title-top">
           <p>{name}</p> 와
         </div>
-        <div>비슷한 주제예요</div>
+        <div>이런 주제도 있어요</div>
       </div>
 
       <TopicWraaper>
@@ -29,7 +29,7 @@ const SimilarTopic = ({ data }: { data: SimilarTopicProps[] }) => {
           })}
         </div>
         <DifferentTopicBtn>
-          <p>다른 주제도 둘러보세요</p>
+          <p>다른 사회 이슈도 둘러보세요.</p>
           <img
             src={next}
             alt=">"

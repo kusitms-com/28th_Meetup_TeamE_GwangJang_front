@@ -8,7 +8,7 @@ import { Inner } from "@/style/global";
 
 export const MainContent = () => {
   const firstData = contentData[0];
-  const title = "지금 사람들이\n가장 많이 본 콘텐츠";
+  const title = "지금 가장\n인기있는 콘텐츠";
 
   return (
     <Background>

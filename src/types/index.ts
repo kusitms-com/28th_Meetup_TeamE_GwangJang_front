@@ -122,6 +122,14 @@ export interface ArticleDataProps {
   type: string;
   url: string;
 } // 좋아요 수 넣기
+export interface ArticleData1Props {
+  id: number;
+  url: string;
+  title: string;
+  imgUrl: string;
+  type: string;
+  pubDate: string;
+} // 좋아요 수 넣기
 
 export interface ArticleItemProps {
   title: string;

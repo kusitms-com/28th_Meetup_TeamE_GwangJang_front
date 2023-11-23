@@ -244,3 +244,36 @@ export const getDeleteSubcribe = async ({
   });
   return res;
 };
+
+export const getactiveSubcribe = async ({
+  topicId,
+  IssueId,
+}: {
+  topicId: number;
+  IssueId: number;
+}) => {
+  const res = await GwangjangAxios.get(`member/topic/${topicId}/issue/${IssueId}/subscribe`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.accessToken}`,
+    },
+  });
+  return res;
+};
+
+export const getget = async () => {
+  const res = await GwangjangAxios.get(`/member/subscribe`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.accessToken}`,
+    },
+  });
+  return res;
+};
+
+export const getgetget = async (topic: string) => {
+  const res = await GwangjangAxios.get(`/contnets/subscribe/${topic}`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.accessToken}`,
+    },
+  });
+  return res;
+};

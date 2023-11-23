@@ -44,7 +44,7 @@ export const KeywordVideo = () => {
       {(keywordYoutubeData.length || YoutubeData.length) && (
         <>
           <div className="inner">
-            <SubTitle title="관련 영상으로 더 알아보기" />
+            <SubTitle title="관련 영상으로 더 알아보세요" />
           </div>
           <div>
             <ArticleCarousel data={DetailPageKeyword === "" ? YoutubeData : keywordYoutubeData} />

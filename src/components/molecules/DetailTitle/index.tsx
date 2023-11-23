@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useSetRecoilState, useRecoilValue } from "recoil";
 
-import { getDeleteSubcribe, getSubcribe } from "@/apis";
+import { getDeleteSubcribe, getSubcribe, getactiveSubcribe } from "@/apis";
 import { SubscribeButton } from "@/components/atoms/button";
 import OneLine from "@/components/atoms/oneLine";
 import { TopicTag } from "@/components/atoms/tag";
@@ -58,6 +58,22 @@ const DetailTitle = ({ data }: { data: DetailTitleProps }) => {
       }, 1500);
     }
   };
+
+  useEffect(() => {
+    getactiveSubcribe({ topicId: num, IssueId: detailtitle.id })
+      .then((res) => {
+        if (res.data.isSuccess) {
+          setOnOff(false);
+        } else {
+          setOnOff(true);
+        }
+
+        setOnOff(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [detailtitle.id, num]);
   return (
     <Container>
       <Top>
