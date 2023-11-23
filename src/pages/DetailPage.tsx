@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import styled from "styled-components";
 
-import { getDetailBubbleGraph, getDetailOneLineIntro, getDetailSubscribeCount } from "@/apis";
+import { getDetailOneLineIntro, getDetailSubscribeCount } from "@/apis";
 import { BubbleGraph } from "@/components/organisms/Details/BubbleGraph";
 import { CommunityPreview } from "@/components/organisms/Details/CommunityPreview";
 import { DetailArticleTitle } from "@/components/organisms/Details/DetailArticleTitle";
@@ -14,16 +14,15 @@ import { LineGraph } from "@/components/organisms/Details/LineGraph";
 import SimilarTopic from "@/components/organisms/Details/SimilarTopic";
 import { KeywordVideo } from "@/components/organisms/Details/keywordVideo";
 import { QuotModal } from "@/components/organisms/Modal/QuotModal";
-import { bubbleDummydata } from "@/dummy/bubbleData";
+//import { bubbleDummydata } from "@/dummy/bubbleData";
 import { detailTitleData } from "@/dummy/detailTitleData";
 //import { lineDummydata } from "@/dummy/lineData";
 import { similartopicData } from "@/dummy/similartopicData";
-import { ShowModalState, bubbleGraphState, detailTitleState, ld } from "@/recoil/atoms";
+import { ShowModalState, bubbleGraphState, detailTitleState } from "@/recoil/atoms";
 //import { BubbleGraphProps } from "@/types";
 
 const DetailPage = () => {
   //모달 show 여부
-  const load = useSetRecoilState(ld);
   const Show = useRecoilValue(ShowModalState);
   const setDetailTitle = useSetRecoilState(detailTitleState);
   const setBubbleGraphData = useSetRecoilState(bubbleGraphState);
@@ -49,7 +48,7 @@ const DetailPage = () => {
             setDetailTitle({
               category: objectTitle.topicTitle,
               title: objectTitle.issueTitle,
-              count: res.data.data.subscribers,
+              count: res.data.data?.subscribers,
               oneline: objectTitle.issueDetail,
               id: objectTitle.issueId,
             });
@@ -62,20 +61,20 @@ const DetailPage = () => {
         console.log(err);
         setDetailTitle(detailTitleData);
       });
-    getDetailBubbleGraph(name)
-      .then((res) => {
-        console.log(res.data.data);
-        const obj = [...res.data.data];
-        const RealObj = obj.map((item: any) => {
-          return Object.freeze(item);
-        });
-        setBubbleGraphData(RealObj);
-      })
-      .catch((err) => {
-        console.log(err);
-        setBubbleGraphData(bubbleDummydata);
-      });
-  }, [id, load, setBubbleGraphData, setDetailTitle]);
+    // getDetailBubbleGraph(name)
+    //   .then((res) => {
+    //     console.log(res.data.data);
+    //     const obj = [...res.data.data];
+    //     const RealObj = obj.map((item: any) => {
+    //       return Object.freeze(item);
+    //     });
+    //     setBubbleGraphData(RealObj);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     setBubbleGraphData(bubbleDummydata);
+    //   });
+  }, [id, setBubbleGraphData, setDetailTitle]);
 
   return (
     <>

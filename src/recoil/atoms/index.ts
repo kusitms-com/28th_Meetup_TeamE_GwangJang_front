@@ -2,7 +2,7 @@ import { atom, selector } from "recoil";
 
 import { mySubjectData } from "@/dummy/mySubjectData";
 import {
-  ArticleItemProps,
+  ArticleDataProps,
   BubbleGraphProps,
   DetailTitleProps,
   lineGraphProps,
@@ -41,7 +41,7 @@ export const selectedTabState = atom({
   default: 0,
 });
 
-export const modalState = atom<ArticleItemProps | null>({
+export const modalState = atom<ArticleDataProps | null>({
   key: "src/atoms/auth.tsx-modalState",
   default: null,
 });
@@ -98,8 +98,20 @@ export const bubbleGraphState = atom<BubbleGraphProps[]>({
   key: "src/atoms/auth.tsx-bubbleGraphState",
   default: [],
 });
-export const ld = atom({
+export const detailPageKeyword = atom({
   // 주제뱔 상세페이지 접속시, 쿼리스트링의 영역값을 저장
-  key: "src/atoms/auth.tsx- ld ",
-  default: false,
+  key: "src/atoms/auth.tsx-detailPageKeyword ",
+  default: "",
+});
+
+export const loadingState = atom({
+  // 주제뱔 상세페이지 접속시, 쿼리스트링의 영역값을 저장
+  key: "src/atoms/auth.tsx-loadingState ",
+  default: true,
+});
+
+export const topDateState = atom({
+  // 주제뱔 상세페이지 접속시, 쿼리스트링의 영역값을 저장
+  key: "src/atoms/auth.tsx-topDateState ",
+  default: "",
 });
