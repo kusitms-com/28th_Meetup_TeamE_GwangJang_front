@@ -7,6 +7,7 @@ import { SeeMore } from "@/components/atoms/more";
 import { Title } from "@/components/atoms/title";
 import { TopicCarousel } from "@/components/molecules/carousel/TopicCarousel";
 import { CategoryFilter } from "@/components/molecules/categoryFilter";
+import { MySubscribeData } from "@/dummy/MySubscribeData";
 
 export const LoginTopic = () => {
   return (
@@ -17,7 +18,7 @@ export const LoginTopic = () => {
       <div className="inner">
         <CategoryFilter />{" "}
       </div>
-      <TopicCarousel />
+      <TopicCarousel data={MySubscribeData} />
       <div className="inner">
         <SeeMore
           text="관심 콘텐츠 더보기"

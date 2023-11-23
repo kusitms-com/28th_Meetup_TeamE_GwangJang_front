@@ -107,7 +107,13 @@ export const MySideBox = () => {
                 <div className="topic-wrapper">
                   <TopTopicBox
                     key={idx}
-                    data={item}
+                    data={{
+                      id: item.id,
+                      area: "영역",
+                      subject: "환경",
+                      category: "환경",
+                      title: "환경",
+                    }}
                   />
                   <button className="subscribe-cancel">구독취소</button>
                 </div>
