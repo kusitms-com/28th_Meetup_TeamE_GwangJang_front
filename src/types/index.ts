@@ -281,12 +281,11 @@ export interface BubbleGraphProps {
   name: string;
 }
 
-
 export interface CommentProps {
   topicId: number;
   communityId: number;
   talk?: string;
-
+}
 export interface FirstTopicProps {
   topicId: number;
   topicTitle: string;

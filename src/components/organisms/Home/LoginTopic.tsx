@@ -5,9 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { SeeMore } from "@/components/atoms/more";
 import { Title } from "@/components/atoms/title";
-import { TopicCarousel } from "@/components/molecules/carousel/TopicCarousel";
+// import { TopicCarousel } from "@/components/molecules/carousel/TopicCarousel";
 import { CategoryFilter } from "@/components/molecules/categoryFilter";
-import { MySubscribeData } from "@/dummy/MySubscribeData";
+// import { MySubscribeData } from "@/dummy/MySubscribeData";
 
 export const LoginTopic = () => {
   // const [arr, setArr] = useState([]);
@@ -36,7 +36,7 @@ export const LoginTopic = () => {
       <div className="inner">
         <CategoryFilter />{" "}
       </div>
-      <TopicCarousel data={MySubscribeData} />
+      {/* <TopicCarousel data={MySubscribeData} /> */}
       <div className="inner">
         <SeeMore
           text="관심 콘텐츠 더보기"
