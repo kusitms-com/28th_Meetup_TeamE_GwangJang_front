@@ -111,15 +111,17 @@ export interface semiDataProps {
 }
 
 export interface ArticleDataProps {
-  data: {
-    title: string;
-    type: string;
-    image: string;
-    date: string;
-    likeCount: number;
-    quotCount: number;
-  }[];
-}
+  contents_id?: string;
+  description?: string;
+  imgUrl: string;
+  issueTitle?: string;
+  keyword?: string;
+  pubDate: string;
+  title: string;
+  topic?: string;
+  type: string;
+  url: string;
+} // 좋아요 수 넣기
 
 export interface ArticleItemProps {
   title: string;
@@ -230,4 +232,25 @@ export interface SearchTopicProps {
   count: number;
   oneline: string;
   img: string;
+}
+
+export interface packBubbleProps {
+  name: string;
+  data: {
+    name: string;
+    value: number;
+    id?: number;
+  }[];
+}
+
+export interface lineGraphProps {
+  name: string;
+  y: number;
+}
+
+export interface BubbleGraphProps {
+  x: number;
+  y: number | null;
+  z: number;
+  name: string;
 }
