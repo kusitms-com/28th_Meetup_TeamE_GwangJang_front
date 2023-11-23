@@ -191,6 +191,8 @@ export interface ToptopicProps {
   id: number;
   area: string;
   subject: string;
+  category?: string;
+  title?: string;
 }
 
 export interface PopularCommunityProps {
@@ -207,12 +209,6 @@ export interface PopularCommunityProps {
   commentCount: number;
   contentsId: number;
   contents: null;
-}
-
-export interface ToptopicProps {
-  id: number;
-  area: string;
-  subject: string;
 }
 
 export interface PopularCommunityProps {

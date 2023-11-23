@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Tag = styled.div<{ $category: string }>`
+export const Tag = styled.div<{ $category: string | undefined }>`
   display: inline-flex;
   padding: 5px 10px;
   justify-content: center;
