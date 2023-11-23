@@ -6,7 +6,7 @@ import { SearchTopicProps } from "@/types";
 const SearchTopicList = ({ data }: { data: SearchTopicProps[] }) => {
   return (
     <Container>
-      {data.map((item) => {
+      {data?.map((item) => {
         return <SearchTopicBox data={item} />;
       })}
     </Container>
