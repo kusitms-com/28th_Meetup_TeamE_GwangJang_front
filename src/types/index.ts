@@ -165,8 +165,6 @@ export interface CommunityItemProps {
   contentsUrl: string;
   likeStatus: string;
   quotText: string;
-  contentsTitle: string;
-  contentsUrl: string;
 }
 
 export interface CommentItemProps {
