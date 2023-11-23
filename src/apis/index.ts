@@ -178,3 +178,18 @@ export const getSearchCommunity = async (keyword: string) => {
   const res = await GwangjangAxios.get(`/community/search/ALL/${keyword}`);
   return res;
 };
+
+export const getMainBottom = async () => {
+  const res = await GwangjangAxios.get("/keyword/topic/all");
+  return res;
+};
+
+export const getMainTop = async () => {
+  const res = await GwangjangAxios.get("/member/subscribe/issue");
+  return res;
+};
+
+export const getPopularContents = async () => {
+  const res = await GwangjangAxios.get("/contents/contents/like");
+  return res;
+};

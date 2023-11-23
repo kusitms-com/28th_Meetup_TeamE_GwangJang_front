@@ -53,6 +53,9 @@ export interface discussedTopicProps {
   title: string;
   subTitles: string[];
   idx: number;
+  // issueList: string[];
+  // topicId: number;
+  // topicTitle: string;
 }
 [];
 
@@ -255,4 +258,62 @@ export interface BubbleGraphProps {
   y: number | null;
   z: number;
   name: string;
+}
+
+export interface FirstTopicProps {
+  topicId: number;
+  topicTitle: string;
+  issueList: IssueListProps[];
+}
+
+export interface IssueListProps {
+  id: number;
+  issueTitle: string;
+}
+
+export interface CommunityMainProps {
+  id: number;
+  communityText: string;
+  date: string;
+  writerId: string;
+  nickname: string;
+  profileImg: string;
+  area: string;
+  subject: string;
+  keyword: string;
+  likeCount: number;
+  commentCount: number;
+  contentsId: number;
+  contents: null;
+  contentsTitle: string;
+}
+
+export interface ContentsMainProps {
+  contents_id?: number;
+  description?: string;
+  imgUrl?: string;
+  issueTitle?: string;
+  keyword?: string;
+  pubDate?: string;
+  title?: string;
+  topic?: string;
+  type?: string;
+  url?: string;
+  category?: string;
+  contents?: string;
+  link?: string;
+}
+
+export interface mainTopicBottom {
+  issueList: string[];
+  topicId: number;
+  topicTitle: string;
+}
+[];
+
+export interface TopicMainProps {
+  title: string;
+  subscribeCount: number;
+  imgUrl: string;
+  category: string;
 }

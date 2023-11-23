@@ -1,11 +1,17 @@
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
 
 import { Title } from "@/components/atoms/title";
 import Topic from "@/components/molecules/discussedTopic";
 import { topicData } from "@/dummy/topicData";
+import { TalkingTopicState } from "@/recoil/atoms";
+// import { TalkingTopicState } from "@/recoil/atoms";
 
 const title = "광장이 지금\n얘기하고 있는 주제";
 const DiscussedTopics = () => {
+  const bottomData = useRecoilValue(TalkingTopicState);
+  console.log("bbb", bottomData);
+
   return (
     <Container>
       <div className="inner">
