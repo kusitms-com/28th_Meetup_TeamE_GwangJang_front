@@ -133,7 +133,6 @@ export const getCommunityAreaData = async (topicId: string) => {
   return res;
 };
 
-
 export const postCommunityItem = async (
   contentsId: number,
   writeText: string,
@@ -150,6 +149,8 @@ export const postCommunityItem = async (
       },
     }
   );
+  return res;
+};
 
 export const getSubscribeTop5 = async () => {
   const res = await GwangjangAxios.get("/member/subscribe/issue");
