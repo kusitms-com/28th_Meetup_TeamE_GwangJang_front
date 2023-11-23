@@ -105,6 +105,23 @@ export const getDetailBubbleGraph = async (name: string) => {
   return res;
 };
 
+export const getKeywordArticle = async (keyword: string) => {
+  const res = await GwangjangAxios.get(`/contents/keyword/${keyword}/NAVER`);
+  return res;
+};
+export const getKeywordYoutube = async (keyword: string) => {
+  const res = await GwangjangAxios.get(`/contents/keyword/${keyword}/YOUTUBE`);
+  return res;
+};
+export const getTopicArticle = async (issue: string) => {
+  const res = await GwangjangAxios.get(`/contents/issueTitle/${issue}/NAVER`);
+  return res;
+};
+export const getTopicYoutube = async (issue: string) => {
+  const res = await GwangjangAxios.get(`/contents/issueTitle/${issue}/YOUTUBE`);
+  return res;
+};
+
 // 커뮤니티 페이지
 export const getCommunityAllData = async () => {
   const res = await GwangjangAxios.get("/community");
