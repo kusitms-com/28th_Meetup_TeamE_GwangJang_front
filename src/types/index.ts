@@ -191,11 +191,6 @@ export interface ToptopicProps {
   id: number;
   area: string;
   subject: string;
-
-  //
-  category: string;
-  imgUrl: string;
-  title: string;
 }
 
 export interface PopularCommunityProps {
@@ -237,12 +232,12 @@ export interface PopularCommunityProps {
 }
 
 export interface SearchTopicProps {
-  id: number;
-  category: string;
-  title: string;
-  count: number;
-  oneline: string;
-  img: string;
+  issueId: number;
+  topicTitle: string;
+  issueTitle: string;
+  count?: number;
+  issueDetail: string;
+  imgUrl: string;
 }
 
 export interface packBubbleProps {
