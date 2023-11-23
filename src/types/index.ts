@@ -178,14 +178,27 @@ export interface CommentItemProps {
 }
 export interface SimilarTopicesProps {
   id: number;
-  topic: string;
-  item: SimilarTopicProps[];
+  communityText: string;
+  date: string;
+  writerId: string;
+  nickname: string;
+  profileImg: string;
+  area: string;
+  subject: string;
+  keyword: string;
+  likeCount: number;
+  commentCount: number;
+  contentsId: number;
+  contents: null;
+  contentsTitle: string;
+  contentsUrl: string;
+  likeStatus: string;
+  quotText: string;
 }
 
 export interface SimilarTopicProps {
-  subscribeCount: number;
-  topic: string;
-  area: string;
+  issueTitle: string;
+  topicTitle: string;
 }
 export interface ToptopicProps {
   id: number;
@@ -255,4 +268,10 @@ export interface BubbleGraphProps {
   y: number | null;
   z: number;
   name: string;
+}
+
+export interface CommentProps {
+  topicId: number;
+  communityId: number;
+  talk?: string;
 }

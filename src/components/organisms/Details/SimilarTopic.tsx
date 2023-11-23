@@ -5,9 +5,9 @@ import styled from "styled-components";
 import next from "@/assets/bottom_arrow.svg";
 import { SimilarTopicBox } from "@/components/molecules/longTopicBox";
 import { areaState } from "@/recoil/atoms";
-import { SimilarTopicesProps } from "@/types";
+import { SimilarTopicProps } from "@/types";
 
-const SimilarTopic = ({ data }: { data: SimilarTopicesProps }) => {
+const SimilarTopic = ({ data }: { data: SimilarTopicProps[] }) => {
   const { id } = useParams();
   const area = useRecoilValue(areaState);
 
@@ -24,7 +24,7 @@ const SimilarTopic = ({ data }: { data: SimilarTopicesProps }) => {
 
       <TopicWraaper>
         <div className="TopicBoxes">
-          {data.item.map((el) => {
+          {data?.map((el) => {
             return <SimilarTopicBox data={el} />;
           })}
         </div>

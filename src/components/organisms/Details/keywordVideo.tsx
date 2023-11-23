@@ -28,14 +28,15 @@ export const KeywordVideo = () => {
         console.log(err);
       });
 
-    getKeywordYoutube(DetailPageKeyword)
-      .then((res) => {
-        setKeywordYoutubeData(res.data.data);
-        console.log(res.data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (name !== "") {
+      getKeywordYoutube(DetailPageKeyword)
+        .then((res) => {
+          setKeywordYoutubeData(res.data.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, [DetailPageKeyword, name]);
 
   return (

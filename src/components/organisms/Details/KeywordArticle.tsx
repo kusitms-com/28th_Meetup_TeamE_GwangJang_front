@@ -30,15 +30,15 @@ export const KeywordArticle = () => {
       .catch((err) => {
         console.log(err);
       });
-
-    getKeywordArticle(DetailPageKeyword)
-      .then((res) => {
-        setKeywordArticleData(res.data.data);
-        console.log(res.data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (name !== "") {
+      getKeywordArticle(DetailPageKeyword)
+        .then((res) => {
+          setKeywordArticleData(res.data.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, [DetailPageKeyword, name]);
 
   return (
