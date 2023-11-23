@@ -131,6 +131,18 @@ export const topDateState = atom({
   default: "",
 });
 
+
+export const ToastState = atom({
+  // 주제뱔 상세페이지 접속시, 쿼리스트링의 영역값을 저장
+  key: "src/atoms/auth.tsx-ToastState ",
+  default: false,
+});
+
+export const subscriber = atom({
+  // 주제뱔 상세페이지 접속시, 쿼리스트링의 영역값을 저장
+  key: "src/atoms/auth.tsx-subscriber ",
+  default: 0,
+});
 export const TalkingTopicState = atom<mainTopicBottom[]>({
   key: "src/atoms/auth.tsx-TalkingTopicState",
   default: [],
@@ -154,4 +166,5 @@ export const ContentsPopularState = atom<ContentsMainProps[]>({
 export const PopularCommunityState = atom<CommunityMainProps[]>({
   key: "src/atoms/auth.tsx-PopularCommunityState",
   default: [],
+
 });

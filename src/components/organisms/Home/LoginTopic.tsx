@@ -10,10 +10,28 @@ import { CategoryFilter } from "@/components/molecules/categoryFilter";
 import { MySubscribeData } from "@/dummy/MySubscribeData";
 
 export const LoginTopic = () => {
+  // const [arr, setArr] = useState([]);
+  // const [a, setA] = useState("");
+
+  // const [b, setB] = useState("");
+  // const [c, setC] = useState("");
+
+  // useEffect(() => {
+  //   getget()
+  //     .then((res) => {
+  //       console.log(res.data.data.subscribeResList);
+  //       setA(res.data.data.subscribeResList[0]?.issue);
+  //       setB(res.data.data.subscribeResList[1]?.issue);
+  //       setC(res.data.data.subscribeResList[2]?.issue);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
   return (
     <Background>
       <div className="inner">
-        <Title title="나의 관심 주제" />
+        <Title title="나의 관심 이슈" />
       </div>
       <div className="inner">
         <CategoryFilter />{" "}

@@ -125,6 +125,14 @@ export interface ArticleDataProps {
   type: string;
   url: string;
 } // 좋아요 수 넣기
+export interface ArticleData1Props {
+  id: number;
+  url: string;
+  title: string;
+  imgUrl: string;
+  type: string;
+  pubDate: string;
+} // 좋아요 수 넣기
 
 export interface ArticleItemProps {
   title: string;
@@ -181,14 +189,27 @@ export interface CommentItemProps {
 }
 export interface SimilarTopicesProps {
   id: number;
-  topic: string;
-  item: SimilarTopicProps[];
+  communityText: string;
+  date: string;
+  writerId: string;
+  nickname: string;
+  profileImg: string;
+  area: string;
+  subject: string;
+  keyword: string;
+  likeCount: number;
+  commentCount: number;
+  contentsId: number;
+  contents: null;
+  contentsTitle: string;
+  contentsUrl: string;
+  likeStatus: string;
+  quotText: string;
 }
 
 export interface SimilarTopicProps {
-  subscribeCount: number;
-  topic: string;
-  area: string;
+  issueTitle: string;
+  topicTitle: string;
 }
 export interface ToptopicProps {
   id: number;
@@ -259,6 +280,12 @@ export interface BubbleGraphProps {
   z: number;
   name: string;
 }
+
+
+export interface CommentProps {
+  topicId: number;
+  communityId: number;
+  talk?: string;
 
 export interface FirstTopicProps {
   topicId: number;

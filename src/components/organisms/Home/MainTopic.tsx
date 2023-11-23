@@ -9,7 +9,7 @@ import { MainTopState } from "@/recoil/atoms";
 import { Inner } from "@/style/global";
 
 export const MainTopic = () => {
-  const title = "가장 인기있는\n주제";
+  const title = " 광장에서 가장\n인기 있는 사회 이슈";
 
   const mainTopicData = useRecoilValue(MainTopState);
   console.log(mainTopicData);
