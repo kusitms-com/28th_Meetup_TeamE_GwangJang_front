@@ -1,6 +1,6 @@
 import bg from "@/assets/discussedTopic/topic1.png";
 import { TopicTag } from "@/components/atoms/tag";
-import { SimilarTopicProps, SubscribeDataProps } from "@/types";
+import { SimilarTopicProps, ToptopicProps } from "@/types";
 
 import { Container, Top, Bottom, Middle } from "./style";
 
@@ -25,7 +25,7 @@ export const SimilarTopicBox = ({ data }: { data: SimilarTopicProps }) => {
   );
 };
 
-export const TopTopicBox = ({ data }: { data: SubscribeDataProps }) => {
+export const TopTopicBox = ({ data }: { data: ToptopicProps }) => {
   const containerStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(${bg})`,
     backgroundSize: "cover",
@@ -36,8 +36,8 @@ export const TopTopicBox = ({ data }: { data: SubscribeDataProps }) => {
       $string="top"
     >
       <Middle>
-        <div className="title">{data.issue}</div>
-        <TopicTag category={data.topic} />
+        <div className="title">{data.subject}</div>
+        <TopicTag category={data.area} />
       </Middle>
     </Container>
   );

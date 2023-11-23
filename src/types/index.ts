@@ -174,11 +174,6 @@ export interface SimilarTopicProps {
   topic: string;
   area: string;
 }
-export interface ToptopicProps {
-  id: number;
-  area: string;
-  subject: string;
-}
 
 export interface PopularCommunityProps {
   id: number;
@@ -200,6 +195,12 @@ export interface ToptopicProps {
   id: number;
   area: string;
   subject: string;
+  //
+  category: string;
+  title: string;
+  count: number;
+  oneline: string;
+  img: string;
 }
 
 export interface PopularCommunityProps {
