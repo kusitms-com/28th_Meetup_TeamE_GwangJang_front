@@ -4,8 +4,12 @@ import { mySubjectData } from "@/dummy/mySubjectData";
 import {
   ArticleDataProps,
   BubbleGraphProps,
+  CommunityMainProps,
+  ContentsMainProps,
   DetailTitleProps,
+  TopicMainProps,
   lineGraphProps,
+  mainTopicBottom,
   packBubbleProps,
 } from "@/types";
 
@@ -144,5 +148,38 @@ export const myLikeContentsData = atom({
 
 export const myWriteData = atom({
   key: "src/atoms/auth.tsx-myWriteData",
+export const ToastState = atom({
+  // 주제뱔 상세페이지 접속시, 쿼리스트링의 영역값을 저장
+  key: "src/atoms/auth.tsx-ToastState ",
+  default: false,
+});
+
+export const subscriber = atom({
+  // 주제뱔 상세페이지 접속시, 쿼리스트링의 영역값을 저장
+  key: "src/atoms/auth.tsx-subscriber ",
+  default: 0,
+});
+export const TalkingTopicState = atom<mainTopicBottom[]>({
+  key: "src/atoms/auth.tsx-TalkingTopicState",
+  default: [],
+});
+
+export const TalkingHoverState = atom({
+  key: "src/atoms/auth.tsx-TalkingHoverState",
+  default: [],
+});
+
+export const MainTopState = atom<TopicMainProps[]>({
+  key: "src/atoms/auth.tsx-MainTopState",
+  default: [],
+});
+
+export const ContentsPopularState = atom<ContentsMainProps[]>({
+  key: "src/atoms/auth.tsx-ContentsPopularState",
+  default: [],
+});
+
+export const PopularCommunityState = atom<CommunityMainProps[]>({
+  key: "src/atoms/auth.tsx-PopularCommunityState",
   default: [],
 });
