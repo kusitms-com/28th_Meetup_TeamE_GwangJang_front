@@ -224,3 +224,24 @@ export interface SearchTopicProps {
   oneline: string;
   img: string;
 }
+
+export interface packBubbleProps {
+  name: string;
+  data: {
+    name: string;
+    value: number;
+    id?: number;
+  }[];
+}
+
+export interface lineGraphProps {
+  name: string;
+  y: number;
+}
+
+export interface BubbleGraphProps {
+  x: number;
+  y: number | null;
+  z: number;
+  name: string;
+}
