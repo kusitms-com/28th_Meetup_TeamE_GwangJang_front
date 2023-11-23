@@ -18,10 +18,10 @@ export const MainCommunityBox = ({ data }: { data: CommunityItemProps }) => {
       <div className="content-quot">
         <div className="quot-text">
           <p>인용한 콘텐츠</p>
-          <div>{data.quotText}</div>
+          <div>{data.contentsTitle}</div>
         </div>
         <img
-          src="https://images.chosun.com/resizer/XKL6ePOdAuAn81yF-ZBOY8VyQWs=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/JMI3RCEB2Y7QSIUWJKT2MT7CC4.jpg"
+          src={data.contentsUrl}
           alt=""
         />
       </div>

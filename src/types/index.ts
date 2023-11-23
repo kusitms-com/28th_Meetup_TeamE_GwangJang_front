@@ -150,6 +150,8 @@ export interface CommunityItemProps {
   contents: null;
   likeStatus: string;
   quotText: string;
+  contentsTitle: string;
+  contentsUrl: string;
 }
 
 export interface CommentItemProps {
@@ -223,4 +225,26 @@ export interface SearchTopicProps {
   count: number;
   oneline: string;
   img: string;
+}
+
+export interface SubscribeDataProps {
+  //
+  imgUrl: string;
+  issue: string;
+  issueId: number;
+  topic: string;
+}
+
+export interface ContentsItemProps {
+  contents_id: number;
+  imgUrl: string;
+  title: string;
+  description: string;
+  type: string;
+  issueTitle: string;
+  keyword: string;
+  pubDate: string;
+  topic: string;
+  likeCount?: number;
+  quotCount?: number;
 }

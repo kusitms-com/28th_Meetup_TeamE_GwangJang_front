@@ -64,3 +64,23 @@ export const searchResultState = atom({
   default: "",
   effects: [persistAtom],
 });
+
+export const mySubscribeTopicData = atom({
+  key: "src/atoms/auth.tsx-mySubscribeTopicData",
+  default: [],
+});
+
+export const myLikeData = atom({
+  key: "src/atoms/auth.tsx-myLikeData",
+  default: [],
+});
+
+export const myLikeContentsData = atom({
+  key: "src/atoms/auth.tsx-myLikeContentsData",
+  default: [],
+});
+
+export const myWriteData = atom({
+  key: "src/atoms/auth.tsx-myWriteData",
+  default: [],
+});
