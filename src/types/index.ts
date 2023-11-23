@@ -128,6 +128,17 @@ export interface ArticleItemProps {
   date: string;
   likeCount?: number;
   quotCount?: number;
+  contents_id?: number;
+}
+
+export interface ContentsItemProps {
+  contents_id: number;
+  url: string;
+  title: string;
+  description: string;
+  type: string;
+  issueTitle: string;
+  pubDate: string;
 }
 
 export interface CategoryBarProps {
