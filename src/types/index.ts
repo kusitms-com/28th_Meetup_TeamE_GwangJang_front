@@ -67,7 +67,7 @@ export interface SeeMoreProps {
 
 export interface ContentDataProps {
   category: string;
-  keyword: string[];
+  keyword: string;
   type: string;
   title: string;
   imgUrl: string;

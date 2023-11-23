@@ -8,7 +8,9 @@ import { ArticleDataProps } from "@/types";
 import { SlideWrapper } from "./style";
 
 export const SlideItem = ({ data }: { data: ArticleDataProps }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const setModal = useSetRecoilState(modalState);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const ShowModal = useSetRecoilState(ShowModalState);
   console.log(data, 124);
 
