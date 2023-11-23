@@ -133,6 +133,24 @@ export const getCommunityAreaData = async (topicId: string) => {
   return res;
 };
 
+
+export const postCommunityItem = async (
+  contentsId: number,
+  writeText: string,
+  accessToken: string
+) => {
+  const res = await GwangjangAxios.post(
+    `/community/contents/${contentsId}`,
+    {
+      communityText: writeText,
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }
+  );
+
 export const getSubscribeTop5 = async () => {
   const res = await GwangjangAxios.get("/member/subscribe/issue");
   return res;
